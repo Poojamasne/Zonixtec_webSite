@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO Meta Tags -->
+    <title>Zonixtec - Transform Ideas into Powerful Digital Solutions</title>
+    <meta name="description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta name="keywords" content="software development, AI solutions, cloud computing, custom software, web development, mobile app development, digital transformation, Zonixtec">
+    <meta name="author" content="Zonixtec">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zonixtec.com/">
+    <meta property="og:title" content="Zonixtec - Transform Ideas into Powerful Digital Solutions">
+    <meta property="og:description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta property="og:image" content="https://www.zonixtec.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.zonixtec.com/">
+    <meta property="twitter:title" content="Zonixtec - Transform Ideas into Powerful Digital Solutions">
+    <meta property="twitter:description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta property="twitter:image" content="https://www.zonixtec.com/images/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.zonixtec.com/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0044cc;
+            --secondary: #00f2ff;
+            --accent: #ff3366;
+            --dark: #050511;
+            --dark-light: #0a0a1a;
+            --light: #f5f5f5;
+            --gray: #888;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title span {
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title span.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px var(--secondary); }
+            50% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+            100% { text-shadow: 0 0 5px var(--secondary); }
+        }
+        
+        .hero-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(5, 5, 17, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo .tech {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .cta-buttons {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-buttons:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--dark-light), var(--dark));
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 17, 0.7);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 1160px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gray);
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .about-content {
+            flex: 2 1 400px;
+            min-width: 280px;
+        }
+        
+        .about-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .about-content h2 span {
+            color: var(--secondary);
+        }
+        
+        .about-content p {
+            text-align: left;
+            margin: 12px 0;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+        
+        .about-image {
+            flex: 1 1 300px;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: rgba(10, 10, 26, 0.5);
+        }
+        
+        .services-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .services-header h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+        
+        .services-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .service-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .service-link:hover {
+            color: var(--secondary);
+        }
+        
+        .services-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        
+        .stats-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .stats-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .stat-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+        
+        .stat-count i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .stat-title {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Industries Section */
+        .industries {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .industries-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .industry-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .industry-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .industry-card p {
+            color: var(--gray);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: rgba(10, 10, 26, 0.5);
+            position: relative;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .testimonial-inner {
+            padding: 30px;
+        }
+        
+        .quote-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .client-position {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-quote {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .rating {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .project-details {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+        
+        .project-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 70px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+        
+        .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #f5f6fa;
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.4rem;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(52,152,219,0.18);
+        }
+        
+        .contact-form {
+            background: rgba(10, 10, 26, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-light);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-links a i {
+            font-size: 0.8rem;
+        }
+        
+        #newsletter-group {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        #newsletter-email {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            outline: none;
+        }
+        
+        #newsletter-btn {
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        #newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .secondary-button {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-header h2, .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid, .industries-container, .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* SEO Elements */
+        .seo-keywords {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden SEO keywords -->
+    <div class="seo-keywords">
+        software development services, custom software solutions, AI development company, 
+        cloud computing services, digital transformation agency, web application development, 
+        mobile app development, UX/UI design services, IT consulting, technology solutions provider, 
+        software outsourcing, enterprise software development, AI implementation, machine learning solutions, 
+        cloud migration services, DevOps services, blockchain development, IoT solutions, 
+        data analytics services, custom CRM development, ERP solutions, e-commerce development, 
+        healthcare software, fintech solutions, logistics software, education technology, 
+        manufacturing software, retail solutions, Zonixtec services, Zonixtec technologies
+    </div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html">Services</a>
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Ideas into Powerful Digital Solutions</h1>
+                    <p>From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.</p>
+                    <div class="hero-buttons">
+                        <a href="Services.html" class="secondary-button">Explore our Services</a>
+                        <a href="contact.html" class="secondary-button">Let's Build Together</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" style="color: #ffff;">Scroll Down <span style="font-size: 20px; color: #f5f6fa;">&#8595</span></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <h1 class="section-title">About <span class="pulse">Zonixtec</span></h1>
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>About <span>Zonixtec</span></h2>
+                    <p>At Zonixtec, we are more than a tech company—we are your <strong>digital innovation partner</strong>. Our mission is simple: to build solutions that <strong>solve real problems</strong>, <strong>deliver measurable results</strong>, and <strong>drive growth</strong>.</p>
+                    <p>With expertise in <strong>AI, Cloud, UX/UI, and Software Development</strong>, we design and develop platforms that make businesses <strong>smarter, faster, and future-ready</strong>.</p>
+                </div>
+                <div class="about-image">
+                    <img src="./Assets/aboutus1.webp" alt="Zonixtec Technology Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding" id="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>Next-Gen Services Tailored for Your Business</h2>
+                <p>We provide a complete range of <strong>technology services</strong> to help companies unlock new opportunities.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Custom Software Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailor-made software built to fit your unique business needs. Our custom software development helps you improve efficiency and scale with ease.</p>
+                    <a href="CustomSoftware.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Mobile App Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>We design and develop secure, high-performing mobile apps for Android and iOS. Our mobile app development services boost customer engagement and growth.</p>
+                    <a href="MobileDevelopment.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- AI & Machine Learning -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Smart AI/ML models that automate tasks, analyze data, and deliver accurate predictions. We help businesses make faster, data-driven decisions.</p>
+                    <a href="MachineLearning.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Cloud Solutions -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable and secure cloud solutions for storage, apps, and business operations. Our cloud expertise reduces costs and increases flexibility.</p>
+                    <a href="CloudSolutions.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- UX/UI Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UX/UI Design</h3>
+                    <p>User-friendly, modern, and responsive designs that enhance customer experience. Our UX/UI design services make apps and websites simple yet powerful.</p>
+                    <a href="ui.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- AI Strategy & Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Expert guidance to adopt AI in your business. Our AI strategy and consulting services help you innovate, reduce costs, and stay future-ready.</p>
+                    <a href="Services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="services-cta">
+                <a href="Services.html" class="secondary-button">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section-padding" id="stats">
+        <video class="stats-bg-video" autoplay muted loop playsinline>
+            <source src="../Assets/zk.mp4" type="video/mp4">
+        </video>
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Zonixtec in Numbers</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-count">
+                        <span class="stat-number">95</span>
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="stat-title">Client Retention Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-count">
+                        <span class="stat-number">40</span>
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="stat-title">Operational Cost Reduction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-count">
+                        <span class="stat-number">48</span>
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="stat-title">E-commerce Conversion Boost</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-count">
+                        <span class="stat-number">60</span>
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="stat-title">Manual Workload Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries section-padding" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>We deliver custom IT solutions across industries, solving unique challenges with technology.</p>
+            </div>
+            <div class="industries-container">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare Software</h3>
+                    <p>Smart solutions for hospitals and clinics to improve patient care and medical operations.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Fintech Solutions</h3>
+                    <p>Secure, compliant, and innovative software for banks, insurance, and fintech companies.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Retail & E-commerce</h3>
+                    <p>Omnichannel platforms that improve customer experience and streamline sales.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>EdTech Solutions</h3>
+                    <p>Learning platforms that make education interactive, engaging, and effective.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Manufacturing Technology</h3>
+                    <p>Industry 4.0 solutions to optimize production, automation, and supply chains.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Logistics Software</h3>
+                    <p>Smart logistics applications that reduce costs and improve delivery efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+     <!-- Testimonials Section -->
+    <section class="testimonials-section section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Discover what our clients say about working with Zonixtec and the transformative impact our software solutions have made on their businesses.</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-inner">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <h3 class="client-name">Krishnal Tagunde</h3>
+                        <p class="client-position">Founder, Kaleshwari Temple</p>
+                        <p class="testimonial-quote">"Zonixtec designed a beautiful and functional website for our temple. Their team understood our vision perfectly and delivered everything with dedication and professionalism. Within 3 months, <strong>our website traffic grew by 150%, and we now receive 40% more online donations.</strong>"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-inner">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <h3 class="client-name">Dhanashree Mhaske</h3>
+                        <p class="client-position">Financial Market Expert</p>
+                        <p class="testimonial-quote">"The software solutions from Zonixtec have helped me streamline my trading operations. Their timely support and understanding of my workflow made a real difference. <strong>With their system, I now save 20+ hours per week, and my trading efficiency has improved by 35%.</strong>"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-inner">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <h3 class="client-name">Uma Borade</h3>
+                        <p class="client-position">Owner, Jewellery Shop</p>
+                        <p class="testimonial-quote">"Thanks to Zonixtec, managing my jewellery inventory and billing has become much easier. Their system is reliable and perfectly suited for small businesses like mine. <strong>I reduced manual errors by 70% and increased billing speed by 3x.</strong>"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your next project? Connect with our team to discuss your requirements and find the right solution.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p>Have questions about our software development services or want to discuss a potential project? Reach out to us through any of the channels below.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <a href="https://www.google.com/maps?q=Zonixtec+IT+Services+PVT+LTD+2nd+Floor,+Vasukamal+Express,+Rohan+Sehar+Ln,+Pan+Card+Club+Rd,+behind+Beverly+Hills+Society,+Samarth+Colony,+Baner" target="_blank" rel="noopener">
+                                    Zonixtec IT Services PVT LTD 2nd Floor, Vasukamal Express, Rohan Sehar Ln, Pan Card Club Rd, behind Beverly Hills Society, Samarth Colony, Baner 411045, Pune, Maharashtra, India
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call Us</h4>
+                                <a href="tel:+919209670926">+91 9209670926</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Us</h4>
+                                <a href="mailto:info@zonixtec.com">info@team.zonixtec.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/zonixtec-it-services-private-limited/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/zonixtec_it_services" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="7ec1a1e9-5be7-4efb-8b82-3823e290426f">
+                        <input type="hidden" name="redirect" value="https://zonixtec.com/thank-you.html">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" inputmode="text" autocomplete="name" onkeypress="return /[a-zA-Z\s]/.test(event.key)">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Zonixtec</h3>
+                    <p>Zonixtec is a leading software development company specializing in custom solutions, AI, and digital transformation services that drive business growth.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                        <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                        <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                        <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                        <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                    </div>
+                </div>
+                <div class="footer-col">                
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="services.html"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+                    <div class="form-group" id="newsletter-group">
+                        <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+                        <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+                        Thank you for subscribing!
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('body').classList.toggle('menu-open');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Newsletter subscription
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('newsletter-btn');
+            const emailInput = document.getElementById('newsletter-email');
+            const thankyou = document.getElementById('newsletter-thankyou');
+            btn.addEventListener('click', function() {
+                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                    thankyou.style.display = 'block';
+                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                    emailInput.value = '';
+                } else {
+                    emailInput.focus();
+                    emailInput.style.borderColor = '#e74c3c';
+                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Automation Services | Zonixtec</title>
+    <meta name="description" content="Streamline business operations with Zonixtec's intelligent process automation solutions. Automate workflows, optimize efficiency, and reduce costs with AI-powered RPA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #8b5cf6;
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--tech-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo .tech {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Services Hero Section */
+        .services-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .services-hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Overview Section */
+        .services-overview {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .services-intro {
+            flex: 1;
+        }
+
+        .section-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .services-intro h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-intro p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .services-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+        }
+
+        .services-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            height: 100%;
+        }
+
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .image-placeholder p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Core Offerings Section */
+        .offerings-section {
+            margin-bottom: 80px;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .offering-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offering-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+
+        .offering-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .offering-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .offering-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .offering-desc {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* Key Features Section */
+        .features-section {
+            margin-bottom: 80px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .feature-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .feature-text p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            margin-bottom: 80px;
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .challenge-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            position: relative;
+        }
+
+        .challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+        }
+
+        .challenge-icon {
+            font-size: 2rem;
+            color: #ef4444;
+            margin-bottom: 15px;
+        }
+
+        .challenge-text {
+            color: #cbd5e1;
+        }
+
+        /* Process Section */
+        .process-section {
+            margin-bottom: 80px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 60px 0;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--tech-gradient);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--tech-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .step-desc {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* Technology Stack Section */
+        .tech-stack-section {
+            margin-bottom: 80px;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-category {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .tech-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tech-item {
+            background: rgba(37, 99, 235, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        /* Impact Section */
+        .impact-section {
+            margin-bottom: 80px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .impact-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .impact-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .impact-desc {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #94a3b8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--tech-gradient);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .cta-button-large {
+            background: var(--dark);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .cta-button-large:hover {
+            transform: translateY(-3px);
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(2, 6, 23, 0.9);
+            padding: 70px 0 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--tech-gradient);
+            border-radius: 3px;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .submit-btn {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Get Start Button */
+        .cta-buttons {
+            background: linear-gradient(135deg, #6C63FF, #3F8EFC);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-buttons:hover {
+            background: linear-gradient(135deg, #cfd3d8, #6666f5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .services-overview {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .offerings-grid, .features-grid, .challenges-grid, .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html" class="active">Services</a>
+                    <a href="ComputerVision.html">Computer Vision</a>
+                    <a href="PredictiveAnalytics.html">Predictive Analytics</a>
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Process Automation Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <h1 class="services-hero-title">Process Automation</h1>
+                <p class="hero-subtitle">Streamline Operations with AI-Powered Automation</p>
+                <p class="hero-description">In today's fast-paced digital world, businesses cannot afford to waste time on repetitive, manual tasks. Zonixtec's Process Automation Services help enterprises embrace intelligent automation, reduce operational costs, and drive efficiency across departments.</p>
+                <a href="contact.html" class="cta-button">Automate Your Business Today</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About the Service Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="services-overview">
+                <div class="services-intro">
+                    <p class="section-subtitle">INTELLENT PROCESS AUTOMATION</p>
+                    <h2>About Process Automation</h2>
+                    <p>Our AI-powered process automation solutions combine Robotic Process Automation (RPA) with machine learning, document understanding, and intelligent data extraction. From automating rule-based workflows to enhancing decision-making with AI, we ensure businesses achieve speed, scalability, and accuracy.</p>
+                    <p>We help organizations transform their operations by automating repetitive tasks, reducing errors, and freeing up employees to focus on higher-value activities.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">60%</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Automation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">99%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-image">
+                    <!-- Image with fallback placeholder -->
+                    <img src="uploads/Intelligent Process Automation.jpg" alt="Process Automation" onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
+                    <div class="image-placeholder" id="image-placeholder" style="display:none;">
+                        <i class="fas fa-robot"></i>
+                        <p>Process Automation Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Offerings Section -->
+    <section class="section-padding offerings-section">
+        <div class="container">
+            <h2 class="section-title">Our Process Automation Services</h2>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <div class="offering-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="offering-title">RPA with AI Enhancement</h3>
+                    <p class="offering-desc">Automating repetitive tasks with smart AI decision-making capabilities for more intelligent and adaptive workflows.</p>
+                </div>
+                
+                <div class="offering-card">
+                    <div class="offering-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="offering-title">Document Processing</h3>
+                    <p class="offering-desc">Extracting, analyzing, and digitizing large volumes of documents with AI-powered document understanding.</p>
+                </div>
+                
+                <div class="offering-card">
+                    <div class="offering-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="offering-title">Workflow Optimization</h3>
+                    <p class="offering-desc">Streamlining complex processes for seamless execution and improved operational efficiency.</p>
+                </div>
+                
+                <div class="offering-card">
+                    <div class="offering-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="offering-title">Intelligent Data Extraction</h3>
+                    <p class="offering-desc">Converting raw, unstructured data into usable business insights with advanced AI algorithms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Features Section -->
+    <section class="section-padding features-section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>End-to-End Automation</h4>
+                        <p>Complete automation solutions for complex workflows across your entire organization</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>AI Integration</h4>
+                        <p>Smart process handling with artificial intelligence for adaptive and intelligent automation</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Scalable Solutions</h4>
+                        <p>Automation platforms that grow with your business and adapt to changing requirements</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Seamless Integration</h4>
+                        <p>Easy integration with existing business systems without disrupting current workflows</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Real-Time Monitoring</h4>
+                        <p>Comprehensive performance monitoring and analytics for continuous optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Challenges Section -->
+    <section class="section-padding challenges-section">
+        <div class="container">
+            <h2 class="section-title">Challenges Without Process Automation</h2>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="challenge-text">
+                        <p>Employees waste valuable hours on repetitive manual tasks instead of strategic work</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="challenge-text">
+                        <p>Higher chances of human errors in critical processes affecting quality and compliance</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="challenge-text">
+                        <p>Delayed operations impact customer satisfaction and business responsiveness</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="challenge-text">
+                        <p>Increased operational costs due to inefficiency and manual intervention requirements</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="challenge-text">
+                        <p>Lack of scalability and agility in workflows to handle growing business operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solution Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="services-overview">
+                <div class="services-intro">
+                    <p class="section-subtitle">THE ZONIXTEC ADVANTAGE</p>
+                    <h2>Why Choose Our Process Automation Solutions</h2>
+                    <p>At Zonixtec, we don't just automate tasks—we transform entire business processes. Our approach combines deep industry expertise with cutting-edge automation technologies to deliver solutions that drive real business value.</p>
+                    <p>We focus on creating automation that is intelligent, scalable, and seamlessly integrated into your existing operations, ensuring maximum ROI and minimal disruption.</p>
+                    
+                    <div class="features-grid" style="margin-top: 30px;">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Rapid Implementation</h4>
+                                <p>Quick deployment with minimal disruption to your existing operations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Custom Solutions</h4>
+                                <p>Tailored automation strategies designed specifically for your business needs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Ongoing Support</h4>
+                                <p>Continuous monitoring, optimization, and support for your automation solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-image">
+                    <div class="image-placeholder">
+                        <img src="uploads/Advantages_and_Disadvantages_of_Automation.avif" alt="Why Choose Us" onerror="this.style.display='none'; document.getElementById('advantage-placeholder').style.display='flex';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="section-padding process-section">
+        <div class="container">
+            <h2 class="section-title">Our Process Automation Approach</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Process Discovery</h3>
+                    <p class="step-desc">Identify automation opportunities and assess process complexity</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Solution Design</h3>
+                    <p class="step-desc">Create tailored automation architecture and implementation plan</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Development & Testing</h3>
+                    <p class="step-desc">Build and rigorously test automation solutions in controlled environments</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Deployment</h3>
+                    <p class="step-desc">Implement automation solutions with minimal disruption to operations</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Monitoring & Optimization</h3>
+                    <p class="step-desc">Continuously monitor performance and optimize for maximum efficiency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technology Stack Section -->
+    <section class="section-padding tech-stack-section">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>RPA Platforms</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">UiPath</div>
+                        <div class="tech-item">Automation Anywhere</div>
+                        <div class="tech-item">Blue Prism</div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>AI & ML Integration</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">Azure Cognitive Services</div>
+                        <div class="tech-item">AWS AI Services</div>
+                        <div class="tech-item">Google Cloud AI</div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Document Processing</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">ABBYY FlexiCapture</div>
+                        <div class="tech-item">Kofax</div>
+                        <div class="tech-item">AWS Textract</div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Workflow Management</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">Microsoft Power Automate</div>
+                        <div class="tech-item">Camunda</div>
+                        <div class="tech-item">Pega</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact Section -->
+    <section class="section-padding impact-section">
+        <div class="container">
+            <h2 class="section-title">Business Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="impact-value">60%</div>
+                    <p class="impact-desc">Cost reduction in operational processes through automation of repetitive tasks</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="impact-value">5x</div>
+                    <p class="impact-desc">Faster process execution with 24/7 automation capabilities</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="impact-value">99%</div>
+                    <p class="impact-desc">Accuracy in data processing and task execution with minimal errors</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="impact-value">40%</div>
+                    <p class="impact-desc">Productivity boost as employees focus on strategic, value-added work</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section-padding faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the difference between RPA and AI-powered automation?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>RPA automates rule-based, repetitive tasks by mimicking human actions, while AI-powered automation can handle unstructured data, make decisions, and adapt to changing scenarios. Our solutions combine both for maximum efficiency and intelligence.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does it take to implement process automation?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Implementation time varies based on process complexity, but most automation projects can be deployed within 4-12 weeks. Simple automations may take just a few weeks, while complex, enterprise-wide solutions may require longer timelines.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Which business processes are best suited for automation?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>High-volume, repetitive, rule-based processes with structured data are ideal candidates. Common examples include data entry, invoice processing, customer onboarding, report generation, and HR operations. We help identify the best opportunities during our discovery phase.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you ensure security in automated processes?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement robust security measures including role-based access control, encryption of sensitive data, audit trails, and compliance with industry standards. Our automation platforms are designed with security as a foundational principle.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What ROI can businesses expect from process automation?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most organizations achieve ROI within 6-12 months, with typical cost savings of 40-60% on automated processes. Additional benefits include improved accuracy, faster processing times, enhanced compliance, and better employee satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-section">
+                <h2 class="cta-title">Ready to Transform Your Operations?</h2>
+                <p class="cta-subtitle">Don't let manual processes hold your business back. Our intelligent automation solutions will streamline your operations, reduce costs, and free up your team to focus on strategic initiatives that drive growth.</p>
+                <button class="cta-button-large" onclick="window.location.href='contact.html'">Start Your Automation Journey</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Zonixtec</h3>
+                    <p>Zonixtec is a leading software development company specializing in custom solutions, AI, and digital transformation services that drive business growth.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                         <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                        <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
+                        <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+                        <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                        <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analytics</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                    </div>
+                </div>
+                <div class="footer-col">                
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="services.html"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+                    <div class="form-group" id="newsletter-group">
+                        <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+                        <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+                        Thank you for subscribing!
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Newsletter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('newsletter-btn');
+            const emailInput = document.getElementById('newsletter-email');
+            const thankyou = document.getElementById('newsletter-thankyou');
+            
+            btn.addEventListener('click', function() {
+                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                    thankyou.style.display = 'block';
+                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                    emailInput.value = '';
+                } else {
+                    emailInput.focus();
+                    emailInput.style.borderColor = '#e74c3c';
+                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                }
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Show image placeholder if image fails to load
+            const image = document.querySelector('.services-image img');
+            const placeholder = document.getElementById('image-placeholder');
+            
+            if (image && image.naturalWidth === 0) {
+                image.style.display = 'none';
+                placeholder.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonixtec - Computer Vision Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #8b5cf6;
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --success: #10b981;
+            --warning: #f59e0b;
+            --dark-transparent: rgba(15, 23, 42, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--tech-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700; 
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;    
+            z-index: 1001;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo .tech {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+        
+        /* Computer Vision Hero Section */
+        .cv-hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cv-hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .cv-hero p {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .cv-hero .description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        /* Service Overview Section */
+        .service-overview {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 100px;
+        }
+        
+        .service-content {
+            flex: 1;
+        }
+        
+        .service-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-content p {
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .service-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            padding: 15px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.7);
+        }
+        
+        /* Capabilities Section */
+        .capabilities-section {
+            margin-bottom: 100px;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .capability-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        
+        .capability-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .capability-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .capability-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin-bottom: 100px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        /* Challenges & Solutions Section */
+        .challenges-solutions {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 100px;
+        }
+        
+        .challenges, .solutions {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .challenges h2, .solutions h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+        }
+        
+        .challenges ul, .solutions ul {
+            list-style-type: none;
+        }
+        
+        .challenges li, .solutions li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: #94a3b8;
+        }
+        
+        .challenges li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .solutions li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Process Section */
+        .process-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 100px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .process-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--tech-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Technology Stack */
+        .tech-stack {
+            margin-bottom: 100px;
+        }
+        
+        .tech-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .tech-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 100px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .impact-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .impact-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .impact-text {
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+        
+        /* CTA Section */
+        .cta-container {
+            background: var(--tech-gradient);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .cta-button-large {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        
+        .cta-button-large:hover {
+            transform: translateY(-3px);
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .faq-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: #94a3b8;
+            line-height: 1.7;
+            padding-right: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background: rgba(2, 6, 23, 0.9);
+            padding: 70px 0 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--tech-gradient);
+            border-radius: 3px;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.2);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--tech-gradient);
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .submit-btn {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom i {
+            color: #ef4444;
+            margin: 0 5px;
+        }
+
+        /* Get Start Button */
+        .cta-buttons {
+            background: linear-gradient(135deg, #6C63FF, #3F8EFC);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-buttons:hover {
+            background: linear-gradient(135deg, #cfd3d8, #6666f5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
+        }
+
+        .cta-buttons:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(100, 149, 255, 0.4);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .service-overview {
+                flex-direction: column;
+            }
+            
+            .challenges-solutions {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-container {
+                padding: 40px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .process-container, .faq-section, .impact-section {
+                padding: 30px 20px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 1000;
+                display: flex;
+                padding: 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cv-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .process-step {
+                min-width: 100%;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .cv-hero {
+                padding-top: 120px;
+            }
+            
+            .nav-links {
+                width: 85%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-container { 
+                grid-template-columns: repeat(4, 1fr); 
+            }
+            .footer-col { 
+                padding: 18px 1px; 
+            }
+            .footer-col h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1rem;
+                margin-bottom: 20px;
+                color: var(--secondary);
+                position: relative;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html">Services</a>
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="section-padding">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="cv-hero">
+                <h1>Computer Vision Services</h1>
+                <p>AI-Powered Image & Video Intelligence</p>
+                <p class="description">
+                    Machines are now capable of "seeing" the world. With <strong>Computer Vision</strong>, businesses can automate visual recognition, track activities, and extract insights from images and videos—just like humans, but faster and more accurately.
+                </p>
+                <button class="cta-button-large">Let's Build Smarter Vision Together</button>
+            </div>
+            
+            <!-- Service Overview -->
+            <div class="service-overview">
+                <div class="service-content">
+                    <h2>About Our Computer Vision Service</h2>
+                    <p>
+                        Our <strong>Computer Vision solutions</strong> empower organizations to analyze and interpret visual data at scale, turning cameras and images into powerful data sources.
+                    </p>
+                    <p>
+                        We combine cutting-edge AI technology with industry expertise to deliver solutions that automate visual tasks, reduce human error, and enhance decision-making. Whether it's retail analytics, healthcare diagnostics, or security surveillance, we build AI models tailored to your business goals.
+                    </p>
+                </div>
+                <div class="service-image">
+    <!-- Computer Vision Services Image -->
+    <div style="width:100%; height:300px; display:flex; align-items:center; justify-content:center;">
+        <img src="./uploads/Cloud Solutions.jpg" 
+             alt="Computer Vision Visualization" 
+             style="max-width:100%; max-height:100%; object-fit:cover; border-radius:8px;">
+    </div>
+    <!-- <div class="image-caption">
+        AI-Powered Image Recognition & Analysis
+    </div> -->
+</div>
+
+            </div>
+            
+            <!-- Capabilities Section -->
+            <h2 class="section-title">Our Computer Vision Capabilities</h2>
+            <div class="capabilities-section">
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3 class="capability-title">Object Detection</h3>
+                        <p class="capability-text">Identify and locate objects in real time with high accuracy using advanced deep learning models.</p>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="capability-title">Facial Recognition</h3>
+                        <p class="capability-text">Authenticate users or detect faces for security and personalization with strict privacy measures.</p>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="capability-title">Image Classification</h3>
+                        <p class="capability-text">Categorize images into predefined groups for faster workflows and automated processing.</p>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="capability-title">Video Analytics</h3>
+                        <p class="capability-text">Extract meaningful patterns, track movements, and detect anomalies in real-time video streams.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features Section -->
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-section">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="feature-title">High Accuracy</h3>
+                        <p class="capability-text">Deep learning models with state-of-the-art accuracy for reliable results.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Real-time Processing</h3>
+                        <p class="capability-text">Instant insights and analysis for time-sensitive applications.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Scalable Solutions</h3>
+                        <p class="capability-text">Adaptable to your industry needs and growing data volumes.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3 class="feature-title">Seamless Integration</h3>
+                        <p class="capability-text">Easy integration with your existing systems and workflows.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Security & Compliance</h3>
+                        <p class="capability-text">Ready for sensitive applications with strict security protocols.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenges & Solutions -->
+            <div class="challenges-solutions">
+                <div class="challenges">
+                    <h2>Challenges Without Computer Vision</h2>
+                    <ul>
+                        <li>Manual monitoring is time-consuming and error-prone</li>
+                        <li>Limited ability to process large amounts of visual data</li>
+                        <li>Higher risks in security, quality control, and surveillance</li>
+                        <li>Missed opportunities in automation and personalization</li>
+                    </ul>
+                </div>
+                
+                <div class="solutions">
+                    <h2>Our Solutions</h2>
+                    <ul>
+                        <li>Automate visual tasks and reduce human error</li>
+                        <li>Process massive amounts of visual data efficiently</li>
+                        <li>Enhance security and quality control with AI</li>
+                        <li>Unlock new automation and personalization opportunities</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Process Section -->
+            <div class="process-container">
+                <h2 class="process-title">Our Development Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Requirement Analysis</h3>
+                        <p class="step-description">Understanding business needs & data sources to define project scope and objectives.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Data Preparation</h3>
+                        <p class="step-description">Cleaning, annotating, and organizing image/video datasets for model training.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Model Development</h3>
+                        <p class="step-description">Training deep learning models (CNNs, RNNs, YOLO, ResNet) tailored to your needs.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Testing & Validation</h3>
+                        <p class="step-description">Ensuring accuracy and robustness in real-world scenarios through rigorous testing.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3 class="step-title">Integration</h3>
+                        <p class="step-description">Deploying models into your existing applications or systems for seamless operation.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3 class="step-title">Continuous Monitoring</h3>
+                        <p class="step-description">Regular improvements with feedback loops to maintain optimal performance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technology Stack -->
+            <div class="tech-stack">
+                <h2 class="tech-title">Our Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="tech-name">TensorFlow</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="tech-name">PyTorch</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="tech-name">OpenCV</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tech-name">YOLO</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="tech-name">Detectron2</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="tech-name">Keras</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="tech-name">AWS Rekognition</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="tech-name">Google Vision AI</div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="tech-name">Azure Cognitive Services</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact Section -->
+            <div class="impact-section">
+                <h2 class="impact-title">The Impact Computer Vision Can Make</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="impact-text">Enhance security with intelligent surveillance</div>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="impact-text">Reduce defects & improve quality control in manufacturing</div>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="impact-text">Improve customer experiences with personalized recommendations</div>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="impact-text">Automate repetitive tasks to save time & costs</div>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="impact-text">Generate insights from massive unstructured visual data</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to Transform Your Visual Data into Insights?</h2>
+                <p class="cta-description">
+                    Let's collaborate to build intelligent computer vision solutions that automate processes, enhance security, and unlock new opportunities for your business. Our AI experts are ready to bring your vision to life.
+                </p>
+                <button class="cta-button-large" onclick="window.location.href='contact.html'">Start Your Computer Vision Project</button>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What industries can benefit from Computer Vision?
+                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            Retail, healthcare, manufacturing, logistics, security, and many more. Computer vision has applications across virtually every industry that deals with visual data.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do I need huge amounts of data to start with Computer Vision?
+                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            Not always—transfer learning and pre-trained models allow us to work efficiently with smaller datasets. We can leverage existing models and fine-tune them for your specific use case.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can Computer Vision be integrated into mobile apps?
+                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we develop lightweight models suitable for mobile and edge devices. Our solutions can run efficiently on smartphones and other resource-constrained environments.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How secure is facial recognition technology?
+                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            We implement strict security measures, anonymization, and compliance with global standards. Data privacy and security are paramount in all our computer vision solutions.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the timeline for developing a Computer Vision solution?
+                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            Typically ranges from 6–12 weeks, depending on project complexity and dataset size. We provide detailed timelines after our initial discovery phase.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Zonixtec</h3>
+                    <p>Zonixtec is a leading software development company specializing in custom solutions, AI, and digital transformation services that drive business growth.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                        <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                        <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                        <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                        <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="services.html"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                 <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+                    <div class="form-group" id="newsletter-group">
+                        <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+                        <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+                        Thank you for subscribing!
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer> 
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon between bars and times
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+            
+            if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnMenuBtn) {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+        
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Close other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Newsletter subscription
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('newsletter-btn');
+            const emailInput = document.getElementById('newsletter-email');
+            const thankyou = document.getElementById('newsletter-thankyou');
+            btn.addEventListener('click', function() {
+                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                    thankyou.style.display = 'block';
+                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                    emailInput.value = '';
+                } else {
+                    emailInput.focus();
+                    emailInput.style.borderColor = '#e74c3c';
+                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

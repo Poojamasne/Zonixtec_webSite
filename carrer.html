@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities - Zonixtec</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #8b5cf6;
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 10px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--tech-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700; 
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;    
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo .tech {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-buttons):hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:not(.cta-buttons)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-buttons):hover::after {
+            width: 100%;
+        }
+
+        .cta-buttons {
+            background: linear-gradient(135deg, #6C63FF, #3F8EFC);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-buttons:hover {
+            background: linear-gradient(135deg, #cfd3d8, #6666f5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Career Hero Section */
+        .career-hero {
+            padding: 200px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .career-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .career-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            padding-right: 20px;
+        }
+        
+        .career-hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .hero-image {
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        /* Search Section */
+        .search-container {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 50px 0;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+        
+        .filter-select {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .search-input::placeholder {
+            color: #94a3b8;
+        }
+        
+        .search-btn {
+            background: var(--tech-gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+        
+        /* Job Listings */
+        .job-listings {
+            margin: 80px 0;
+        }
+        
+        .job-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(37, 99, 235, 0.5);
+        }
+        
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .job-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .job-description {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .job-requirements {
+            margin-bottom: 25px;
+        }
+        
+        .job-requirements h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .job-requirements ul {
+            color: #cbd5e1;
+            padding-left: 20px;
+        }
+        
+        .job-requirements li {
+            margin-bottom: 8px;
+        }
+        
+        .job-apply-btn {
+            background: var(--tech-gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .job-apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+        
+        /* Why Join Us Section */
+        .why-join-us {
+            margin: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(37, 99, 235, 0.5);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .value-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        /* Life at Zonixtec */
+        .life-at-zonixtec {
+            margin: 80px 0;
+        }
+        
+        .life-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .life-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .life-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(37, 99, 235, 0.5);
+        }
+        
+        .life-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .life-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .life-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        /* Employee Benefits */
+        .employee-benefits {
+            margin: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(37, 99, 235, 0.5);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .benefit-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .benefit-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.7);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+        
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--light);
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--secondary);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #cbd5e1;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 300px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(37, 99, 235, 0.5);
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        
+        /* Custom Application CTA */
+        .custom-application {
+            background: var(--tech-gradient);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .custom-application::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+        
+        .custom-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .custom-description {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .custom-btn {
+            background: var(--dark);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transform: translateZ(0);
+            text-decoration: none;
+        }
+        
+        .custom-btn:hover {
+            transform: translateY(-3px) translateZ(10px);
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(2, 6, 23, 0.9);
+            padding: 70px 0 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--tech-gradient);
+            border-radius: 3px;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.2);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--tech-gradient);
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .submit-btn {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom i {
+            color: #ef4444;
+            margin: 0 5px;
+        }
+        
+        /* ===== Mobile Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .career-hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .career-hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+
+            /* Hero section */
+            .career-hero {
+                padding: 150px 0 50px;
+            }
+            
+            .career-hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            /* Job cards */
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .job-meta {
+                gap: 10px;
+            }
+            
+            /* Footer */
+            @media (min-width: 768px) {
+                .footer-container { 
+                    grid-template-columns: repeat(4, 1fr); 
+                }
+                .footer-col { 
+                    padding: 18px 1px; 
+                }
+                .footer-col h3 {
+                    font-family: 'Orbitron', sans-serif;
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                    color: var(--secondary);
+                    position: relative;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Header */
+            nav {
+                padding: 15px 0;
+            }
+            
+            /* Hero section */
+            .career-hero {
+                padding: 130px 0 40px;
+            }
+            
+            .career-hero-title {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            /* Section titles */
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            /* Search filters */
+            .search-filters {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Job cards */
+            .job-card {
+                padding: 20px;
+            }
+            
+            /* Footer */
+            .footer-col {
+                padding: 15px;
+            }
+            
+            .footer-col h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .career-hero-title {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .custom-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html">Services</a>
+                    <a href="carrer.html" class="active">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Career Hero Section -->
+    <section class="career-hero section-padding">
+        <div class="container">
+            <div class="career-hero-content">
+                <div class="hero-text">
+                    <h1 class="career-hero-title">Zonixtec Careers</h1>
+                    <p class="hero-subtitle">Step into Zonixtec, Step into growth.</p>
+                    <p class="hero-description">"At Zonixtec, your career is more than a job—it's a journey of growth, innovation, and impact. We believe our people are the driving force behind every breakthrough, and we're excited to have you shape the future with us."</p>
+                    <p class="hero-description">At <strong>Zonixtec IT Services Pvt. Ltd.</strong>, we don't just deliver technology—we create possibilities. Based in <strong>Baner, Pune</strong>, we are a fast-growing IT company specializing in <strong>custom software development, digital transformation, IT consulting, application testing, and end-to-end IT services</strong>. Our mission is to empower startups, enterprises, and businesses worldwide with scalable and result-driven digital solutions.</p>
+                    <p class="hero-description">Joining our team means being part of a collaborative culture where <strong>Innovation, creativity, and growth</strong> come together. We work on diverse projects across industries, giving our employees hands-on experience with cutting-edge technologies and exposure to solving real-world business challenges.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Zonixtec Team Collaboration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Search Job/Keywords</label>
+                        <input type="text" class="filter-select" placeholder="Job title or keyword">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Location</label>
+                        <select class="filter-select">
+                            <option value="">All Locations</option>
+                            <option value="pune">Pune, India</option>
+                            <option value="remote">Remote</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Work Type</label>
+                        <select class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="internship">Internship</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Department</label>
+                        <select class="filter-select">
+                            <option value="">All Departments</option>
+                            <option value="development">Development</option>
+                            <option value="testing">Testing</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search for jobs...">
+                    <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="job-listings section-padding">
+        <div class="container">
+            <h2 class="section-title">Job Listings</h2>
+            
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Junior Full Stack Developer</h3>
+                    <a href="#" class="job-apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="job-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Baner, Pune</span>
+                    <span><i class="fas fa-clock"></i> Full-time</span>
+                    <span><i class="fas fa-indian-rupee-sign"></i> ₹15,000/month</span>
+                </div>
+                <div class="job-description">
+                    <p>We're looking for a motivated Junior Full Stack Developer with 1 year of experience in React.js, Node.js, Express.js, MySQL, and MongoDB. You'll work closely with senior developers to build scalable web applications, contribute to database design, and deliver high-quality software.</p>
+                </div>
+                <div class="job-requirements">
+                    <h4>Requirements:</h4>
+                    <ul>
+                        <li>Bachelor's degree in CS/IT or related field</li>
+                        <li>1 Year of Professional experience in Full-Stack Development</li>
+                        <li>Proficiency in Node.js, Express.js, React.js, HTML, CSS, and JavaScript</li>
+                        <li>Familiarity with MySQL and MongoDB</li>
+                        <li>Bonus: Basic Python scripting, Git, and Deployment knowledge</li>
+                        <li>Strong problem-solving and debugging skills</li>
+                        <li>Ability to work independently and collaboratively in a team</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-header">
+                    <h3 class="job-title">Software Tester Intern</h3>
+                    <a href="#" class="job-apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="job-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Baner, Pune</span>
+                    <span><i class="fas fa-clock"></i> Internship</span>
+                    <span><i class="fas fa-indian-rupee-sign"></i> ₹5,000/month</span>
+                </div>
+                <div class="job-description">
+                    <p>Perfect for freshers or recent graduates! As a Software Tester Intern, you'll gain hands-on experience in manual & automation testing, working with tools like Selenium & JIRA while collaborating with the dev team.</p>
+                </div>
+                <div class="job-requirements">
+                    <h4>Requirements:</h4>
+                    <ul>
+                        <li>Strong understanding of SDLC & STLC</li>
+                        <li>Familiarity with automation tools (Selenium) and bug tracking tools (JIRA)</li>
+                        <li>Basic proficiency in SQL for data validation and query execution (preferred)</li>
+                        <li>Knowledge of manual and automation testing methodologies</li>
+                        <li>Strong analytical and problem-solving skills with attention to detail</li>
+                        <li>Good communication and teamwork skills</li>
+                        <li>Immediate availability with willingness to work on-site at Pune</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="why-join-us section-padding">
+        <div class="container">
+            <h2 class="section-title">Why Join Us?</h2>
+            <h3 class="section-subtitle" style="text-align: center; margin-bottom: 40px; color: var(--secondary);">Our Core Values</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #cbd5e1; line-height: 1.7;">
+                Our values run more than skin deep. We're committed to building a safe, inclusive, fair, and diverse work community—where everyone can belong and thrive. If you believe in the following, we'd love to meet you.
+            </p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="value-title">Accountability</h3>
+                    <p class="value-description">We consider problems from all angles, which means we ask our teammates for careful feedback. We own and discuss our mistakes so we can all learn and grow. Our goals are clear, our roles are clear, and we are committed.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Team First</h3>
+                    <p class="value-description">We know the best results come when we work together in service of what is best for Zonixtec. We choose the path toward collective success when we rally behind our shared goals, as one, unified team.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="value-title">Inclusivity</h3>
+                    <p class="value-description">We believe diversity is a powerful differentiator that when unlocked allows us to make better decisions and drive better outcomes. We create an environment where everyone feels welcomed, included, and empowered.</p>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle" style="text-align: center; margin: 80px 0 40px; color: var(--secondary);">What drives us every day</h3>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation First</h3>
+                    <p class="value-description">We encourage creativity and curiosity to solve challenges in new ways.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="value-title">Growth Mindset</h3>
+                    <p class="value-description">Every challenge is an opportunity to learn and evolve.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p class="value-description">We believe the best ideas come when great minds work together.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Integrity & Transparency</h3>
+                    <p class="value-description">Open communication and honesty in everything we do.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="value-title">Impact-Driven</h3>
+                    <p class="value-description">Our goal is to create meaningful solutions that drive real business success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life at Zonixtec -->
+    <section class="life-at-zonixtec section-padding">
+        <div class="container">
+            <h2 class="section-title">Life at Zonixtec</h2>
+            <h3 class="section-subtitle" style="text-align: center; margin-bottom: 40px; color: var(--secondary);">Because your journey matters</h3>
+            
+            <div class="life-grid">
+                <div class="life-card">
+                    <div class="life-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="life-title">Career Growth</h3>
+                    <p class="life-description">Continuous learning, mentorship, and clear career paths for advancement.</p>
+                </div>
+                
+                <div class="life-card">
+                    <div class="life-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3 class="life-title">Flexible Work</h3>
+                    <p class="life-description">Hybrid/remote options and adaptable schedules to balance life and work.</p>
+                </div>
+                
+                <div class="life-card">
+                    <div class="life-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="life-title">Team Spirit</h3>
+                    <p class="life-description">A friendly, collaborative culture with regular team outings, events, and celebrations.</p>
+                </div>
+                
+                <div class="life-card">
+                    <div class="life-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="life-title">Recognition & Appreciation</h3>
+                    <p class="life-description">Every contribution is valued, and great work is always celebrated.</p>
+                </div>
+                
+                <div class="life-card">
+                    <div class="life-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="life-title">Work with Impact</h3>
+                    <p class="life-description">Be part of projects that make a difference for clients across industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employee Benefits -->
+    <section class="employee-benefits section-padding">
+        <div class="container">
+            <h2 class="section-title">Employee Benefits & Perks</h2>
+            <h3 class="section-subtitle" style="text-align: center; margin-bottom: 40px; color: var(--secondary);">Because you deserve the best</h3>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="benefit-title">Health & Wellness</h3>
+                    <p class="benefit-description">Comprehensive medical insurance and wellness initiatives.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="benefit-title">Competitive Compensation</h3>
+                    <p class="benefit-description">Attractive salary packages with performance bonuses.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="benefit-title">Generous PTO</h3>
+                    <p class="benefit-description">Paid vacation, sick days, holidays, and personal leave.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="benefit-title">Learning Support</h3>
+                    <p class="benefit-description">Access to workshops, certifications, and skill-up programs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="benefit-title">Extra Perks</h3>
+                    <p class="benefit-description">Fun Fridays, coffee chats, and surprise appreciation activities that keep the energy alive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I apply for a job or internship at Zonixtec?</h4>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, You can explore our current openings on the Careers page and apply directly by submitting your resume. For internships, keep an eye out for seasonal opportunities we post on the same page. Stay Connected!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is the interview process like at Zonixtec?</h4>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our interview process is designed to be simple and transparent. It usually includes an initial screening, a technical/skills assessment, and a final round discussion with our team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer internships for students and fresh graduates?</h4>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We welcome students and recent graduates for internship opportunities where they can learn, gain hands-on experience, and possibly transition into full-time roles.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What qualities do you look for in candidates?</h4>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We value curiosity, problem-solving ability, teamwork, and a willingness to learn. Strong fundamentals, passion for technology, and a growth mindset are always a plus.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How can I prepare for my interview at Zonixtec?</h4>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend revisiting your basics, showcasing your projects, and being ready to talk about real-life problem-solving experiences. Above all, be yourself—we value authenticity!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Impact in Numbers</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">3:1</div>
+                    <div class="stat-label">Ratio of Juniors to Mentors</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Industry Domains Served</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">89.57%</div>
+                    <div class="stat-label">Internal Promotion Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Application CTA -->
+    <section class="custom-application">
+        <div class="container">
+            <h2 class="custom-title">Didn't find a role that matches your profile?</h2>
+            <p class="custom-description">"If you believe you can add value to our team, we'd be happy to connect with you."</p>
+            <a href="contact.html" class="custom-btn">Submit General Application <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Zonixtec</h3>
+                    <p>Zonixtec is a leading software development company specializing in custom solutions, AI, and digital transformation services that drive business growth.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                        <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                        <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                        <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                        <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="Services.html"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+                    <div class="form-group" id="newsletter-group">
+                        <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+                        <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+                        Thank you for subscribing!
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        // Newsletter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('newsletter-btn');
+            const emailInput = document.getElementById('newsletter-email');
+            const thankyou = document.getElementById('newsletter-thankyou');
+            btn.addEventListener('click', function() {
+                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                    thankyou.style.display = 'block';
+                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                    emailInput.value = '';
+                } else {
+                    emailInput.focus();
+                    emailInput.style.borderColor = '#e74c3c';
+                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

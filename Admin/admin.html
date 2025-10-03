@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Zonixtec</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head> 
+
+<body>  
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Open sidebar"><i class="fas fa-bars"></i></button>
+    <div class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2>Zoni<span>x</span>tec</h2>
+        <p>Admin Dashboard</p>
+      </div>
+      <nav class="admin-nav">
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+          <li><a href="job-application.html"><i class="fas fa-briefcase"></i> <span>Job Application</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main -->
+    <div class="admin-main">
+      <div class="admin-header">
+        <h1>Job Listings Management</h1>
+        <div class="admin-user">
+          <div class="user-info">
+            <div class="name">Zonixtec</div>
+            <div class="role">Administrator</div>
+          </div>
+          <button class="logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-briefcase"></i></div>
+          <div class="stat-info">
+            <h3 id="total-jobs">0</h3>
+            <p>Total Jobs</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-info">
+            <h3 id="active-jobs">0</h3>
+            <p>Active Jobs</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orange"><i class="fas fa-pause-circle"></i></div>
+          <div class="stat-info">
+            <h3 id="draft-jobs">0</h3>
+            <p>Draft Jobs</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon red"><i class="fas fa-ban"></i></div>
+          <div class="stat-info">
+            <h3 id="closed-jobs">0</h3>
+            <p>Closed Jobs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Table -->
+      <div class="table-container">
+        <div class="table-header">
+          <h2>Current Job Listings</h2>
+          <div class="table-actions">
+            <button class="btn btn-outline"><i class="fas fa-filter"></i> Filter</button>
+            <button class="btn btn-primary" id="add-job-btn"><i class="fas fa-plus"></i> Add New Job</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Location</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="job-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Modal (Bootstrap) -->
+  <div class="modal fade" id="job-modal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="jobModalLabel">Add New Job Position</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="job-form">
+            <input type="hidden" id="job-id">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="job-title" class="form-label">Job Title*</label>
+                <input type="text" id="job-title" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="job-department" class="form-label">Department*</label>
+                <input type="text" id="job-department" class="form-control" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="job-location" class="form-label">Location*</label>
+                <input type="text" id="job-location" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="job-type" class="form-label">Job Type*</label>
+                <select id="job-type" class="form-select" required>
+                  <option value="">Select job type</option>
+                  <option>Full-time</option>
+                  <option>Part-time</option>
+                  <option>Contract</option>
+                  <option>Remote</option>
+                  <option>Internship</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="job-salary" class="form-label">Salary*</label>
+                <input type="text" id="job-salary" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="job-status" class="form-label">Status*</label>
+                <select id="job-status" class="form-select" required>
+                  <option>active</option>
+                  <option>draft</option>
+                  <option>closed</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="job-tags" class="form-label">Tags*</label>
+              <input type="text" id="job-tags" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="job-description" class="form-label">Description*</label>
+              <textarea id="job-description" class="form-control" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="job-requirements" class="form-label">Requirements*</label>
+              <textarea id="job-requirements" class="form-control" required></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Job</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Delete Modal (Bootstrap) -->
+  <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="deleteModalLabel">Delete Job</h2>
+          <button type="button" class="btn-close close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this job?</p>
+          <p><strong id="delete-job-title">Job Title</strong></p>
+          <div class="form-actions d-flex gap-2 mt-3">
+            <button type="button" class="btn btn-secondary close-modal" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="delete-job-confirm">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <script src="./admin.js"></script> --> 
+  <script>
+  $(document).ready(function () {
+    // Hamburger menu toggle for mobile
+    $('#sidebarToggle').on('click', function () {
+      $('.admin-sidebar').toggleClass('active');
+      $('.admin-container').toggleClass('sidebar-open');
+    });
+    // Hide sidebar when clicking outside on mobile
+    $(document).on('click touchstart', function (e) {
+      if ($(window).width() <= 991 &&
+        !$(e.target).closest('.admin-sidebar, #sidebarToggle').length &&
+        $('.admin-sidebar').hasClass('active')) {
+        $('.admin-sidebar').removeClass('active');
+        $('.admin-container').removeClass('sidebar-open');
+      }
+    });
+    // Auth check on page load (force login if not authenticated)
+    if (localStorage.getItem('admin_auth') === '1') {
+      $('.admin-container').show();
+      renderJobs();
+    } else {
+      window.location.href = 'login.html';
+      return;
+    }
+
+    // Fetch and render jobs
+    function renderJobs() {
+      $.ajax({
+        url: 'https://zonixtec.com/server/admin/admin-get-jobs.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          if (response.status && Array.isArray(response.response)) {
+            var rows = '';
+            response.response.forEach(function (job) {
+              rows += `<tr>
+                <td>${job.title}</td>
+                <td>${job.department}</td>
+                <td>${job.location}</td>
+                <td>${job.type}</td>
+                <td>${job.status}</td>  
+                <td>    
+                  <button class="btn btn-sm btn-outline-primary edit-job" data-id="${job.id}"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-sm btn-outline-danger delete-job" data-id="${job.id}"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>`;
+            });
+            $('#job-table-body').html(rows);
+          } else {
+            $('#job-table-body').html('<tr><td colspan="6">No jobs found.</td></tr>');
+          }
+          // Update stats if present
+          if (response.stats) {
+            updateStatsUI(response.stats);
+          }
+        },
+        error: function () {
+          $('#job-table-body').html('<tr><td colspan="6">Failed to fetch jobs.</td></tr>');
+        }
+      });
+    }
+    // Update stats UI
+    function updateStatsUI(stats) { 
+      $('#total-jobs').text(stats.total);
+      $('#active-jobs').text(stats.active);
+      $('#draft-jobs').text(stats.draft);
+      $('#closed-jobs').text(stats.closed);
+    }
+
+
+    
+    // Optionally, a separate updateStats for manual refresh
+    function updateStats() {
+      $.ajax({
+        url: 'https://zonixtec.com/server/admin/admin-get-jobs.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          if (response.stats) updateStatsUI(response.stats);
+        }
+      });
+    }
+
+
+
+    // Call renderJobs on page load
+    renderJobs();
+    // Modal logic for Add New Job
+    $('#add-job-btn').on('click', function () {
+      var modal = new bootstrap.Modal(document.getElementById('job-modal'));
+      modal.show();
+    });
+    // Job form submit handler
+    $('#job-form').on('submit', function (e) {
+      e.preventDefault();
+      var jobData = {
+        title: $('#job-title').val(),
+        department: $('#job-department').val(),
+        location: $('#job-location').val(),
+        type: $('#job-type').val(),
+        status: $('#job-status').val(),
+        salary: $('#job-salary').val(),
+        tags: $('#job-tags').val(),
+        description: $('#job-description').val(),
+        requirements: $('#job-requirements').val()
+      };
+      $.ajax({
+        url: 'https://zonixtec.com/server/admin/admin-add-job.php',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(jobData),
+        dataType: 'json',
+        success: function (response) {
+          if (typeof renderJobs === 'function') renderJobs();
+          if (typeof updateStats === 'function') updateStats();
+          var modal = bootstrap.Modal.getInstance(document.getElementById('job-modal'));
+          if (modal) modal.hide();
+          $('#job-form')[0].reset();
+        },
+        error: function () {
+          alert('Failed to add job. Please try again.');
+        }
+      });
+    }); 
+
+
+      // Delete job modal logic (robust, jQuery only, fixes event bubbling and modal display)
+      let deleteJobId = null;
+      // Open delete modal and set job ID
+      $(document).off('click', '.delete-job').on('click', '.delete-job', function (e) {
+        e.preventDefault();
+        deleteJobId = $(this).data('id');
+        const jobTitle = $(this).closest('tr').find('td').eq(0).text();
+        $('#delete-job-title').text(jobTitle);
+        $('#delete-modal').modal('show');
+      });
+      // Close modal
+      $(document).off('click', '.close-modal').on('click', '.close-modal', function () {
+        $('#delete-modal').modal('hide');
+        deleteJobId = null;
+      });
+
+
+
+      // Confirm delete
+      $(document).off('click', '#delete-job-confirm').on('click', '#delete-job-confirm', function () {
+        if (!deleteJobId) return;
+        const $btn = $(this);
+        $btn.prop('disabled', true).text('Deleting...');
+        $.ajax({
+          // Use absolute path for local dev, fallback to relative for production
+          url: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'https://zonixtec.com/server/admin/admin-delete-job.php'
+            : 'https://zonixtec.com/server/admin/admin-delete-job.php',
+          type: 'POST',
+          contentType: 'application/json',  
+          data: JSON.stringify({ id: deleteJobId }),
+          dataType: 'json',
+          success: function (response) {
+            $('#delete-modal').modal('hide');
+            deleteJobId = null;
+            $btn.prop('disabled', false).text('Delete');
+            if (typeof renderJobs === 'function') renderJobs();
+            if (typeof updateStats === 'function') updateStats();
+            if (!response.status) alert(response.message || 'Failed to delete job.');
+          },
+          error: function () {
+            alert('Failed to delete job. Please try again.');
+            $btn.prop('disabled', false).text('Delete');
+          }
+        });
+      });
+
+
+      // Add/Edit Modal logic (fetch and update)
+      $(document).off('click', '.edit-job').on('click', '.edit-job', function () {
+        const jobId = $(this).data('id');
+        // Fetch full job details from backend
+        $.ajax({
+          url: `https://zonixtec.com/server/admin/admin-get-job.php?id=${jobId}`,
+          type: 'GET',
+          dataType: 'json',
+          success: function(response) {
+            if (response.status && response.job) {
+              const job = response.job;
+              $('#job-id').val(job.id);
+              $('#job-title').val(job.title);
+              $('#job-department').val(job.department);
+              $('#job-location').val(job.location);
+              $('#job-type').val(job.type);
+              $('#job-status').val(job.status);
+              $('#job-salary').val(job.salary);
+              $('#job-tags').val(job.tags);
+              $('#job-description').val(job.description);
+              $('#job-requirements').val(job.requirements);
+              $('#jobModalLabel').text('Edit Job Position');
+              var modal = new bootstrap.Modal(document.getElementById('job-modal'));
+              modal.show();
+            } else {
+              alert('Failed to fetch job details.');
+            }
+          },
+          error: function() {
+            alert('Failed to fetch job details.');
+          }
+        });
+      });
+
+      $('#job-form').off('submit').on('submit', function (e) {
+        e.preventDefault();
+        var jobId = $('#job-id').val();
+        var jobData = {
+          id: jobId,
+          title: $('#job-title').val(),
+          department: $('#job-department').val(),
+          location: $('#job-location').val(),
+          type: $('#job-type').val(),
+          status: $('#job-status').val(),
+          salary: $('#job-salary').val(),
+          tags: $('#job-tags').val(),
+          description: $('#job-description').val(),
+          requirements: $('#job-requirements').val()
+        };
+        var url = jobId ? 'https://zonixtec.com/server/admin/admin-update-job.php' : 'https://zonixtec.com/server/admin/admin-add-job.php';
+        $.ajax({
+          url: url,
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(jobData),
+          dataType: 'json',
+          success: function (response) {
+            if (typeof renderJobs === 'function') renderJobs();
+            if (typeof updateStats === 'function') updateStats();
+            var modal = bootstrap.Modal.getInstance(document.getElementById('job-modal'));
+            if (modal) modal.hide();
+            $('#job-form')[0].reset();
+          },
+          error: function () {
+            alert('Failed to ' + (jobId ? 'update' : 'add') + ' job. Please try again.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

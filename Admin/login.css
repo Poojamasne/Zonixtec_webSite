@@ -1,0 +1,224 @@
+/* login.css - Standalone styles for the login page (distinct from admin panel) */
+body.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f4f6fb 60%, #e0e3ef 100%);
+}
+.login-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(67,97,238,0.18), 0 1.5px 8px rgba(114,9,183,0.08);
+  padding: 48px 32px 32px 32px;
+  max-width: 400px;
+  width: 100%;
+  margin: 40px auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.login-logo,
+.login-header,
+.login-footer {
+  width: 100%;
+  text-align: center;
+}
+.login-logo h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4361ee;
+  letter-spacing: 2px;
+  margin-bottom: 0.2em;
+}
+.login-logo span {
+  color: #7209b7;
+}
+.login-header h1 {
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.login-header p {
+  color: #5a5a5a;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+.form-group,
+.input-with-icon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 0.7rem;
+}
+.form-group label {
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  align-self: flex-start;
+  font-size: 1rem;
+  text-align: left;
+}
+.input-with-icon {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.input-with-icon input {
+  background: #f4f6fb;
+  border: 1.5px solid #e0e3ef;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 12px 48px 12px 44px;
+  transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  box-sizing: border-box;
+}
+.input-with-icon input:focus {
+  border-color: #4361ee;
+  background: #f0f4ff;
+  box-shadow: 0 0 0 2px #4361ee33;
+}
+.input-with-icon input:focus-visible {
+  outline: 2px solid #4361ee;
+  outline-offset: 2px;
+}
+.input-with-icon i {
+  color: #4361ee;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25em;
+  pointer-events: none;
+  opacity: 1;
+  background: transparent;
+}
+#passwordToggle {
+  color: #7209b7;
+  transition: color 0.2s, background 0.2s;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.35em;
+  cursor: pointer;
+  z-index: 2;
+  padding: 7px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#passwordToggle:focus-visible {
+  outline: 2px solid #4361ee;
+  outline-offset: 2px;
+  background: #f0f4ff;
+}
+#passwordToggle:hover {
+  color: #4361ee;
+  background: #e0e3ef;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #4361ee 60%, #7209b7 100%);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  box-shadow: 0 2px 8px rgba(67,97,238,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  width: 100%;
+  max-width: 320px;
+}
+.btn-primary:focus-visible {
+  outline: 2px solid #4361ee;
+  outline-offset: 2px;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #7209b7 0%, #4361ee 100%);
+  box-shadow: 0 4px 16px rgba(67,97,238,0.18);
+  transform: translateY(-2px) scale(1.02);
+}
+.login-footer {
+  color: #b0b3c6;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
+.error-message {
+  color: #ef476f;
+  font-size: 0.97rem;
+  margin-top: 4px;
+  display: block;
+  min-height: 1.2em;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  width: 100%;
+  font-size: 0.97rem;
+}
+.forgot-password {
+  color: #7209b7;
+  font-size: 0.97rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.forgot-password:hover,
+.forgot-password:focus-visible {
+  color: #4361ee;
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .login-container {
+    padding: 24px 8px 18px 8px;
+    max-width: 98vw;
+  }
+  .login-logo h2 {
+    font-size: 1.3rem;
+  }
+  .login-header h1 {
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .form-group label {
+    font-size: 0.97rem;
+  }
+  .input-with-icon i {
+    font-size: 1.1em;
+    left: 10px;
+  }
+  #passwordToggle {
+    font-size: 1.1em;
+    right: 7px;
+    padding: 5px;
+  }
+  .input-with-icon input {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}

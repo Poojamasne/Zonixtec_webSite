@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Applications - Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+   <div class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2>Zoni<span>x</span>tec</h2>
+        <p>Admin Dashboard</p>
+      </div>
+      <nav class="admin-nav">
+        <ul>
+          <li><a href="admin.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+          <li><a href="job-application.html"><i class="fas fa-briefcase"></i> <span>Job Application</span></a></li>
+        </ul>
+      </nav>
+    </div>  
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <h1>Job Applications</h1>
+        <div class="admin-user">
+          <div class="user-info">
+            <div class="name">Admin</div>
+            <div class="role">Administrator</div>
+          </div>
+          <button class="logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+      </header>
+
+      <section class="table-container">
+        <div class="table-header">
+          <h2>All Applications</h2>
+        </div>
+        <div style="overflow-x:auto;">
+          <table id="applicationsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Position</th>
+                <th>Resume</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Sidebar toggle for mobile
+    const sidebar = document.getElementById('adminSidebar');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    toggleBtn.addEventListener('click', function() {
+      sidebar.classList.toggle('sidebar-open');
+    });
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900 && sidebar.classList.contains('sidebar-open')) {
+        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+          sidebar.classList.remove('sidebar-open');
+        }
+      }
+    });
+
+    // Fetch job applications from backend
+    async function loadApplications() {
+      try {
+        const res = await fetch('https://zonixtec.com/server/admin/admin-get-applications.php');
+        const data = await res.json();
+        console.log('API response:', data); // Debug: log the API response
+        const tbody = document.querySelector('#applicationsTable tbody');
+        tbody.innerHTML = '';
+        if (data.status && Array.isArray(data.applications) && data.applications.length > 0) {
+          data.applications.forEach(app => {
+            // If resume_path starts with 'uploads/', use root. Otherwise, use /server/admin/
+            let resumeUrl = app.resume_path ?
+              (app.resume_path.startsWith('uploads/')
+                ? `https://zonixtec.com/${app.resume_path}`
+                : `https://zonixtec.com/server/admin/${app.resume_path}`)
+              : '#';
+            tbody.innerHTML += `
+              <tr>
+                <td>${app.id ?? ''}</td>
+                <td>${app.name ?? ''}</td>
+                <td>${app.email ?? ''}</td>
+                <td>${app.phone ?? ''}</td>
+                <td>${app.job_title ?? ''}</td>
+                <td><a href="${resumeUrl}" target="_blank" class="resume-link">View</a></td>
+                <td>${app.applied_at ?? ''}</td>
+              </tr>
+            `;
+          });
+        } else {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;">No applications found.</td></tr>';
+        }
+      } catch (err) {
+        document.querySelector('#applicationsTable tbody').innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Failed to load applications.</td></tr>';
+        console.error('Failed to load applications:', err);
+      }
+    }
+    loadApplications();
+  </script>
+</body>
+</html>

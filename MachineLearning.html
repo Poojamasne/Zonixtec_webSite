@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence & Machine Learning Development | Zonixtec</title>
+    <meta name="description" content="Unlock business potential with Zonixtec's AI & ML solutions. From automation to predictive analytics, we help you streamline operations, enhance customer engagement, and accelerate growth.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #8b5cf6;
+            --ai-gradient: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --success: #10b981;
+            --warning: #f59e0b;
+            --dark-transparent: rgba(15, 23, 42, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--ai-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700; 
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;    
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo .tech {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--ai-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* AI/ML Section */
+        .ai-section {
+            padding: 150px 0 100px;
+            position: relative;
+        }
+        
+        .ai-hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+        
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        /* Service Types Section */
+        .service-types {
+            margin-bottom: 80px;
+        }
+        
+        .service-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-type-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--ai-gradient);
+        }
+        
+        .service-type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .service-type-icon {
+            font-size: 2.5rem;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+        }
+        
+        .service-type-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .service-type-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Features Section */
+        .features-section {
+            margin-bottom: 80px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--ai-gradient);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Challenges Section */
+        .challenges-section {
+            margin-bottom: 80px;
+        }
+        
+        .challenges-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .challenges-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .challenges-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .challenge-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .challenge-icon {
+            color: #ef4444;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .challenge-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* What We Bring Section */
+        .what-we-bring {
+            margin-bottom: 80px;
+        }
+        
+        .what-we-bring-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .what-we-bring-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .what-we-bring-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .what-we-bring-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .what-we-bring-icon {
+            color: var(--success);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .what-we-bring-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 80px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .process-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--ai-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* Tech Stack Section */
+        .tech-stack {
+            margin-bottom: 80px;
+        }
+        
+        .tech-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #8b5cf6;
+        }
+        
+        .tech-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            margin-bottom: 80px;
+        }
+        
+        .impact-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .impact-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .impact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .impact-icon {
+            color: var(--success);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .impact-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-container {
+            background: var(--ai-gradient);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .cta-button-large {
+            background: var(--dark);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        
+        .cta-button-large:hover {
+            transform: translateY(-3px);
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .faq-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: #94a3b8;
+            line-height: 1.7;
+            padding-right: 20px;
+            display: none;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .ai-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: 
+                radial-gradient(circle, rgba(139, 92, 246, 0.5) 1px, transparent 1px),
+                radial-gradient(circle, rgba(6, 182, 212, 0.5) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(2, 6, 23, 0.9);
+            padding: 70px 0 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--ai-gradient);
+            border-radius: 3px;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .submit-btn {
+            background: var(--ai-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Get Start Button */
+        .cta-buttons {
+            background: linear-gradient(135deg, #6C63FF, #3F8EFC);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-buttons:hover {
+            background: linear-gradient(135deg, #cfd3d8, #6666f5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .process-step {
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-container {
+                padding: 40px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .process-container, .faq-section, .challenges-container, .what-we-bring-container, .impact-container {
+                padding: 30px 20px;
+            }
+
+            /* Mobile navbar styles */
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--dark-transparent);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 999;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                border-left: 1px solid rgba(100, 116, 139, 0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn.active i::before {
+                content: "\f00d";
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .process-step {
+                min-width: 100%;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container { 
+                grid-template-columns: repeat(4, 1fr); 
+            }
+            .footer-col { 
+                padding: 18px 1px; 
+            }
+            .footer-col h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1rem;
+                margin-bottom: 20px;
+                color: var(--secondary);
+                position: relative;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html" class="active">Services</a>
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="ai-section">
+            <div class="ai-pattern"></div>
+            <div class="container">
+                <div class="ai-hero">
+                    <h1 class="hero-title">Artificial Intelligence & Machine Learning</h1>
+                    <h2 class="hero-subtitle">Unlock Business Potential with Intelligent Solutions</h2>
+                    <p class="hero-description">Artificial Intelligence (AI) and Machine Learning (ML) are no longer future technologies—they are transforming businesses today. From predictive decision-making to smart automation, AI/ML helps organizations stay competitive, agile, and customer-centric. At Zonixtec, we design AI & ML solutions that deliver measurable impact tailored to your business goals.</p>
+                    <a href="contact.html" class="cta-button">Start Your AI Journey Today</a>
+                </div>
+                
+                <!-- Service Types Section -->
+                <div class="service-types">
+                    <h2 class="section-title">Our AI & ML Solutions</h2>
+                    <div class="service-types-grid">
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-type-title">Predictive Analytics</h3>
+                            <p class="service-type-text">Forecast demand, risks, and opportunities with advanced predictive modeling.</p>
+                        </div>
+                        
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="service-type-title">Natural Language Processing</h3>
+                            <p class="service-type-text">Build chatbots, sentiment analysis, and language translation tools.</p>
+                        </div>
+                        
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="service-type-title">Computer Vision</h3>
+                            <p class="service-type-text">Enable image recognition, object detection, and quality inspection.</p>
+                        </div>
+                        
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <h3 class="service-type-title">Recommendation Engines</h3>
+                            <p class="service-type-text">Deliver personalized customer experiences with intelligent recommendations.</p>
+                        </div>
+                        
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="service-type-title">Robotic Process Automation</h3>
+                            <p class="service-type-text">Automate repetitive business workflows with intelligent automation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="features-section">
+                    <h2 class="section-title">Key Features of AI & ML Solutions</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="feature-title">Intelligent Automation</h3>
+                            <p class="feature-text">Automate workflows with smart AI systems that learn and adapt over time.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="feature-title">Real-time Insights</h3>
+                            <p class="feature-text">Process data and deliver actionable insights in real-time for faster decision-making.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Scalable Algorithms</h3>
+                            <p class="feature-text">Future-ready algorithms that scale with your business growth and data volume.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <h3 class="feature-title">Personalized Experiences</h3>
+                            <p class="feature-text">Deliver tailored recommendations and predictions for enhanced customer engagement.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="feature-title">Predictive Modeling</h3>
+                            <p class="feature-text">Enhanced decision-making with advanced predictive modeling techniques.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Secure Solutions</h3>
+                            <p class="feature-text">Secure and adaptive solutions built on modern AI frameworks with enterprise-grade security.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Challenges Section -->
+                <div class="challenges-section">
+                    <div class="challenges-container">
+                        <h2 class="challenges-title">Challenges Without AI & ML</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="challenge-text">Missed opportunities due to manual decision-making</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="challenge-text">Inability to analyze big data effectively</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="challenge-text">Poor customer experience without personalization</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="challenge-text">Higher operational costs from repetitive manual tasks</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="challenge-text">Delays in innovation and competitiveness</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- What We Bring Section -->
+                <div class="what-we-bring">
+                    <div class="what-we-bring-container">
+                        <h2 class="what-we-bring-title">What We Bring for You</h2>
+                        <div class="what-we-bring-list">
+                            <div class="what-we-bring-item">
+                                <div class="what-we-bring-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="what-we-bring-text">Domain expertise across multiple industries</p>
+                            </div>
+                            <div class="what-we-bring-item">
+                                <div class="what-we-bring-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="what-we-bring-text">Data-driven strategies for measurable outcomes</p>
+                            </div>
+                            <div class="what-we-bring-item">
+                                <div class="what-we-bring-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="what-we-bring-text">Advanced AI models that solve real-world problems</p>
+                            </div>
+                            <div class="what-we-bring-item">
+                                <div class="what-we-bring-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="what-we-bring-text">Business outcomes like efficiency and revenue growth</p>
+                            </div>
+                            <div class="what-we-bring-item">
+                                <div class="what-we-bring-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="what-we-bring-text">Enhanced customer satisfaction and loyalty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Process Section -->
+                <div class="process-container">
+                    <h2 class="process-title">Our Development Process</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Requirement Analysis</h3>
+                            <p class="step-description">Understanding your business challenges & goals.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">Data Collection & Preparation</h3>
+                            <p class="step-description">Gathering and structuring data for model training.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Model Development</h3>
+                            <p class="step-description">Designing and training AI/ML models with state-of-the-art techniques.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Integration & Deployment</h3>
+                            <p class="step-description">Seamlessly embedding AI into your systems and workflows.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">5</div>    
+                            <h3 class="step-title">Testing & Optimization</h3>
+                            <p class="step-description">Ensuring accuracy, reliability, and scalability of AI solutions.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <h3 class="step-title">Ongoing Support</h3>
+                            <p class="step-description">Continuous improvements, monitoring, and model updates.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tech Stack Section -->
+                <div class="tech-stack">
+                    <h2 class="tech-title">Our Technology Stack</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="tech-name">Python</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="tech-name">R</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="tech-name">Java</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="tech-name">TensorFlow</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="tech-name">PyTorch</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="tech-name">Keras</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="tech-name">Scikit-learn</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="tech-name">AWS AI/ML</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <div class="tech-name">Azure ML</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="tech-name">Google AI</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="tech-name">MongoDB</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="tech-name">PostgreSQL</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impact Section -->
+                <div class="impact-section">
+                    <div class="impact-container">
+                        <h2 class="impact-title">Impact of AI & ML on Your Business</h2>
+                        <div class="impact-list">
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <p class="impact-text"><strong>40% faster</strong> decision-making with predictive analytics</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <p class="impact-text"><strong>30% reduction</strong> in operational costs via automation</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p class="impact-text"><strong>Enhanced customer loyalty</strong> with personalized recommendations</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <p class="impact-text"><strong>Improved product quality</strong> through computer vision & predictive maintenance</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <p class="impact-text"><strong>Competitive edge</strong> by embracing future-ready technology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="cta-container">
+                    <h2 class="cta-title">Ready to Transform with AI?</h2>
+                    <p class="cta-description">Discover how our AI and machine learning solutions can revolutionize your business operations, enhance decision-making, and create new revenue streams. Schedule a consultation with our AI experts today.</p>
+                    <a href="contact.html" class="cta-button-large">Schedule AI Consultation</a>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 class="faq-title">AI & ML Frequently Asked Questions</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What industries benefit the most from AI & ML?
+                                <span class="fas fa-chevron-down faq-toggle"></span>
+                            </div>
+                            <p class="faq-answer">AI & ML are used across industries like finance, healthcare, retail, manufacturing, and logistics to automate processes, forecast trends, and improve customer experience.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How long does it take to build an AI/ML solution?
+                                <span class="fas fa-chevron-down faq-toggle"></span>
+                            </div>
+                            <p class="faq-answer">The timeline depends on the project's complexity, typically ranging from 6 weeks to 6 months.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do I need large amounts of data to start?
+                                <span class="fas fa-chevron-down faq-toggle"></span>
+                            </div>
+                            <p class="faq-answer">Not always. We can work with existing datasets and scale as your business grows.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can AI integrate with my existing systems?
+                                <span class="fas fa-chevron-down faq-toggle"></span>
+                            </div>
+                            <p class="faq-answer">Yes, our AI solutions are custom-built for seamless integration with your ERP, CRM, or other software systems.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Is AI secure for business data?
+                                <span class="fas fa-chevron-down faq-toggle"></span>
+                            </div>
+                            <p class="faq-answer">Absolutely. We follow enterprise-grade data security protocols to ensure your sensitive information remains safe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Zonixtec</h3>
+                    <p>Zonixtec is a leading AI solutions provider specializing in machine learning, deep learning, and intelligent automation that drives business transformation.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Our AI Services</h3>
+                    <div class="footer-links">
+                         <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                        <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                        <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                        <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="services.html"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+                    <div class="form-group" id="newsletter-group">
+                        <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+                        <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+                        Thank you for subscribing!
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+        
+        // FAQ toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items first
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Newsletter functionality
+            const btn = document.getElementById('newsletter-btn');
+            const emailInput = document.getElementById('newsletter-email');
+            const thankyou = document.getElementById('newsletter-thankyou');
+            
+            btn.addEventListener('click', function() {
+                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                    thankyou.style.display = 'block';
+                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                    emailInput.value = '';
+                } else {
+                    emailInput.focus();
+                    emailInput.style.borderColor = '#e74c3c';
+                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

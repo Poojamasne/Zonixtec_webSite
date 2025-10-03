@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - Zonixtec</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./login.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">    
+</head>
+<body class="login-page">
+  <div class="login-container" id="loginSection">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    <div class="login-logo">
+      <h2>Zoni<span>x</span>tec</h2>
+    </div>
+    <div class="login-header">
+      <h1>Admin Login</h1>
+      <p>Access your dashboard with your credentials</p>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <div class="input-with-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+        </div>
+        <div class="error-message" id="usernameError">Please enter a valid username</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+          <i class="fas fa-eye-slash" id="passwordToggle"></i>
+        </div>
+        <div class="error-message" id="passwordError">Password must be at least 6 characters</div>
+      </div>
+      <div class="remember-forgot">
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>  
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+    <div class="login-footer">
+      <p>&copy; 2023 Zonixtec. All rights reserved.</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // If already logged in, redirect to admin.html
+    if (localStorage.getItem('admin_auth') === '1') {
+      window.location.href = 'admin.html';
+    }
+    $(function() {
+      // Hide error messages on input
+      $('#username, #password').on('input', function() {
+        $('#usernameError, #passwordError').hide();
+      });
+      // Password show/hide toggle
+      $('#passwordToggle').on('click', function() {
+        var input = $('#password');
+        var type = input.attr('type') === 'password' ? 'text' : 'password';
+        input.attr('type', type);
+        $(this).toggleClass('fa-eye-slash fa-eye');
+      });
+      // Fix: Ensure button is clickable and not covered by icon
+      // Move the password toggle icon outside the input if needed
+      $('.input-with-icon').css('position', 'relative');
+      $('#passwordToggle').css({
+        position: 'absolute',
+        right: '15px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        cursor: 'pointer',
+        zIndex: 2
+      });
+      $('#password').css({
+        paddingRight: '40px'
+      });
+      // Fix: Ensure Sign In button is always clickable and shows pointer
+      $('.btn.btn-primary[type="submit"]').css({
+        cursor: 'pointer',
+        zIndex: 3,
+        position: 'relative'
+      });
+      // Fix stacking context for password icon
+      $('#passwordToggle').css({
+        zIndex: 2
+      });
+      // Fix stacking context for input
+      $('#password').css({
+        position: 'relative',
+        zIndex: 1
+      });
+      // Form submit
+      $('#loginForm').on('submit', function (e) {
+        e.preventDefault();
+        var username = $('#username').val().trim();
+        var password = $('#password').val();
+        var valid = true;
+        if (!username) {
+          $('#usernameError').text('Please enter a valid username').show();
+          valid = false;
+        }
+        if (!password || password.length < 6) {
+          $('#passwordError').text('Password must be at least 6 characters').show();
+          valid = false;
+        }
+        if (!valid) return;
+        $.ajax({
+          url: 'https://zonixtec.com/server/admin/admin-login.php',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({ username: username, password: password }),
+          dataType: 'json',
+          success: function (response) {
+            if (response.status) {
+              localStorage.setItem('admin_auth', '1');
+              window.location.href = 'admin.html';
+            } else {
+              $('#usernameError').text('Invalid username or password').show();
+            }
+          },
+          error: function () {
+            $('#usernameError').text('Login failed. Please try again.').show();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create New Job - Zonixtec Admin</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <div class="modal-overlay show" id="create-job-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Job Position</h2>
+        <a href="admin.html" class="close-modal"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <form id="create-job-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="job-title">Job Title*</label>
+              <input type="text" id="job-title" required>
+            </div>
+            <div class="form-group">
+              <label for="job-department">Department*</label>
+              <input type="text" id="job-department" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="job-location">Location*</label>
+              <input type="text" id="job-location" required>
+            </div>
+            <div class="form-group">
+              <label for="job-type">Job Type*</label>
+              <select id="job-type" required>
+                <option value="">Select job type</option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Contract</option>
+                <option>Remote</option>
+                <option>Internship</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="job-salary">Salary*</label>
+              <input type="text" id="job-salary" required>
+            </div>
+            <div class="form-group">
+              <label for="job-status">Status*</label>
+              <select id="job-status" required>
+                <option>active</option>
+                <option>draft</option>
+                <option>closed</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="job-tags">Tags*</label>
+            <input type="text" id="job-tags" required>
+          </div>
+          <div class="form-group">
+            <label for="job-description">Description*</label>
+            <textarea id="job-description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="job-requirements">Requirements*</label>
+            <textarea id="job-requirements" required></textarea>
+          </div>
+          <div class="form-actions">
+            <a href="admin.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save Job</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $('#create-job-form').on('submit', function(e) {
+      e.preventDefault();
+      // Collect form data
+      var jobData = {
+        title: $('#job-title').val(),
+        department: $('#job-department').val(),
+        location: $('#job-location').val(),
+        type: $('#job-type').val(),
+        status: $('#job-status').val(),
+        salary: $('#job-salary').val(),
+        tags: $('#job-tags').val(),
+        description: $('#job-description').val(),
+        requirements: $('#job-requirements').val()
+      };
+      // Send AJAX request to add job (adjust URL as needed)
+      $.ajax({
+        url: 'https://zonixtec.com/server/admin/admin-add-job.php',
+        type: 'POST',
+        data: jobData,
+        success: function(response) {
+          window.location.href = 'admin.html';
+        },
+        error: function() {
+          alert('Failed to add job. Please try again.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
