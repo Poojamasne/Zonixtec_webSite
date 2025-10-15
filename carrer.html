@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Opportunities - Zonixtec</title>
-    <link rel="icon" href="./Assets/Logo (1).jpg" sizes="32x32" type="image/png">
+    <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -1136,14 +1136,33 @@
             color: #f8fafc;
         }
 
-        .close-modal {
-            background: none;
+        /* .close-modal {
+            -webkit-background-clip:text;
+            background: red;
             border: none;
             color: #f8fafc;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        } */
+
+        .close-modal {
+            background: red;
+            /* Your background color or gradient */
+            -webkit-background-clip: text;
+            /* Clip background to text */
+            background-clip: text;
+            color: transparent;
+            /* Hide normal text color */
+            -webkit-text-fill-color: transparent;
+            /* Make text see-through */
+
+            border: none;
+            font-size: 2.5rem;
             cursor: pointer;
             transition: color 0.3s ease;
         }
+
 
         .close-modal:hover {
             color: #06b6d4;
@@ -1702,7 +1721,7 @@
                             <label class="form-label" for="firstName">
                                 First Name <span class="required-star">*</span>
                             </label>
-                            <input type="text" id="firstName" class="form-control" required>
+                            <input type="text" id="firstName" class="form-control" required >
                             <div class="form-error" id="firstNameError"></div>
                         </div>
 
@@ -1769,7 +1788,7 @@
                             Cover Letter <span class="optional-text">(Optional)</span>
                         </label>
                         <textarea id="coverLetter" class="form-control"
-                            placeholder="Tell us why you're interested in this position and what makes you a good fit... (Optional)"></textarea>
+                            placeholder="Tell us why you're interested in this position and what makes you a good fit..."></textarea>
                         <div class="char-counter" id="coverLetterCounter">0/500 characters</div>
                     </div>
 
@@ -2133,6 +2152,7 @@
                 }
             });
         });
+        
     </script>
 </body>
 
