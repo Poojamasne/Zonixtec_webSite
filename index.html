@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,38 @@
 
     <!-- SEO Meta Tags -->
     <title>Zonixtec - Transform Ideas into Powerful Digital Solutions</title>
-    <meta name="description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
-    <meta name="keywords" content="software development, AI solutions, cloud computing, custom software, web development, mobile app development, digital transformation, Zonixtec">
+    <meta name="description"
+        content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta name="keywords"
+        content="software development, AI solutions, cloud computing, custom software, web development, mobile app development, digital transformation, Zonixtec">
     <meta name="author" content="Zonixtec">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.zonixtec.com/">
     <meta property="og:title" content="Zonixtec - Transform Ideas into Powerful Digital Solutions">
-    <meta property="og:description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta property="og:description"
+        content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
     <meta property="og:image" content="https://www.zonixtec.com/images/og-image.jpg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.zonixtec.com/">
     <meta property="twitter:title" content="Zonixtec - Transform Ideas into Powerful Digital Solutions">
-    <meta property="twitter:description" content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
+    <meta property="twitter:description"
+        content="From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.">
     <meta property="twitter:image" content="https://www.zonixtec.com/images/twitter-image.jpg">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.zonixtec.com/">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --primary: #0066ff;
@@ -45,13 +52,13 @@
             --gray: #888;
             --success: #27ae60;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark);
@@ -59,56 +66,70 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .section-padding {
             padding: 80px 0;
         }
-        
+
         .section-title {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
         }
-        
+
         .section-title span {
             color: var(--secondary);
             position: relative;
         }
-        
+
         .section-title span.pulse {
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { text-shadow: 0 0 5px var(--secondary); }
-            50% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
-            100% { text-shadow: 0 0 5px var(--secondary); }
+            0% {
+                text-shadow: 0 0 5px var(--secondary);
+            }
+
+            50% {
+                text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+            }
+
+            100% {
+                text-shadow: 0 0 5px var(--secondary);
+            }
         }
-        
+
         .hero-subtitle {
             text-align: center;
             font-size: 1.2rem;
+            background-color: rgba(15, 23, 42, 0.85);
             color: var(--gray);
             margin-bottom: 3rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         /* Header Styles */
         header {
             position: fixed;
@@ -116,22 +137,22 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(5, 5, 17, 0.9);
+            background-color: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
-        
+
         header.scrolled {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
+
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
@@ -139,21 +160,21 @@
             color: var(--light);
             text-decoration: none;
         }
-        
+
         .logo span {
             color: var(--secondary);
         }
-        
+
         .logo .tech {
             color: var(--primary);
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
             gap: 30px;
         }
-        
+
         .nav-links a {
             color: var(--light);
             text-decoration: none;
@@ -161,11 +182,12 @@
             transition: color 0.3s ease;
             position: relative;
         }
-        
-        .nav-links a:hover, .nav-links a.active {
+
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--secondary);
         }
-        
+
         .nav-links a.active::after {
             content: '';
             position: absolute;
@@ -175,7 +197,7 @@
             height: 2px;
             background-color: var(--secondary);
         }
-        
+
         .cta-buttons {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: var(--dark);
@@ -184,21 +206,22 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .cta-buttons:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
             position: relative;
+            background-color: rgba(15, 23, 42, 0.85);
             height: 100vh;
             display: flex;
             align-items: center;
@@ -206,17 +229,18 @@
             text-align: center;
             overflow: hidden;
         }
-        
+
         .hero-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--dark-light), var(--dark));
+            /* background: linear-gradient(45deg, var(--dark-light), var(--dark)); */
+            /* background: rgba(15, 23, 42, 0.85); */
             z-index: -2;
         }
-        
+
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -226,18 +250,18 @@
             background: rgba(5, 5, 17, 0.7);
             z-index: -1;
         }
-        
+
         .hero-content {
             max-width: 1160px;
             padding: 0 20px;
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             color: var(--light);
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             color: var(--gray);
@@ -246,14 +270,14 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .secondary-button {
             display: inline-block;
             padding: 15px 30px;
@@ -264,12 +288,12 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .secondary-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
         }
-        
+
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -279,89 +303,103 @@
             font-size: 0.9rem;
             animation: bounce 2s infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
         }
-        
+
         /* About Section */
         .about {
             padding: 80px 0;
+            background-color: rgba(15, 23, 42, 0.85);
         }
-        
+
         .about-container {
             display: flex;
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
         }
-        
+
         .about-content {
             flex: 2 1 400px;
             min-width: 280px;
         }
-        
+
         .about-content h2 {
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
             color: var(--light);
         }
-        
+
         .about-content h2 span {
             color: var(--secondary);
         }
-        
+
         .about-content p {
             text-align: left;
             margin: 12px 0;
             line-height: 1.6;
             color: var(--gray);
         }
-        
+
         .about-image {
             flex: 1 1 300px;
             min-width: 250px;
             text-align: center;
         }
-        
+
         .about-image img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
         }
-        
+
         /* Services Section */
         .services-section {
             padding: 80px 0;
-            background: rgba(10, 10, 26, 0.5);
+            background: rgba(15, 23, 42, 0.85);
         }
-        
+
         .services-header {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .services-header h2 {
             font-size: 2.5rem;
             color: var(--light);
             margin-bottom: 1rem;
         }
-        
+
         .services-header p {
             font-size: 1.2rem;
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .service-card {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
@@ -370,13 +408,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
             border-color: var(--primary);
         }
-        
+
         .service-icon {
             width: 70px;
             height: 70px;
@@ -389,18 +427,18 @@
             font-size: 1.8rem;
             color: var(--dark);
         }
-        
+
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--secondary);
         }
-        
+
         .service-card p {
             color: var(--gray);
             margin-bottom: 20px;
         }
-        
+
         .service-link {
             display: inline-block;
             color: var(--primary);
@@ -408,23 +446,23 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
-        
+
         .service-link:hover {
             color: var(--secondary);
         }
-        
+
         .services-cta {
             text-align: center;
             margin-top: 50px;
         }
-        
+
         /* Stats Section */
         .stats {
             position: relative;
             padding: 80px 0;
             overflow: hidden;
         }
-        
+
         .stats-bg-video {
             position: absolute;
             top: 0;
@@ -434,17 +472,17 @@
             object-fit: cover;
             z-index: 0;
         }
-        
+
         .stats-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(15, 23, 42, 0.85);
             z-index: 1;
         }
-        
+
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -452,7 +490,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .stat-box {
             text-align: center;
             background: rgba(255, 255, 255, 0.05);
@@ -460,13 +498,13 @@
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
-        
+
         .stat-icon {
             font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 15px;
         }
-        
+
         .stat-count {
             display: flex;
             align-items: center;
@@ -474,52 +512,53 @@
             gap: 5px;
             margin-bottom: 10px;
         }
-        
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
             color: var(--light);
         }
-        
+
         .stat-count i {
             color: var(--secondary);
             font-size: 1.5rem;
         }
-        
+
         .stat-title {
             color: var(--gray);
             font-size: 1.1rem;
         }
-        
+
         /* Industries Section */
         .industries {
             padding: 80px 0;
+            background-color: rgba(15, 23, 42, 0.85);
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-header h2 {
             font-size: 2.5rem;
             color: var(--light);
             margin-bottom: 1rem;
         }
-        
+
         .section-header p {
             font-size: 1.2rem;
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .industries-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .industry-card {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
@@ -529,13 +568,13 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             height: 100%;
         }
-        
+
         .industry-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
             border-color: var(--primary);
         }
-        
+
         .industry-icon {
             width: 70px;
             height: 70px;
@@ -548,30 +587,30 @@
             font-size: 1.8rem;
             color: var(--dark);
         }
-        
+
         .industry-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--secondary);
         }
-        
+
         .industry-card p {
             color: var(--gray);
         }
-        
+
         /* Testimonials Section */
         .testimonials-section {
             padding: 80px 0;
-            background: rgba(10, 10, 26, 0.5);
+            background: rgba(15, 23, 42, 0.85);
             position: relative;
         }
-        
+
         .testimonials-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .testimonial-card {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
@@ -579,89 +618,90 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .testimonial-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
             border-color: var(--primary);
         }
-        
+
         .testimonial-inner {
             padding: 30px;
         }
-        
+
         .quote-icon {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         .client-name {
             font-size: 1.3rem;
             margin-bottom: 5px;
             color: var(--secondary);
         }
-        
+
         .client-position {
             color: var(--gray);
             margin-bottom: 15px;
             font-style: italic;
         }
-        
+
         .testimonial-quote {
             color: var(--gray);
             font-style: italic;
             margin-bottom: 20px;
         }
-        
+
         .rating {
             color: var(--secondary);
             margin-bottom: 15px;
         }
-        
+
         .project-details {
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 15px;
         }
-        
+
         .project-title {
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 70px 0;
+            background-color: rgba(15, 23, 42, 0.85);
         }
-        
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
         }
-        
+
         .contact-info h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--secondary);
         }
-        
+
         .contact-info p {
             color: var(--gray);
             margin-bottom: 30px;
         }
-        
+
         .contact-details {
             margin-bottom: 30px;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
             margin-bottom: 20px;
         }
-        
+
         .contact-icon {
             width: 40px;
             height: 40px;
@@ -674,30 +714,30 @@
             color: var(--dark);
             flex-shrink: 0;
         }
-        
+
         .contact-text h4 {
             font-size: 1.1rem;
             margin-bottom: 5px;
             color: var(--light);
         }
-        
+
         .contact-text a {
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .contact-text a:hover {
             color: var(--secondary);
         }
-        
+
         .social-links {
             margin-top: 20px;
             display: flex;
             gap: 16px;
             align-items: center;
         }
-        
+
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -709,34 +749,34 @@
             color: var(--primary);
             font-size: 1.4rem;
             transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
             text-decoration: none;
         }
-        
+
         .social-links a:hover {
             background: var(--primary);
             color: #fff;
-            box-shadow: 0 4px 16px rgba(52,152,219,0.18);
+            box-shadow: 0 4px 16px rgba(52, 152, 219, 0.18);
         }
-        
+
         .contact-form {
             background: rgba(10, 10, 26, 0.7);
             padding: 30px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: var(--light);
             font-weight: 500;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -747,17 +787,17 @@
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
-        
+
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
         }
-        
+
         textarea.form-control {
             min-height: 120px;
             resize: vertical;
         }
-        
+
         .submit-btn {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: var(--dark);
@@ -769,42 +809,42 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
         }
-        
+
         /* Footer */
         .footer {
-            background: var(--dark-light);
+            background: rgba(15, 23, 42, 0.85);
             padding: 60px 0 20px;
         }
-        
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-col h3 {
             color: var(--secondary);
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
-        
+
         .footer-col p {
             color: var(--gray);
             margin-bottom: 20px;
         }
-        
+
         .footer-links {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        
+
         .footer-links a {
             color: var(--gray);
             text-decoration: none;
@@ -813,21 +853,21 @@
             align-items: center;
             gap: 10px;
         }
-        
-        
+
+
         .footer-links a:hover {
             color: var(--secondary);
         }
-        
+
         .footer-links a i {
             font-size: 0.8rem;
         }
-        
+
         #newsletter-group {
             display: flex;
             margin-top: 20px;
         }
-        
+
         #newsletter-email {
             flex: 1;
             padding: 12px 15px;
@@ -837,7 +877,7 @@
             color: var(--light);
             outline: none;
         }
-        
+
         #newsletter-btn {
             background: var(--primary);
             color: var(--light);
@@ -847,29 +887,29 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-        
+
         #newsletter-btn:hover {
             background: var(--primary-dark);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--gray);
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero h1 {
                 font-size: 2.8rem;
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -882,57 +922,61 @@
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             }
-            
+
             .nav-links.active {
                 display: flex;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .secondary-button {
                 width: 100%;
                 max-width: 250px;
                 text-align: center;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
-            .services-header h2, .section-header h2 {
+
+            .services-header h2,
+            .section-header h2 {
                 font-size: 2rem;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .services-grid, .industries-container, .testimonials-container {
+
+            .services-grid,
+            .industries-container,
+            .testimonials-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         /* SEO Elements */
         .seo-keywords {
             position: absolute;
@@ -947,19 +991,20 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Hidden SEO keywords -->
     <div class="seo-keywords">
-        software development services, custom software solutions, AI development company, 
-        cloud computing services, digital transformation agency, web application development, 
-        mobile app development, UX/UI design services, IT consulting, technology solutions provider, 
-        software outsourcing, enterprise software development, AI implementation, machine learning solutions, 
-        cloud migration services, DevOps services, blockchain development, IoT solutions, 
-        data analytics services, custom CRM development, ERP solutions, e-commerce development, 
-        healthcare software, fintech solutions, logistics software, education technology, 
+        software development services, custom software solutions, AI development company,
+        cloud computing services, digital transformation agency, web application development,
+        mobile app development, UX/UI design services, IT consulting, technology solutions provider,
+        software outsourcing, enterprise software development, AI implementation, machine learning solutions,
+        cloud migration services, DevOps services, blockchain development, IoT solutions,
+        data analytics services, custom CRM development, ERP solutions, e-commerce development,
+        healthcare software, fintech solutions, logistics software, education technology,
         manufacturing software, retail solutions, Zonixtec services, Zonixtec technologies
     </div>
-    
+
     <!-- Header -->
     <header id="header">
         <div class="container">
@@ -988,7 +1033,8 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Transform Ideas into Powerful Digital Solutions</h1>
-                    <p>From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses innovate, scale, and succeed.</p>
+                    <p>From AI and Cloud to Software Development and Design, Zonixtec helps startups and businesses
+                        innovate, scale, and succeed.</p>
                     <div class="hero-buttons">
                         <a href="Services.html" class="secondary-button">Explore our Services</a>
                         <a href="contact.html" class="secondary-button">Let's Build Together</a>
@@ -996,7 +1042,8 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-down" style="color: #ffff;">Scroll Down <span style="font-size: 20px; color: #f5f6fa;">&#8595</span></div>
+        <div class="scroll-down" style="color: #ffff;">Scroll Down <span
+                style="font-size: 20px; color: #f5f6fa;">&#8595</span></div>
     </section>
 
     <!-- About Us Section -->
@@ -1006,8 +1053,12 @@
             <div class="about-container">
                 <div class="about-content">
                     <h2>About <span>Zonixtec</span></h2>
-                    <p>At Zonixtec, we are more than a tech company—we are your <strong>digital innovation partner</strong>. Our mission is simple: to build solutions that <strong>solve real problems</strong>, <strong>deliver measurable results</strong>, and <strong>drive growth</strong>.</p>
-                    <p>With expertise in <strong>AI, Cloud, UX/UI, and Software Development</strong>, we design and develop platforms that make businesses <strong>smarter, faster, and future-ready</strong>.</p>
+                    <p>At Zonixtec, we are more than a tech company—we are your <strong>digital innovation
+                            partner</strong>. Our mission is simple: to build solutions that <strong>solve real
+                            problems</strong>, <strong>deliver measurable results</strong>, and <strong>drive
+                            growth</strong>.</p>
+                    <p>With expertise in <strong>AI, Cloud, UX/UI, and Software Development</strong>, we design and
+                        develop platforms that make businesses <strong>smarter, faster, and future-ready</strong>.</p>
                 </div>
                 <div class="about-image">
                     <img src="./Assets/aboutus1.webp" alt="Zonixtec Technology Solutions">
@@ -1021,9 +1072,10 @@
         <div class="container">
             <div class="services-header">
                 <h2>Next-Gen Services Tailored for Your Business</h2>
-                <p>We provide a complete range of <strong>technology services</strong> to help companies unlock new opportunities.</p>
+                <p>We provide a complete range of <strong>technology services</strong> to help companies unlock new
+                    opportunities.</p>
             </div>
-            
+
             <div class="services-grid">
                 <!-- Custom Software Development -->
                 <div class="service-card">
@@ -1031,61 +1083,69 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Custom Software Development</h3>
-                    <p>Tailor-made software built to fit your unique business needs. Our custom software development helps you improve efficiency and scale with ease.</p>
+                    <p>Tailor-made software built to fit your unique business needs. Our custom software development
+                        helps you improve efficiency and scale with ease.</p>
                     <a href="CustomSoftware.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
+
                 <!-- Mobile App Development -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile App Development</h3>
-                    <p>We design and develop secure, high-performing mobile apps for Android and iOS. Our mobile app development services boost customer engagement and growth.</p>
-                    <a href="MobileDevelopment.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>We design and develop secure, high-performing mobile apps for Android and iOS. Our mobile app
+                        development services boost customer engagement and growth.</p>
+                    <a href="MobileDevelopment.html" class="service-link">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
-                
+
                 <!-- AI & Machine Learning -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>AI & Machine Learning</h3>
-                    <p>Smart AI/ML models that automate tasks, analyze data, and deliver accurate predictions. We help businesses make faster, data-driven decisions.</p>
-                    <a href="MachineLearning.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Smart AI/ML models that automate tasks, analyze data, and deliver accurate predictions. We help
+                        businesses make faster, data-driven decisions.</p>
+                    <a href="MachineLearning.html" class="service-link">Learn More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
-                
+
                 <!-- Cloud Solutions -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Cloud Solutions</h3>
-                    <p>Scalable and secure cloud solutions for storage, apps, and business operations. Our cloud expertise reduces costs and increases flexibility.</p>
+                    <p>Scalable and secure cloud solutions for storage, apps, and business operations. Our cloud
+                        expertise reduces costs and increases flexibility.</p>
                     <a href="CloudSolutions.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
+
                 <!-- UX/UI Design -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
                     <h3>UX/UI Design</h3>
-                    <p>User-friendly, modern, and responsive designs that enhance customer experience. Our UX/UI design services make apps and websites simple yet powerful.</p>
+                    <p>User-friendly, modern, and responsive designs that enhance customer experience. Our UX/UI design
+                        services make apps and websites simple yet powerful.</p>
                     <a href="ui.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
+
                 <!-- AI Strategy & Consulting -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>AI Strategy & Consulting</h3>
-                    <p>Expert guidance to adopt AI in your business. Our AI strategy and consulting services help you innovate, reduce costs, and stay future-ready.</p>
+                    <p>Expert guidance to adopt AI in your business. Our AI strategy and consulting services help you
+                        innovate, reduce costs, and stay future-ready.</p>
                     <a href="Services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            
+
             <div class="services-cta">
                 <a href="Services.html" class="secondary-button">Explore All Services</a>
             </div>
@@ -1200,15 +1260,16 @@
             </div>
         </div>
     </section>
-     
-     <!-- Testimonials Section -->
+
+    <!-- Testimonials Section -->
     <section class="testimonials-section section-padding" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <h2>Client Testimonials</h2>
-                <p>Discover what our clients say about working with Zonixtec and the transformative impact our software solutions have made on their businesses.</p>
+                <p>Discover what our clients say about working with Zonixtec and the transformative impact our software
+                    solutions have made on their businesses.</p>
             </div>
-            
+
             <div class="testimonials-container">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card">
@@ -1216,7 +1277,10 @@
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
                         <h3 class="client-name">Krishnal Tagunde</h3>
                         <p class="client-position">Founder, Kaleshwari Temple</p>
-                        <p class="testimonial-quote">"Zonixtec designed a beautiful and functional website for our temple. Their team understood our vision perfectly and delivered everything with dedication and professionalism. Within 3 months, <strong>our website traffic grew by 150%, and we now receive 40% more online donations.</strong>"</p>
+                        <p class="testimonial-quote">"Zonixtec designed a beautiful and functional website for our
+                            temple. Their team understood our vision perfectly and delivered everything with dedication
+                            and professionalism. Within 3 months, <strong>our website traffic grew by 150%, and we now
+                                receive 40% more online donations.</strong>"</p>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1226,14 +1290,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-inner">
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
                         <h3 class="client-name">Dhanashree Mhaske</h3>
                         <p class="client-position">Financial Market Expert</p>
-                        <p class="testimonial-quote">"The software solutions from Zonixtec have helped me streamline my trading operations. Their timely support and understanding of my workflow made a real difference. <strong>With their system, I now save 20+ hours per week, and my trading efficiency has improved by 35%.</strong>"</p>
+                        <p class="testimonial-quote">"The software solutions from Zonixtec have helped me streamline my
+                            trading operations. Their timely support and understanding of my workflow made a real
+                            difference. <strong>With their system, I now save 20+ hours per week, and my trading
+                                efficiency has improved by 35%.</strong>"</p>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1243,14 +1310,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-inner">
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
                         <h3 class="client-name">Uma Borade</h3>
                         <p class="client-position">Owner, Jewellery Shop</p>
-                        <p class="testimonial-quote">"Thanks to Zonixtec, managing my jewellery inventory and billing has become much easier. Their system is reliable and perfectly suited for small businesses like mine. <strong>I reduced manual errors by 70% and increased billing speed by 3x.</strong>"</p>
+                        <p class="testimonial-quote">"Thanks to Zonixtec, managing my jewellery inventory and billing
+                            has become much easier. Their system is reliable and perfectly suited for small businesses
+                            like mine. <strong>I reduced manual errors by 70% and increased billing speed by
+                                3x.</strong>"</p>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1269,13 +1339,15 @@
         <div class="container">
             <div class="section-header">
                 <h2>Get In Touch</h2>
-                <p>Ready to start your next project? Connect with our team to discuss your requirements and find the right solution.</p>
+                <p>Ready to start your next project? Connect with our team to discuss your requirements and find the
+                    right solution.</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <div>
                         <h3>Contact Information</h3>
-                        <p>Have questions about our software development services or want to discuss a potential project? Reach out to us through any of the channels below.</p>
+                        <p>Have questions about our software development services or want to discuss a potential
+                            project? Reach out to us through any of the channels below.</p>
                     </div>
                     <div class="contact-details">
                         <div class="contact-item">
@@ -1284,8 +1356,11 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Our Location</h4>
-                                <a href="https://www.google.com/maps?q=Zonixtec+IT+Services+PVT+LTD+2nd+Floor,+Vasukamal+Express,+Rohan+Sehar+Ln,+Pan+Card+Club+Rd,+behind+Beverly+Hills+Society,+Samarth+Colony,+Baner" target="_blank" rel="noopener">
-                                    Zonixtec IT Services PVT LTD 2nd Floor, Vasukamal Express, Rohan Sehar Ln, Pan Card Club Rd, behind Beverly Hills Society, Samarth Colony, Baner 411045, Pune, Maharashtra, India
+                                <a href="https://www.google.com/maps?q=Zonixtec+IT+Services+PVT+LTD+2nd+Floor,+Vasukamal+Express,+Rohan+Sehar+Ln,+Pan+Card+Club+Rd,+behind+Beverly+Hills+Society,+Samarth+Colony,+Baner"
+                                    target="_blank" rel="noopener">
+                                    Zonixtec IT Services PVT LTD 2nd Floor, Vasukamal Express, Rohan Sehar Ln, Pan Card
+                                    Club Rd, behind Beverly Hills Society, Samarth Colony, Baner 411045, Pune,
+                                    Maharashtra, India
                                 </a>
                             </div>
                         </div>
@@ -1309,8 +1384,10 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/zonixtec-it-services-private-limited/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/zonixtec_it_services" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/zonixtec-it-services-private-limited/"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/zonixtec_it_services" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <!-- <div class="contact-form">
@@ -1337,28 +1414,31 @@
                     </form>
                 </div> -->
                 <div class="contact-form">
-    <form id="contactForm">
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" required pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" inputmode="text" autocomplete="name" onkeypress="return /[a-zA-Z\s]/.test(event.key)">
-        </div>
-        <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-    <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
-</div>
-           
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required
+                                pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" inputmode="text"
+                                autocomplete="name" onkeypress="return /[a-zA-Z\s]/.test(event.key)">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;">
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -1366,112 +1446,119 @@
 
     <!-- Footer -->
     <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-container">
-      <!-- Solutions Section with Dropdown -->
-      <div class="footer-col">
-        <h3>Solutions</h3>
-        <div class="footer-links">
-          
-          <!-- Next-Gen Tech Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
-              <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
-            </div>
-          </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdown -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
 
-          <!-- AI Services Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> AI Services</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
-              <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
-              <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-              <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing (NLP)</a>
-              <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-              <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
-              <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
-            </div>
-          </div>
+                        <!-- Next-Gen Tech Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine
+                                    Learning</a>
+                                <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                            </div>
+                        </div>
 
-          <!-- Core Development Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Core Development</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
-              <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
-            </div>
-          </div>
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> AI Services</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
+                                <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy &
+                                    Consulting</a>
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
+                                <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing
+                                    (NLP)</a>
+                                <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive
+                                    Analysis</a>
+                                <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process
+                                    Automation</a>
+                            </div>
+                        </div>
 
-          <!-- Design & Experience Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
-            </div>
-          </div>
-        </div>
-      </div>
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software
+                                    Development</a>
+                                <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App
+                                    Development</a>
+                            </div>
+                        </div>
 
-      <!-- Insights Section -->
-      <div class="footer-col">
-        <h3>Insights</h3>
-        <div class="footer-links">
-          <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-          <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-          <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-          <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a>
-          <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-          <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-          <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
-        </div>
-      </div>
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Company Section -->
-      <div class="footer-col">
-        <h3>Company</h3>
-        <div class="footer-links">
-          <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-          <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-          <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-          <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
-          <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
-          <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-          <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
-        </div>
-      </div>
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                    </div>
+                </div>
 
-      <!-- Quick Links Section -->
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <div class="footer-links">
-          <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-          <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
-          <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-          <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-          <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-          <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-          <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-        </div>
-      </div>
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
+                        <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
+                </div>
 
-      <!-- Newsletter Section -->
-      <!-- <div class="footer-col">
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <!-- <div class="footer-col">
         <h3>Newsletter</h3>
         <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
         <div class="form-group" id="newsletter-group">
@@ -1482,56 +1569,59 @@
           Thank you for subscribing!
         </div>
       </div> -->
-    </div>
+            </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
-    </div>
-  </div>
-</footer>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
 
-<!-- CSS -->
-<style>
-.footer-dropdown-content {
-  display: none;
-  margin-left: 15px;
-}
-.footer-dropdown.open .footer-dropdown-content {
-  display: block;
-}
-.footer-dropdown-header {
-  display: flex;
-  color: var(--gray);
-  /* transform: ; */
-  justify-content: space-between;
-  cursor: pointer;
-  margin: 5px 0;
-}
-.footer-dropdown-header:hover {
-  color: var(--secondary);
-}
-</style>
+    <!-- CSS -->
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
 
-<!-- JS -->
-<script>
-document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const parent = header.parentElement;
-    parent.classList.toggle('open');
-  });
-});
-</script>
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
+
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            /* transform: ; */
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
+    </style>
+
+    <!-- JS -->
+    <script>
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
 
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
             document.querySelector('body').classList.toggle('menu-open');
         });
-        
+
         // Header scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -1541,14 +1631,14 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
         });
 
 
-        
+
         // Newsletter subscription
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const btn = document.getElementById('newsletter-btn');
             const emailInput = document.getElementById('newsletter-email');
             const thankyou = document.getElementById('newsletter-thankyou');
-            btn.addEventListener('click', function() {
-                if(emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+            btn.addEventListener('click', function () {
+                if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
                     thankyou.style.display = 'block';
                     setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
                     emailInput.value = '';
@@ -1561,130 +1651,131 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
         });
 
         // Contact Form Submission to Your Backend API
-         // Contact Form with LocalStorage Database (Working Solution)
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('form-message');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Saving...';
-            formMessage.style.display = 'none';
-            
-            const formData = {
-                id: Date.now(), // Unique ID
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                subject: document.getElementById('subject').value.trim(),
-                message: document.getElementById('message').value.trim(),
-                timestamp: new Date().toLocaleString(),
-                ip: 'local',
-                status: 'new'
-            };
-            
-            // Validation
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-                showMessage('Please fill in all fields.', 'error');
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-                return;
+        // Contact Form with LocalStorage Database (Working Solution)
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('form-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = contactForm.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Saving...';
+                    formMessage.style.display = 'none';
+
+                    const formData = {
+                        id: Date.now(), // Unique ID
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        subject: document.getElementById('subject').value.trim(),
+                        message: document.getElementById('message').value.trim(),
+                        timestamp: new Date().toLocaleString(),
+                        ip: 'local',
+                        status: 'new'
+                    };
+
+                    // Validation
+                    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                        showMessage('Please fill in all fields.', 'error');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+
+                    if (!isValidEmail(formData.email)) {
+                        showMessage('Please enter a valid email address.', 'error');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        return;
+                    }
+
+                    // Save to localStorage database
+                    try {
+                        saveToLocalDatabase(formData);
+                        showMessage('✅ Thank you! Your message has been saved successfully. We will contact you soon.', 'success');
+                        contactForm.reset();
+
+                        // Log to console for verification
+                        console.log('📁 Saved to Local Database:', formData);
+                        displayAllMessages(); // Show all saved messages in console
+
+                    } catch (error) {
+                        showMessage('Thank you! Message received. (Temporary storage)', 'success');
+                        contactForm.reset();
+                        console.log('Form data:', formData);
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
             }
-            
-            if (!isValidEmail(formData.email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-                return;
-            }
-            
+
             // Save to localStorage database
-            try {
-                saveToLocalDatabase(formData);
-                showMessage('✅ Thank you! Your message has been saved successfully. We will contact you soon.', 'success');
-                contactForm.reset();
-                
-                // Log to console for verification
-                console.log('📁 Saved to Local Database:', formData);
-                displayAllMessages(); // Show all saved messages in console
-                
-            } catch (error) {
-                showMessage('Thank you! Message received. (Temporary storage)', 'success');
-                contactForm.reset();
-                console.log('Form data:', formData);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
+            function saveToLocalDatabase(formData) {
+                // Get existing messages or initialize empty array
+                const existingMessages = JSON.parse(localStorage.getItem('zonixtec_contact_messages') || '[]');
+
+                // Add new message with unique ID
+                formData.id = Date.now();
+                formData.timestamp = new Date().toLocaleString();
+
+                // Add to array
+                existingMessages.push(formData);
+
+                // Save back to localStorage (max 50 messages to prevent overflow)
+                const trimmedMessages = existingMessages.slice(-50);
+                localStorage.setItem('zonixtec_contact_messages', JSON.stringify(trimmedMessages));
+
+                return formData.id;
             }
-        });
-    }
-    
-    // Save to localStorage database
-    function saveToLocalDatabase(formData) {
-        // Get existing messages or initialize empty array
-        const existingMessages = JSON.parse(localStorage.getItem('zonixtec_contact_messages') || '[]');
-        
-        // Add new message with unique ID
-        formData.id = Date.now();
-        formData.timestamp = new Date().toLocaleString();
-        
-        // Add to array
-        existingMessages.push(formData);
-        
-        // Save back to localStorage (max 50 messages to prevent overflow)
-        const trimmedMessages = existingMessages.slice(-50);
-        localStorage.setItem('zonixtec_contact_messages', JSON.stringify(trimmedMessages));
-        
-        return formData.id;
-    }
-    
-    // Display all saved messages in console (for testing)
-    function displayAllMessages() {
-        const messages = JSON.parse(localStorage.getItem('zonixtec_contact_messages') || '[]');
-        console.log('📊 ALL SAVED MESSAGES:', messages);
-        console.log(`💾 Total messages stored: ${messages.length}`);
-        
-        // Show recent messages
-        if (messages.length > 0) {
-            console.log('🆕 Recent messages:');
-            messages.slice(-3).forEach(msg => {
-                console.log(`   📝 ${msg.name} - ${msg.subject} (${msg.timestamp})`);
-            });
-        }
-    }
-    
-    function showMessage(text, type) {
-        formMessage.textContent = text;
-        formMessage.style.display = 'block';
-        formMessage.style.backgroundColor = type === 'success' 
-            ? 'rgba(39, 174, 96, 0.1)' 
-            : 'rgba(231, 76, 60, 0.1)';
-        formMessage.style.color = type === 'success' ? '#27ae60' : '#e74c3c';
-        formMessage.style.border = `1px solid ${type === 'success' ? '#27ae60' : '#e74c3c'}`;
-        
-        if (type === 'success') {
+
+            // Display all saved messages in console (for testing)
+            function displayAllMessages() {
+                const messages = JSON.parse(localStorage.getItem('zonixtec_contact_messages') || '[]');
+                console.log('📊 ALL SAVED MESSAGES:', messages);
+                console.log(`💾 Total messages stored: ${messages.length}`);
+
+                // Show recent messages
+                if (messages.length > 0) {
+                    console.log('🆕 Recent messages:');
+                    messages.slice(-3).forEach(msg => {
+                        console.log(`   📝 ${msg.name} - ${msg.subject} (${msg.timestamp})`);
+                    });
+                }
+            }
+
+            function showMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = type === 'success'
+                    ? 'rgba(39, 174, 96, 0.1)'
+                    : 'rgba(231, 76, 60, 0.1)';
+                formMessage.style.color = type === 'success' ? '#27ae60' : '#e74c3c';
+                formMessage.style.border = `1px solid ${type === 'success' ? '#27ae60' : '#e74c3c'}`;
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 8000);
+                }
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Display existing messages on page load
             setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 8000);
-        }
-    }
-    
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    // Display existing messages on page load
-    setTimeout(() => {
-        displayAllMessages();
-    }, 1000);
-});
+                displayAllMessages();
+            }, 1000);
+        });
     </script>
-    
+
 </body>
+
 </html>
