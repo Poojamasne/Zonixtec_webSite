@@ -140,6 +140,10 @@
             transition: all 0.3s ease;
             position: relative;
         }
+            .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+        
 
         .nav-links a:not(.cta-button):hover {
             color: var(--secondary);
@@ -201,6 +205,18 @@
             background-clip: text;
             line-height: 1.2;
         }
+
+         .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary); 
+            
+        }
+        
 
         .hero-subtitle {
             font-size: 1.2rem;
