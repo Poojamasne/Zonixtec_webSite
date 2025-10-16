@@ -762,7 +762,6 @@
             color: white;
         }
 
-
         /* ===== Dropdown Styles ===== */
 .dropdown {
     position: relative;
@@ -837,7 +836,6 @@
     }
 }
         
-        /* Footer */
         .footer {
             background: rgba(2, 6, 23, 0.9);
             padding: 70px 0 0;
@@ -1504,6 +1502,14 @@
             margin-right: auto;
         }
 
+        .nav-links a:not(.cta-buttons):hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .modal-content {
@@ -1573,7 +1579,7 @@
         <nav>
             <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="aboutus.html">About</a>
                 
                 <!-- Services Dropdown -->
@@ -1592,7 +1598,7 @@
                     </div>
                 </div>
                 
-                <a href="carrer.html">Career</a>
+                <a href="carrer.html" class="active">Career</a>
                 <a href="contact.html">Contact</a>
                 <a href="contact.html" class="cta-buttons">Get Started</a>
             </div>
@@ -1959,8 +1965,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
+
     </div>
     <footer class="footer">
   <div class="container">
@@ -2085,7 +2090,6 @@
     </div>
   </div>
 </footer>
->>>>>>> e1af764 (Updated HTML pages and added new files (Blogs, CaseStudies, FAQs, Guides))
 
     <script>
         // Mobile menu toggle
