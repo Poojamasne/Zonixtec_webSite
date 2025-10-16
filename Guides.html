@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides | Zonixtec - Business & Technology Guides for Digital Transformation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0044cc;
+            --secondary: #00f2ff;
+            --accent: #ff3366;
+            --dark: #050511;
+            --dark-light: #0a0a1a;
+            --light: #f5f5f5;
+            --gray: #888;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title span {
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title span.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px var(--secondary); }
+            50% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+            100% { text-shadow: 0 0 5px var(--secondary); }
+        }
+        
+        .hero-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo .tech {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .cta-buttons {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-buttons:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ===== Dropdown Styles ===== */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            min-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            margin: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Guides Hero */
+        .guides-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guides-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 102, 255, 0.1), transparent 70%);
+            z-index: -1;
+        }
+        
+        .guides-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .guides-hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* Why Guides Matter Section */
+        .why-guides {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .why-guides h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-content h3 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-content p {
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Guides Grid */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .guide-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
+        }
+        
+        .guide-icon {
+            height: 120px;
+            background: linear-gradient(45deg, var(--primary), var(--dark-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guide-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 102, 255, 0.3), rgba(0, 242, 255, 0.3));
+        }
+        
+        .guide-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .guide-title {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .guide-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .guide-topics {
+            margin-bottom: 20px;
+        }
+        
+        .guide-topics h4 {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .topics-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .topic-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .guide-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--secondary);
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            margin-top: auto;
+        }
+        
+        .guide-cta:hover {
+            background: rgba(0, 102, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Highlights Section */
+        .highlights-section {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .highlights-section h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .highlight-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+        
+        .highlight-item h3 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-item p {
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Audience Section */
+        .audience-section {
+            margin-bottom: 60px;
+        }
+        
+        .audience-section h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .audience-item {
+            background: rgba(10, 10, 26, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .audience-item:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .audience-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .audience-item h3 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .audience-item p {
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        /* Promise Section */
+        .promise-section {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 80px 60px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promise-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .promise-section h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .promise-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-light);
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(150px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-links a i {
+            font-size: 0.8rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+        }
+
+        .footer-links ul li a {
+            color: #a19c9c;
+            text-decoration: none;
+            font-size: medium;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-links ul ul {
+            margin-left: 15px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 15px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guides-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                color: var(--secondary);
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .guides-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .why-guides, .highlights-section, .promise-section {
+                padding: 40px 20px;
+            }
+            
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlights-grid, .audience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .highlights-grid, .audience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .promise-section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="web-design-development.html">Web Design & Development</a>
+                            <a href="web-app-development.html">Web App Development</a>
+                            <a href="software-development.html">Software Development</a>
+                            <a href="crm-erp-solutions.html">CRM & ERP Solutions</a>
+                            <a href="AIStrategy.html">AI Strategy & Consulting</a>
+                            <a href="CustomSoftware.html">Custom Software Development</a>
+                            <a href="MobileDevelopment.html">Mobile App Development</a>
+                            <a href="ui.html">UX/UI Design Services</a>
+                            <a href="CloudSolutions.html">Cloud Solutions</a>
+                        </div>
+                    </div>
+                    
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Guides Hero -->
+    <section class="guides-hero">
+        <div class="container">
+            <h1>Business & Technology Guides for Digital Transformation</h1>
+            <p>Learn. Implement. Grow. Your go-to resource hub for mastering digital transformation and business automation.</p>
+            <a href="#guides" class="hero-cta">Explore All Guides</a>
+        </div>
+    </section>
+    
+    <!-- Why Guides Matter -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="why-guides">
+                <h2>Why These Guides Matter</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Learn Complex Topics in Plain English</h3>
+                            <p>Each guide is written in simple language to help you understand how technology can make your business more efficient and competitive.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Discover Automation Benefits</h3>
+                            <p>Learn how automation boosts productivity, saves time, and transforms your business operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Real-World Examples & Insights</h3>
+                            <p>Explore practical examples and industry insights that you can apply directly to your business.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Stay Ahead with Latest Trends</h3>
+                            <p>Keep up with the latest technology and innovation trends that are shaping the business landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Guides Grid -->
+            <h2 class="section-title" id="guides">Zonixtec's Expert <span>Guides Library</span></h2>
+            
+            <div class="guides-grid">
+                <!-- Guide 1: Web & App Development -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Building Digital Experiences that Convert</h3>
+                        <p class="guide-description">Discover how custom web and app development can enhance your digital presence, improve engagement, and scale performance.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Responsive design</span>
+                                <span class="topic-tag">Frontend frameworks</span>
+                                <span class="topic-tag">Backend integration</span>
+                                <span class="topic-tag">App deployment</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Read Web Development Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 2: CRM Implementation -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">From Leads to Loyalty – Mastering CRM Systems</h3>
+                        <p class="guide-description">Learn how CRM software helps you manage leads, improve communication, and retain customers through data-driven insights.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Pipeline automation</span>
+                                <span class="topic-tag">Sales tracking</span>
+                                <span class="topic-tag">Customer engagement</span>
+                                <span class="topic-tag">Analytics dashboards</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Explore CRM Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 3: ERP Systems -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Streamlining Business Operations with ERP</h3>
+                        <p class="guide-description">Understand how ERP systems connect your departments — from finance to HR — to improve efficiency and transparency.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">ERP modules</span>
+                                <span class="topic-tag">Process automation</span>
+                                <span class="topic-tag">Cloud-based ERP</span>
+                                <span class="topic-tag">Data reporting</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Download ERP Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 4: HRMS Automation -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Smart HR Management for Modern Teams</h3>
+                        <p class="guide-description">Simplify HR with automation. Learn how HRMS streamlines payroll, performance reviews, and attendance tracking.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Payroll automation</span>
+                                <span class="topic-tag">Compliance</span>
+                                <span class="topic-tag">Employee self-service</span>
+                                <span class="topic-tag">Workforce analytics</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Access HRMS Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 5: Billing & Invoicing -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Automate Your Finances – The Smart Way</h3>
+                        <p class="guide-description">Explore how billing software automates invoices, reduces errors, and enhances financial control.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Invoice automation</span>
+                                <span class="topic-tag">Tax management</span>
+                                <span class="topic-tag">Recurring billing</span>
+                                <span class="topic-tag">Accounting integration</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Read Billing Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 6: Digital Marketing -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Boost Your Brand with Data-Driven Marketing</h3>
+                        <p class="guide-description">Learn how SEO, PPC, and analytics-driven strategies help businesses grow their online presence.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Keyword optimization</span>
+                                <span class="topic-tag">Ad performance</span>
+                                <span class="topic-tag">ROI tracking</span>
+                                <span class="topic-tag">Content marketing</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Explore Marketing Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 7: Cloud Solutions -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">Why Cloud is the Future of Business Scalability</h3>
+                        <p class="guide-description">Understand how cloud computing improves data accessibility, scalability, and cost efficiency.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Cloud migration</span>
+                                <span class="topic-tag">Hybrid models</span>
+                                <span class="topic-tag">Cybersecurity</span>
+                                <span class="topic-tag">Disaster recovery</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Download Cloud Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Guide 8: AI & Automation -->
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3 class="guide-title">AI for Business Growth – Turning Data into Decisions</h3>
+                        <p class="guide-description">Discover how AI tools like chatbots, NLP, and predictive analytics help automate workflows and improve decision-making.</p>
+                        
+                        <div class="guide-topics">
+                            <h4>Key Topics:</h4>
+                            <div class="topics-list">
+                                <span class="topic-tag">Natural Language Processing</span>
+                                <span class="topic-tag">AI chatbots</span>
+                                <span class="topic-tag">Business automation</span>
+                                <span class="topic-tag">Machine learning</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="guide-cta">Access AI Guide</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Highlights Section -->
+            <div class="highlights-section">
+                <h2>Highlights of Our Guides</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Written by Experts</h3>
+                        <p>All guides are created by technology experts with real industry experience</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Easy to Understand</h3>
+                        <p>Simple explanations and plain English for complex technical topics</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Free to Download</h3>
+                        <p>Completely free resources that you can download and share with your team</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimized</h3>
+                        <p>Content optimized for digital visibility and easy discovery</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Regularly Updated</h3>
+                        <p>Content is refreshed regularly to reflect the latest tech trends</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Audience Section -->
+            <div class="audience-section">
+                <h2>Who Should Read These Guides</h2>
+                <div class="audience-grid">
+                    <div class="audience-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Entrepreneurs</h3>
+                        <p>Exploring digital transformation for business growth</p>
+                    </div>
+                    
+                    <div class="audience-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>IT Managers</h3>
+                        <p>Planning software integration and technology adoption</p>
+                    </div>
+                    
+                    <div class="audience-item">
+                        <i class="fas fa-startup"></i>
+                        <h3>Startups</h3>
+                        <p>Scaling through automation tools and digital solutions</p>
+                    </div>
+                    
+                    <div class="audience-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Professionals</h3>
+                        <p>Learning about modern tech applications and trends</p>
+                    </div>
+                    
+                    <div class="audience-item">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Owners</h3>
+                        <p>Seeking cost-effective IT solutions for operations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Promise Section -->
+            <div class="promise-section">
+                <h2>Zonixtec Resource Promise</h2>
+                <p>At Zonixtec, knowledge fuels innovation. Our guides empower you with the right tools, insights, and strategies to build a future-ready digital business.</p>
+                <a href="#guides" class="hero-cta">Start Learning Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdown -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        
+                        <!-- Next-Gen Tech Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIMachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                                <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                            </div>
+                        </div>
+
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> AI Services</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
+                                <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
+                                <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing (NLP)</a>
+                                <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
+                        </div>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                                <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                    </div>
+                </div>
+
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
+                        <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
+    </style>
+    <script>
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('body').classList.toggle('menu-open');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

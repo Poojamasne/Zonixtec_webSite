@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Zonixtec - Advanced AI Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0044cc;
+            --secondary: #00f2ff;
+            --accent: #ff3366;
+            --dark: #050511;
+            --dark-light: #0a0a1a;
+            --light: #f5f5f5;
+            --gray: #888;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 5rem;
+    position: relative;
+}
+        
+        .section-title span {
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title span.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px var(--secondary); }
+            50% { text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary); }
+            100% { text-shadow: 0 0 5px var(--secondary); }
+        }
+        
+        .hero-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo .tech {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .cta-buttons {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-buttons:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ===== Dropdown Styles ===== */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            min-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            margin: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(0, 102, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--secondary);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 30px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(10, 10, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: var(--light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+        
+        .contact-cta {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 60px;
+            margin-top: 60px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-light);
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(150px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .setFooter{
+            margin-right: 200px;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-links a i {
+            font-size: 0.8rem;
+        }
+        
+        .form-group {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .form-control {
+            flex: 1;
+            padding: 11px 3px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            outline: none;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+        }
+
+        .footer-links ul li a {
+            color: #a19c9c;
+            text-decoration: none;
+            font-size: medium;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-links ul ul {
+            margin-left: 15px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 15px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+            
+            .nav-links a:hover, .nav-links a.active {
+                color: var(--secondary);
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-cta {
+                padding: 40px 20px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="web-design-development.html">Web Design & Development</a>
+                            <a href="web-app-development.html">Web App Development</a>
+                            <a href="software-development.html">Software Development</a>
+                            <a href="crm-erp-solutions.html">CRM & ERP Solutions</a>
+                            <a href="AIStrategy.html">AI Strategy & Consulting</a>
+                            <a href="CustomSoftware.html">Custom Software Development</a>
+                            <a href="MobileDevelopment.html">Mobile App Development</a>
+                            <a href="ui.html">UX/UI Design Services</a>
+                            <a href="CloudSolutions.html">Cloud Solutions</a>
+                        </div>
+                    </div>
+                    
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-buttons">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- FAQ Section -->
+    <section class="section-padding" id="faq">
+        <div class="container">
+            <h1 class="section-title">Frequently Asked <span>Questions</span></h1>
+            <p class="hero-subtitle">Find answers to common questions about our services, processes, and how we can help your business grow</p>
+            
+            <div class="search-box">
+                <input type="text" id="faq-search" placeholder="Search for questions or keywords...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>1. What services does Zonixtec offer?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We specialize in Digital Experience Services, e-commerce solutions (web & mobile), Performance Testing, Application Modernization Services, Monitoring, and Maintenance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>2. Who can benefit from Zonixtec's services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our solutions are designed for startups, Small and medium enterprises, and enterprises looking to scale, modernize, or outsource their technology needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>3. How is Zonixtec different from other IT service providers?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We combine innovation, scalability, and personalized engagement. Unlike one-size-fits-all providers, we customize every solution to your business goals and growth stage.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>4. How does Zonixtec help businesses with AI solutions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide end-to-end AI services, including Natural Language Processing (NLP), Computer Vision, Predictive Analytics, and Process Automation. Our team designs tailored AI strategies to help businesses cut costs, improve customer experiences, and make smarter data-driven decisions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>5. Do you help businesses build e-commerce platforms?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We design and develop end-to-end e-commerce solutions for web and mobile, ensuring smooth user experiences and scalable growth.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>6. Can Zonixtec help with legacy application modernization?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We transform outdated systems into modern, efficient applications that are future-ready and secure.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>7. What industries does Zonixtec work with?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work across diverse industries — retail, fintech, healthcare, logistics, and more — customizing solutions to fit unique sector needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>8. How does Zonixtec ensure project quality?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Through performance engineering, rigorous testing, continuous monitoring, and proactive maintenance. We prioritize both stability and innovation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>9. What is Digital Experience Design at Zonixtec?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>It's our human-centered design approach that ensures products are intuitive, engaging, and aligned with customer behavior.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>10. Can Zonixtec support growing startups with limited budgets?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We specialize in working with funded startups and SMEs, providing scalable solutions that match growth without overspending.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>11. Does Zonixtec offer long-term support after project delivery?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our maintenance and monitoring services ensure your applications remain secure, optimized, and up to date.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>12. Where is Zonixtec located?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are headquartered in Pune-Baner, serving clients globally through both onsite and remote collaboration.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>13. How can I get in touch with Zonixtec?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can reach us through the Contact Us page on our website or email us directly. Our team will respond promptly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>14. Why should I choose Zonixtec for my business?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Because we're not just developers — we're growth partners. We focus on delivering measurable results, smooth digital experiences, and technology that scales with your vision.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>15. How do I start working with Zonixtec?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply connect with us via our website form or email. Our team will schedule a consultation to understand your needs and propose the right solution.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-cta">
+                <h2>Still Have Questions?</h2>
+                <p>If you didn't find the answer you were looking for, our team is ready to help. Get in touch with us for personalized assistance.</p>
+                <a href="contact.html" class="cta-buttons">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdown -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        
+                        <!-- Next-Gen Tech Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIMachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                                <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                            </div>
+                        </div>
+
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> AI Services</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
+                                <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
+                                <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing (NLP)</a>
+                                <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
+                        </div>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                                <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="ui.html"><i class="fas fa-chevron-right"></i> UX/UI Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                    </div>
+                </div>
+
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
+                        <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
+    </style>
+    <script>
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('body').classList.toggle('menu-open');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // FAQ Search Functionality
+        document.getElementById('faq-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

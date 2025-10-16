@@ -213,6 +213,81 @@
 
         }
 
+
+        /* ===== Dropdown Styles ===== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(15px);
+    min-width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    z-index: 1000;
+    padding: 8px 0;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-left: 4px solid transparent;
+    margin: 2px 8px;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--secondary);
+    border-left: 4px solid var(--secondary);
+    transform: translateX(5px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
         /* Contact Hero Section */
         .contact-hero {
             padding: 200px 0 100px;
@@ -526,7 +601,7 @@
             padding-bottom: 10px;
         }
 
-        .footer-col h3::after {
+        /* .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -535,7 +610,7 @@
             height: 3px;
             background: var(--tech-gradient);
             border-radius: 3px;
-        }
+        } */
 
         .footer-col p {
             color: #cbd5e1;
@@ -802,23 +877,49 @@
 
 <body>
     <header id="header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="aboutus.html">About</a>
-                    <a href="Services.html">Services</a>
-                    <a href="carrer.html">Career</a>
-                    <a href="contact.html" class="active">Contact</a>
-                    <a href="contact.html" class="cta-buttons">Get Started</a>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="aboutus.html">About</a>
+                
+                <!-- Services Dropdown -->
+                <div class="dropdown">
+                    <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="web-design-development.html">Web Design & Development</a>
+                        <a href="web-app-development.html">Web App Development</a>
+                        <a href="software-development.html">Software Development</a>
+                        <a href="crm-erp-solutions.html">CRM & ERP Solutions</a>
+                        <a href="AIStrategy.html">AI Strategy & Consulting</a>
+                        <a href="CustomSoftware.html">Custom Software Development</a>
+                        <a href="MobileDevelopment.html">Mobile App Development</a>
+                        <a href="ui.html">UX/UI Design Services</a>
+                        <a href="CloudSolutions.html">Cloud Solutions</a>
+                    </div>
                 </div>
+
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
     </header>
+
+
+                
+                <a href="carrer.html">Career</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-buttons">Get Started</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+    
 
     <!-- Contact Hero Section -->
     <section class="contact-hero">
