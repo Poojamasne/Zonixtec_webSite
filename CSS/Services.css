@@ -102,7 +102,7 @@
         }
 
         .logo span {
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .logo .tech {
