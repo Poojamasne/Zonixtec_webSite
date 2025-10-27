@@ -1824,12 +1824,12 @@
 
             <div class="application-form-container" id="formContainer">
                 <form class="application-form" id="applicationForm">
-                    <div class="form-row">
+                    <div class="form-row"> 
                         <div class="form-group">
                             <label class="form-label" for="firstName">
                                 First Name <span class="required-star">*</span>
                             </label>
-                            <input type="text" id="firstName" class="form-control" required >
+                            <input type="text" id="firstName" class="form-control" required>
                             <div class="form-error" id="firstNameError"></div>
                         </div>
 
@@ -2125,266 +2125,320 @@
     </script>
 
     <script>
-        // Application Form Functionality
+
+
         document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('applicationModal');
-            const closeModal = document.getElementById('closeModal');
-            const cancelBtn = document.getElementById('cancelBtn');
-            const closeSuccess = document.getElementById('closeSuccess');
-            const jobApplyBtns = document.querySelectorAll('.job-apply-btn');
-            const jobTitleElement = document.getElementById('jobTitle');
-            const applicationForm = document.getElementById('applicationForm');
-            const formContainer = document.getElementById('formContainer');
-            const successMessage = document.getElementById('successMessage');
-            const fileUpload = document.getElementById('fileUpload');
-            const resumeInput = document.getElementById('resume');
-            const fileName = document.getElementById('fileName');
-            const coverLetter = document.getElementById('coverLetter');
-            const coverLetterCounter = document.getElementById('coverLetterCounter');
-            const sourceSelect = document.getElementById('source');
-            const otherSourceContainer = document.getElementById('otherSourceContainer');
-            const otherSourceInput = document.getElementById('otherSource');
-            const submitBtn = applicationForm.querySelector('.submit-btn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
+                const modal = document.getElementById('applicationModal');
+                const closeModal = document.getElementById('closeModal');
+                const cancelBtn = document.getElementById('cancelBtn');
+                const closeSuccess = document.getElementById('closeSuccess');
+                const jobApplyBtns = document.querySelectorAll('.job-apply-btn');
+                const jobTitleElement = document.getElementById('jobTitle');
+                const applicationForm = document.getElementById('applicationForm');
+                const formContainer = document.getElementById('formContainer');
+                const successMessage = document.getElementById('successMessage');
+                const fileUpload = document.getElementById('fileUpload');
+                const resumeInput = document.getElementById('resume');
+                const fileName = document.getElementById('fileName');
+                const coverLetter = document.getElementById('coverLetter');
+                const coverLetterCounter = document.getElementById('coverLetterCounter');
+                const sourceSelect = document.getElementById('source');
+                const otherSourceContainer = document.getElementById('otherSourceContainer');
+                const otherSourceInput = document.getElementById('otherSource');
+                const submitBtn = applicationForm.querySelector('.submit-btn');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
 
-            // Character counter for cover letter
-            coverLetter.addEventListener('input', function () {
-                const length = this.value.length;
-                coverLetterCounter.textContent = `${length}/500 characters`;
+                // Validation regex patterns
+                const regexPatterns = {
+                    name: /^[A-Za-z\s]{1,18}$/, // Letters and spaces, 2-50 characters
+                    email: /^[^\s@]+@[^\s@]+\.com$/, // Email must end with .com
+                    phone: /^\+?[0-9\s\-\(\)]{1,10}$/, // Phone number with optional country code
+                };
 
-                if (length > 450) {
-                    coverLetterCounter.classList.add('near-limit');
-                    coverLetterCounter.classList.remove('over-limit');
-                } else if (length > 500) {
-                    coverLetterCounter.classList.remove('near-limit');
-                    coverLetterCounter.classList.add('over-limit');
-                } else {
-                    coverLetterCounter.classList.remove('near-limit', 'over-limit');
-                }
-            });
-
-            // Show/hide other source input
-            sourceSelect.addEventListener('change', function () {
-                if (this.value === 'other') {
-                    otherSourceContainer.classList.add('active');
-                    otherSourceInput.required = true;
-                } else {
-                    otherSourceContainer.classList.remove('active');
-                    otherSourceInput.required = false;
-                    otherSourceInput.value = '';
-                }
-            });
-
-            // Open modal when Apply Now is clicked
-            jobApplyBtns.forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const jobTitle = this.getAttribute('data-job');
-                    jobTitleElement.textContent = jobTitle;
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
-                });
-            });
-
-            // Close modal functions
-            function closeApplicationModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
-                // Reset form and show form again
-                applicationForm.reset();
-                fileName.textContent = '';
-                fileUpload.classList.remove('has-file');
-                formContainer.style.display = 'block';
-                successMessage.classList.remove('active');
-                coverLetterCounter.textContent = '0/500 characters';
-                coverLetterCounter.classList.remove('near-limit', 'over-limit');
-                otherSourceContainer.classList.remove('active');
-                otherSourceInput.required = false;
-
-                // Clear error states
-                document.querySelectorAll('.form-control').forEach(input => {
-                    input.classList.remove('error');
-                });
-                document.querySelectorAll('.form-error').forEach(error => {
-                    error.style.display = 'none';
-                });
-
-                // Reset button state
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-
-            closeModal.addEventListener('click', closeApplicationModal);
-            cancelBtn.addEventListener('click', closeApplicationModal);
-            closeSuccess.addEventListener('click', closeApplicationModal);
-
-            // Close modal when clicking outside content
-            modal.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    closeApplicationModal();
-                }
-            });
-
-            // File upload functionality
-            fileUpload.addEventListener('click', function () {
-                resumeInput.click();
-            });
-
-            resumeInput.addEventListener('change', function () {
-                if (this.files.length > 0) {
-                    const file = this.files[0];
-                    const fileSize = file.size / 1024 / 1024; // MB
-
-                    if (fileSize > 5) {
-                        showError('resume', 'File size must be less than 5MB');
-                        this.value = '';
-                        fileName.textContent = '';
-                        fileUpload.classList.remove('has-file');
-                    } else {
-                        fileName.textContent = file.name;
-                        fileUpload.classList.add('has-file');
-                        clearError('resume');
+                // Show error message
+                function showError(fieldId, message) {
+                    const errorElement = document.getElementById(fieldId + 'Error');
+                    const inputElement = document.getElementById(fieldId);
+                    if (errorElement && inputElement) {
+                        errorElement.textContent = message;
+                        errorElement.style.display = 'block';
+                        inputElement.classList.add('error');
                     }
-                } else {
-                    fileName.textContent = '';
-                    fileUpload.classList.remove('has-file');
                 }
-            });
 
-            // Form validation functions
-            function showError(fieldId, message) {
-                const errorElement = document.getElementById(fieldId + 'Error');
-                const inputElement = document.getElementById(fieldId);
-
-                if (errorElement && inputElement) {
-                    errorElement.textContent = message;
-                    errorElement.style.display = 'block';
-                    inputElement.classList.add('error');
+                // Clear error message
+                function clearError(fieldId) {
+                    const errorElement = document.getElementById(fieldId + 'Error');
+                    const inputElement = document.getElementById(fieldId);
+                    if (errorElement && inputElement) {
+                        errorElement.textContent = '';
+                        errorElement.style.display = 'none';
+                        inputElement.classList.remove('error');
+                    }
                 }
-            }
 
-            function clearError(fieldId) {
-                const errorElement = document.getElementById(fieldId + 'Error');
-                const inputElement = document.getElementById(fieldId);
+                // Validate individual field
+                function validateField(field) {
+                    const fieldId = field.id;
+                    const value = field.value.trim();
 
-                if (errorElement && inputElement) {
-                    errorElement.style.display = 'none';
-                    inputElement.classList.remove('error');
-                }
-            }
-
-            function validateForm() {
-                let isValid = true;
-
-                // Validate required fields
-                const requiredFields = [
-                    'firstName', 'lastName', 'email', 'phone',
-                    'experience', 'education', 'source'
-                ];
-
-                requiredFields.forEach(fieldId => {
-                    const field = document.getElementById(fieldId);
-                    if (!field.value.trim()) {
+                    if (field.required && !value) {
                         showError(fieldId, 'This field is required');
-                        isValid = false;
-                    } else {
-                        clearError(fieldId);
+                        return false;
                     }
-                });
 
-                // Validate email format
-                const email = document.getElementById('email');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (email.value && !emailRegex.test(email.value)) {
-                    showError('email', 'Please enter a valid email address');
-                    isValid = false;
-                }
-
-                // Validate phone format (basic validation)
-                const phone = document.getElementById('phone');
-                const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
-                if (phone.value && !phoneRegex.test(phone.value)) {
-                    showError('phone', 'Please enter a valid phone number');
-                    isValid = false;
+                    switch (fieldId) {
+                        case 'firstName':
+                        case 'lastName':
+                            if (value && !regexPatterns.name.test(value)) {
+                                showError(fieldId, 'Please enter a valid name');
+                                return false;
+                            }
+                            break;
+                        case 'email':
+                            if (value && !regexPatterns.email.test(value)) {
+                                showError(fieldId, 'Please enter a valid email address');
+                                return false;
+                            }
+                            break;
+                        case 'phone':
+                            if (value && !regexPatterns.phone.test(value)) {
+                                showError(fieldId, 'Please enter a valid phone number ');
+                                return false;
+                            }
+                            break;
+                        case 'experience':
+                        case 'education':
+                        case 'source':
+                            if (!value) {
+                                showError(fieldId, 'Please select an option');
+                                return false;
+                            }
+                            break;
+                        case 'otherSource':
+                            if (sourceSelect.value === 'other' && !value) {
+                                showError('source', 'Please specify how you heard about us');
+                                return false;
+                            }
+                            break;
+                    }
+                    clearError(fieldId);
+                    return true;
                 }
 
                 // Validate file upload
-                if (!resumeInput.files.length) {
-                    showError('resume', 'Please upload your resume');
-                    isValid = false;
+                function validateFile() {
+                    if (!resumeInput.files.length) {
+                        showError('resume', 'Please upload your resume');
+                        return false;
+                    }
+                    const file = resumeInput.files[0];
+                    const fileSize = file.size / 1024 / 1024; // Size in MB
+                    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+                    if (!validTypes.includes(file.type)) {
+                        showError('resume', 'Please upload a PDF, DOC, or DOCX file');
+                        return false;
+                    }
+                    // if (fileSize > 5) {
+                    //     showError('resume', 'File size must be less than 5MB');
+                    //     return false;
+                    // }
+                    
+                    clearError('resume');
+                    return true;
                 }
 
-                // Validate other source if selected
-                if (sourceSelect.value === 'other' && !otherSourceInput.value.trim()) {
-                    showError('source', 'Please specify how you heard about us');
-                    isValid = false;
+                // Validate cover letter
+                function validateCoverLetter() {
+                    const length = coverLetter.value.length;
+                    if (length > 500) {
+                        showError('coverLetter', 'Cover letter cannot exceed 500 characters');
+                        return false;
+                    }
+                    clearError('coverLetter');
+                    return true;
                 }
 
-                return isValid;
-            }
+                // Validate entire form
+                function validateForm() {
+                    let isValid = true;
+                    const fields = ['firstName', 'lastName', 'email', 'phone', 'experience', 'education', 'source'];
 
-            // Form submission
-            applicationForm.addEventListener('submit', function (e) {
-                e.preventDefault();
+                    fields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!validateField(field)) {
+                            isValid = false;
+                        }
+                    });
 
-                if (!validateForm()) {
-                    return;
+                    if (!validateFile()) {
+                        isValid = false;
+                    }
+
+                    if (!validateCoverLetter()) {
+                        isValid = false;
+                    }
+
+                    if (sourceSelect.value === 'other') {
+                        if (!validateField(otherSourceInput)) {
+                            isValid = false;
+                        }
+                    }
+
+                    return isValid;
                 }
 
-                // Show loading state
-                btnText.style.display = 'none';
-                btnLoading.style.display = 'flex';
-                submitBtn.disabled = true;
+                // Character counter for cover letter
+                coverLetter.addEventListener('input', function () {
+                    const length = this.value.length;
+                    coverLetterCounter.textContent = `${length}/500 characters`;
+                    if (length > 450) {
+                        coverLetterCounter.classList.add('near-limit');
+                        coverLetterCounter.classList.remove('over-limit');
+                    } else if (length > 500) {
+                        coverLetterCounter.classList.remove('near-limit');
+                        coverLetterCounter.classList.add('over-limit');
+                    } else {
+                        coverLetterCounter.classList.remove('near-limit', 'over-limit');
+                    }
+                    validateCoverLetter();
+                });
 
-                // Simulate form submission (replace with actual API call)
-                setTimeout(() => {
-                    // Hide form and show success message
-                    formContainer.style.display = 'none';
-                    successMessage.classList.add('active');
+                // Show/hide other source input
+                sourceSelect.addEventListener('change', function () {
+                    if (this.value === 'other') {
+                        otherSourceContainer.classList.add('active');
+                        otherSourceInput.required = true;
+                    } else {
+                        otherSourceContainer.classList.remove('active');
+                        otherSourceInput.required = false;
+                        otherSourceInput.value = '';
+                        clearError('source');
+                    }
+                    validateField(this);
+                });
+
+                // Open modal
+                jobApplyBtns.forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const jobTitle = this.getAttribute('data-job');
+                        jobTitleElement.textContent = jobTitle;
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+
+                // Close modal
+                function closeApplicationModal() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    applicationForm.reset();
+                    fileName.textContent = '';
+                    fileUpload.classList.remove('has-file');
+                    formContainer.style.display = 'block';
+                    successMessage.classList.remove('active');
+                    coverLetterCounter.textContent = '0/500 characters';
+                    coverLetterCounter.classList.remove('near-limit', 'over-limit');
+                    otherSourceContainer.classList.remove('active');
+                    otherSourceInput.required = false;
+
+                    // Clear all errors
+                    document.querySelectorAll('.form-control').forEach(input => {
+                        input.classList.remove('error');
+                    });
+                    document.querySelectorAll('.form-error').forEach(error => {
+                        error.textContent = '';
+                        error.style.display = 'none';
+                    });
 
                     // Reset button state
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
-                }, 2000);
-            });
+                }
 
-            // Real-time validation for required fields
-            const requiredInputs = applicationForm.querySelectorAll('input[required], select[required]');
-            requiredInputs.forEach(input => {
-                input.addEventListener('blur', function () {
-                    if (!this.value.trim()) {
-                        showError(this.id, 'This field is required');
-                    } else {
-                        clearError(this.id);
+                closeModal.addEventListener('click', closeApplicationModal);
+                cancelBtn.addEventListener('click', closeApplicationModal);
+                closeSuccess.addEventListener('click', closeApplicationModal);
+
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        closeApplicationModal();
                     }
                 });
-            });
 
-            // Real-time validation for email
-            const emailInput = document.getElementById('email');
-            emailInput.addEventListener('blur', function () {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (this.value && !emailRegex.test(this.value)) {
-                    showError('email', 'Please enter a valid email address');
-                } else if (this.value) {
-                    clearError('email');
-                }
-            });
+                // File upload handling
+                fileUpload.addEventListener('click', function () {
+                    resumeInput.click();
+                });
 
-            // Real-time validation for phone
-            const phoneInput = document.getElementById('phone');
-            phoneInput.addEventListener('blur', function () {
-                const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
-                if (this.value && !phoneRegex.test(this.value)) {
-                    showError('phone', 'Please enter a valid phone number');
-                } else if (this.value) {
-                    clearError('phone');
-                }
+                resumeInput.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        const file = this.files[0];
+                        fileName.textContent = file.name;
+                        fileUpload.classList.add('has-file');
+                        validateFile();
+                    } else {
+                        fileName.textContent = '';
+                        fileUpload.classList.remove('has-file');
+                        showError('resume', 'Please upload your resume');
+                    }
+                });
+
+                // Real-time validation
+                const inputs = applicationForm.querySelectorAll('input[required], select[required]');
+                inputs.forEach(input => {
+                    input.addEventListener('input', function () {
+                        validateField(this);
+                    });
+                    input.addEventListener('blur', function () {
+                        validateField(this);
+                    });
+                });
+
+                // Form submission
+                applicationForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (!validateForm()) {
+                        return;
+                    }
+
+                    // Show loading state
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'flex';
+                    submitBtn.disabled = true;
+
+                    // Simulate form submission (replace with actual API call)
+                    setTimeout(() => {
+                        formContainer.style.display = 'none';
+                        successMessage.classList.add('active');
+                        btnText.style.display = 'inline';
+                        btnLoading.style.display = 'none';
+                        submitBtn.disabled = false;
+
+                        // Log form data for debugging (remove in production)
+                        const formData = new FormData(applicationForm);
+                        console.log('Form Data:', {
+                            firstName: formData.get('firstName'),
+                            lastName: formData.get('lastName'),
+                            email: formData.get('email'),
+                            phone: formData.get('phone'),
+                            experience: formData.get('experience'),
+                            education: formData.get('education'),
+                            coverLetter: formData.get('coverLetter'),
+                            resume: formData.get('resume')?.name,
+                            source: formData.get('source'),
+                            otherSource: formData.get('otherSource'),
+                            jobTitle: jobTitleElement.textContent
+                        });
+                    }, 2000);
+                });
             });
-        });
+        
         
     </script>
 
