@@ -239,6 +239,7 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-align: left;
         }
 
         /* Overview Section */
@@ -1261,14 +1262,16 @@
                     </div>
                 </div>
                 <div class="services-image">
-                    <!-- Image with fallback placeholder -->
-                    <img src="./uploads/1sr.jpg" alt="AI Solutions"
-                        onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
-                    <div class="image-placeholder" id="image-placeholder" style="display:none;">
-                        <!-- <i class="fas fa-brain"></i>
-                        <p>AI Solutions Visualization</p> -->
-
+                    <!-- Show placeholder initially -->
+                    <div class="image-placeholder" id="image-placeholder">
+                        <i class="fas fa-brain"></i>
+                        <p>AI Solutions Visualization</p>
                     </div>
+
+                    <!-- Image loads in background, replaces placeholder when ready -->
+                    <img src="./uploads/1sr.jpg" alt="AI Solutions" style="display:none;"
+                        onload="this.style.display='block'; document.getElementById('image-placeholder').style.display='none';"
+                        onerror="this.style.display='none';">
                 </div>
             </div>
         </div>
@@ -1276,215 +1279,228 @@
 
     <!-- Flashcard Services Section -->
     <!-- Flashcard Services Section -->
-<section class="section-padding flashcards-section">
-    <div class="container">
-        <h2 class="flashcards-title">Next-Gen Technology Solutions for Your Business</h2>
-        <div class="flashcards-grid">
-            <!-- Web Design & Development -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/web-design-development.jpg" alt="Web Design & Development" />
+    <section class="section-padding flashcards-section">
+        <div class="container">
+            <h2 class="flashcards-title">Next-Gen Technology Solutions for Your Business</h2>
+            <div class="flashcards-grid">
+                <!-- Web Design & Development -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/web-design-development.jpg" alt="Web Design & Development" />
+                            </div>
+                            <h3 class="service-title">Web Design & Development</h3>
                         </div>
-                        <h3 class="service-title">Web Design & Development</h3>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Web Design & Development</h3>
+                            <p class="service-desc">Create stunning, responsive websites that deliver exceptional user
+                                experiences and drive business growth with modern design principles.</p>
+                            <a href="web-design-development.html" class="service-cta">Explore Service</a>
+                        </div>
                     </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Web Design & Development</h3>
-                        <p class="service-desc">Create stunning, responsive websites that deliver exceptional user experiences and drive business growth with modern design principles.</p>
-                        <a href="web-design-development.html" class="service-cta">Explore Service</a>
+                </div>
+
+                <!-- Web App Development -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/wdd1.jpg" alt="Web App Development" />
+                            </div>
+                            <h3 class="service-title">Web App Development</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Web App Development</h3>
+                            <p class="service-desc">Build powerful, scalable web applications that streamline
+                                operations, enhance productivity, and deliver seamless user experiences.</p>
+                            <a href="web-app-development.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Software Development -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/Custom Software Development.jpg"
+                                    alt="Custom Software Development" />
+                            </div>
+                            <h3 class="service-title">Custom Software Development</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Custom Software Development</h3>
+                            <p class="service-desc">Build scalable and flexible custom software designed to meet your
+                                business needs with precision and innovation.</p>
+                            <a href="CustomSoftware.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom CRM Solutions -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/crm.jpg" alt="Custom CRM Solutions" />
+                            </div>
+                            <h3 class="service-title">Custom CRM Solutions</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Custom CRM Solutions</h3>
+                            <p class="service-desc">Implement tailored CRM systems to optimize customer relationships,
+                                streamline sales processes, and enhance customer satisfaction.</p>
+                            <a href="crm-solutions.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom ERP Solutions -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/ERP_solution.jpg" alt="Custom ERP Solutions" />
+                            </div>
+                            <h3 class="service-title">Custom ERP Solutions</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Custom ERP Solutions</h3>
+                            <p class="service-desc">Streamline business operations with customized ERP systems that
+                                integrate processes, improve efficiency, and provide real-time insights.</p>
+                            <a href="erp-solutions.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing-Invoice -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/billing.jpg" alt="Billing-Invoice Solutions" />
+                            </div>
+                            <h3 class="service-title">Billing-Invoice Solutions</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Billing-Invoice Solutions</h3>
+                            <p class="service-desc">Automate and streamline your billing and invoicing processes with
+                                customized solutions that improve accuracy and efficiency.</p>
+                            <a href="Billing-invoice.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Strategy & Consulting -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/AI Strategy & Consulting.jpg" alt="AI Strategy & Consulting" />
+                            </div>
+                            <h3 class="service-title">AI Strategy & Consulting</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">AI Strategy & Consulting</h3>
+                            <p class="service-desc">Unlock efficiency and growth with AI-driven strategies tailored to
+                                your business goals. Stay ahead in the digital era with expert AI consulting.</p>
+                            <a href="AIStrategy.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Services -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/dm.jpg" alt="Digital Marketing Services" />
+                            </div>
+                            <h3 class="service-title">Digital Marketing Services</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Digital Marketing Services</h3>
+                            <p class="service-desc">Boost your online presence with comprehensive digital marketing
+                                strategies including SEO, social media, and content marketing.</p>
+                            <a href="DigitalMarketing.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Development -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/Mobile App Development.jpg" alt="Mobile App Development" />
+                            </div>
+                            <h3 class="service-title">Mobile App Development</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Mobile App Development</h3>
+                            <p class="service-desc">Create engaging, user-friendly mobile apps that scale with your
+                                business while delivering seamless digital experiences.</p>
+                            <a href="MobileDevelopment.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design Services -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/ui.jpg" alt="UI/UX Design Services" />
+                            </div>
+                            <h3 class="service-title">UI/UX Design Services</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">UI/UX Design Services</h3>
+                            <p class="service-desc">Deliver exceptional digital journeys with intuitive UI/UX design
+                                that boosts usability, engagement, and customer satisfaction.</p>
+                            <a href="ui.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Solutions -->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/Cloud Solutions.jpg" alt="Cloud Solutions" />
+                            </div>
+                            <h3 class="service-title">Cloud Solutions</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">Cloud Solutions</h3>
+                            <p class="service-desc">Securely scale your business with customized cloud solutions for
+                                hosting, storage, and enterprise-grade operations.</p>
+                            <a href="CloudSolutions.html" class="service-cta">Explore Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HRMS Solutions-->
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="service-icon">
+                                <img src="./uploads/hr.jpg" alt="HRMS Solutions" />
+                            </div>
+                            <h3 class="service-title">HRMS Solutions</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3 class="service-title">HRMS Solutions</h3>
+                            <p class="service-desc">Optimize your human resource management with tailored HRMS solutions
+                                that streamline recruitment, payroll, and employee engagement.</p>
+                            <a href="HRMS-Solutions.html" class="service-cta">Explore Service</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Web App Development -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/wdd1.jpg" alt="Web App Development" />
-                        </div>
-                        <h3 class="service-title">Web App Development</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Web App Development</h3>
-                        <p class="service-desc">Build powerful, scalable web applications that streamline operations, enhance productivity, and deliver seamless user experiences.</p>
-                        <a href="web-app-development.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Custom Software Development -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/Custom Software Development.jpg" alt="Custom Software Development" />
-                        </div>
-                        <h3 class="service-title">Custom Software Development</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Custom Software Development</h3>
-                        <p class="service-desc">Build scalable and flexible custom software designed to meet your business needs with precision and innovation.</p>
-                        <a href="CustomSoftware.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Custom CRM Solutions -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/crm.jpg" alt="Custom CRM Solutions" />
-                        </div>
-                        <h3 class="service-title">Custom CRM Solutions</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Custom CRM Solutions</h3>
-                        <p class="service-desc">Implement tailored CRM systems to optimize customer relationships, streamline sales processes, and enhance customer satisfaction.</p>
-                        <a href="crm-solutions.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Custom ERP Solutions -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/ERP_solution.jpg" alt="Custom ERP Solutions" />
-                        </div>
-                        <h3 class="service-title">Custom ERP Solutions</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Custom ERP Solutions</h3>
-                        <p class="service-desc">Streamline business operations with customized ERP systems that integrate processes, improve efficiency, and provide real-time insights.</p>
-                        <a href="erp-solutions.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Billing-Invoice -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/billing.jpg" alt="Billing-Invoice Solutions" />
-                        </div>
-                        <h3 class="service-title">Billing-Invoice Solutions</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Billing-Invoice Solutions</h3>
-                        <p class="service-desc">Automate and streamline your billing and invoicing processes with customized solutions that improve accuracy and efficiency.</p>
-                        <a href="Billing-invoice.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Strategy & Consulting -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/AI Strategy & Consulting.jpg" alt="AI Strategy & Consulting" />
-                        </div>
-                        <h3 class="service-title">AI Strategy & Consulting</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">AI Strategy & Consulting</h3>
-                        <p class="service-desc">Unlock efficiency and growth with AI-driven strategies tailored to your business goals. Stay ahead in the digital era with expert AI consulting.</p>
-                        <a href="AIStrategy.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Digital Marketing Services -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/dm.jpg" alt="Digital Marketing Services" />
-                        </div>
-                        <h3 class="service-title">Digital Marketing Services</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Digital Marketing Services</h3>
-                        <p class="service-desc">Boost your online presence with comprehensive digital marketing strategies including SEO, social media, and content marketing.</p>
-                        <a href="DigitalMarketing.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile App Development -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/Mobile App Development.jpg" alt="Mobile App Development" />
-                        </div>
-                        <h3 class="service-title">Mobile App Development</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Mobile App Development</h3>
-                        <p class="service-desc">Create engaging, user-friendly mobile apps that scale with your business while delivering seamless digital experiences.</p>
-                        <a href="MobileDevelopment.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- UI/UX Design Services -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/ui.jpg" alt="UI/UX Design Services" />
-                        </div>
-                        <h3 class="service-title">UI/UX Design Services</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">UI/UX Design Services</h3>
-                        <p class="service-desc">Deliver exceptional digital journeys with intuitive UI/UX design that boosts usability, engagement, and customer satisfaction.</p>
-                        <a href="ui.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cloud Solutions -->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/Cloud Solutions.jpg" alt="Cloud Solutions" />
-                        </div>
-                        <h3 class="service-title">Cloud Solutions</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">Cloud Solutions</h3>
-                        <p class="service-desc">Securely scale your business with customized cloud solutions for hosting, storage, and enterprise-grade operations.</p>
-                        <a href="CloudSolutions.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!--HRMS Solutions-->
-            <div class="flashcard">
-                <div class="flashcard-inner">
-                    <div class="flashcard-front">
-                        <div class="service-icon">
-                            <img src="./uploads/hr.jpg" alt="HRMS Solutions" />
-                        </div>
-                        <h3 class="service-title">HRMS Solutions</h3>
-                    </div>
-                    <div class="flashcard-back">
-                        <h3 class="service-title">HRMS Solutions</h3>
-                        <p class="service-desc">Optimize your human resource management with tailored HRMS solutions that streamline recruitment, payroll, and employee engagement.</p>
-                        <a href="HRMS-Solutions.html" class="service-cta">Explore Service</a>
-                    </div>
-                </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Industries Section -->
     <section class="section-padding industries-section">
@@ -1606,7 +1622,7 @@
                                     Analysis</a>
                                 <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process
                                     Automation</a>
-                        
+
                             </div>
                         </div>
 
