@@ -267,6 +267,31 @@
     transform: translateX(5px);
 }
 
+ .dropdown-scroll {
+    max-height: 300px; /* Slightly less than parent to account for padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 8px 0; /* Add padding to scroll container */
+}
+
+/* Custom scrollbar styling */
+.dropdown-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -721,6 +746,11 @@
 
         @media (max-width: 768px) {
 
+
+                 .dropdown-scroll {
+        max-height: 250px; /* Smaller scroll container for mobile */
+    }
+
             /* Header adjustments */
             .logo {
                 font-size: 1.5rem;
@@ -878,15 +908,19 @@
                 <div class="dropdown">
                     <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
+                    <div class="dropdown-scroll">
                         <a href="web-design-development.html">Web Design & Development</a>
                         <a href="web-app-development.html">Web App Development</a>
-                        <a href="software-development.html">Software Development</a>
-                        <a href="crm-erp-solutions.html">CRM & ERP Solutions</a>
-                        <a href="AIStrategy.html">AI Strategy & Consulting</a>
                         <a href="CustomSoftware.html">Custom Software Development</a>
+                        <a href="crm-solutions.html">Custom CRM Solutions</a>
+                        <a href="erp-solutions.html">Custom ERP Solutions</a>
+                        <a href="Billing-invoice">Billing-Invoice</a>
+                        <a href="AIStrategy.html">AI Strategy & Consulting</a>
+                        <a href="DigitalMarketing.html">Digital Marketing Services</a>
                         <a href="MobileDevelopment.html">Mobile App Development</a>
                         <a href="ui.html">UI/UX Design Services</a>
                         <a href="CloudSolutions.html">Cloud Solutions</a>
+                    </div>
                     </div>
                 </div>
                 
