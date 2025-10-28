@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Solutions | Zonixtec - Transform Customer Relationships</title>
+    <meta name="description"
+        content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0044cc;
+            --secondary: #00f2ff;
+            --accent: #ff3366;
+            --dark: #050511;
+            --dark-light: #0a0a1a;
+            --light: #f5f5f5;
+            --gray: #94a3b8;
+            --success: #27ae60;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title span.pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 5px var(--secondary);
+            }
+
+            50% {
+                text-shadow: 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+            }
+
+            100% {
+                text-shadow: 0 0 5px var(--secondary);
+            }
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo .tech {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .cta-button {
+            background: var(--tech-gradient);
+            color: var(--dark);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light);
+        }
+
+        /* Hero Section */
+        .crm-hero {
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .crm-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 242, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+            height: 500px;
+        }
+
+        .floating-cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(2) {
+            top: 50%;
+            right: -14%;
+            z-index: 1;
+            width: 200px;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        .floating-card:nth-child(3) {
+            bottom: 10%;
+            left: 44%;
+            width: 200px;
+            animation: float 5s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .card-text {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Features Section */
+        .interactive-features {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-container {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .feature-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-visual {
+            flex: 1;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .feature-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-list i {
+            color: var(--success);
+            margin-top: 5px;
+        }
+
+        /* Process Visualization */
+        .process-section {
+            position: relative;
+        }
+
+        .process-visual {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            width: 180px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 90px;
+            width: 100%;
+            height: 2px;
+            background: var(--tech-gradient);
+            z-index: -1;
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--tech-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--dark);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .step-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Demo */
+        .interactive-demo {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 60px;
+            margin-top: 80px;
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .demo-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .demo-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .demo-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .demo-controls {
+            flex: 1;
+        }
+
+        .control-group {
+            margin-bottom: 30px;
+        }
+
+        .control-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .control-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .control-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        .demo-visual {
+            flex: 1;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        /* Benefits Showcase */
+        .benefits-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .benefit-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--tech-gradient);
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><path fill="%23ffffff" d="M500,100 C700,100 900,200 900,500 C900,800 700,900 500,900 C300,900 100,800 100,500 C100,200 300,100 500,100 Z"/></svg>') no-repeat center center;
+            background-size: 80%;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button-large {
+            background: var(--dark);
+            color: var(--light);
+            padding: 18px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 80px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .feature-row,
+            .feature-row.reverse {
+                flex-direction: column;
+            }
+
+            .process-visual {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+            }
+
+            .process-step::before {
+                display: none;
+            }
+
+            .demo-container {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .interactive-demo {
+                padding: 40px 20px;
+            }
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .cta-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .benefits-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Zoni<span>x</span><span class="tech">tec</span></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="Services.html" class="active">Services</a>
+                    <a href="carrer.html">Career</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="crm-hero section-padding">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Transform Customer <span>Relationships</span></h1>
+                    <p class="hero-subtitle">Connect. Engage. Grow.</p>
+                    <p class="hero-description">At Zonixtec, we build intelligent CRM systems that help businesses
+                        manage customer relationships seamlessly. Our CRM solutions go beyond tracking interactions—they
+                        empower your sales, marketing, and service teams with actionable insights, automation, and
+                        unified communication channels.</p>
+                    <a href="#contact" class="cta-button">Let's Build Your CRM Solution</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="floating-card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="card-title">Sales Automation</h3>
+                            <p class="card-text">Streamline your sales process with intelligent automation</p>
+                        </div>
+                        <div class="floating-card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="card-title">360° Customer View</h3>
+                            <p class="card-text">Get complete visibility into customer interactions</p>
+                        </div>
+                        <div class="floating-card">
+                            <div class="card-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="card-title">AI-Powered Insights</h3>
+                            <p class="card-text">Leverage AI for predictive analytics and recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Features Section -->
+    <section class="interactive-features section-padding">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our <span>CRM Solutions</span></h2>
+            <p class="section-subtitle">We don't just develop CRMs—we build growth engines for your business with fully
+                customizable modules designed for your workflow</p>
+
+            <div class="features-container">
+                <div class="feature-row">
+                    <div class="feature-visual">
+                        <div class="demo-metric">
+                            <div class="metric-value">48%</div>
+                            <div class="metric-label">Increase in Sales Efficiency</div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Custom CRM Development</h3>
+                        <p class="feature-description">Tailor-made systems aligned with your unique sales, marketing,
+                            and support processes. We build CRMs that adapt to your workflow, not the other way around.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Fully customizable modules designed for your
+                                    workflow</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Integration with ERP, social media, and
+                                    communication tools</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Real-time insights for informed
+                                    decision-making</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-row reverse">
+                    <div class="feature-visual">
+                        <div class="demo-metric">
+                            <div class="metric-value">360°</div>
+                            <div class="metric-label">Customer Visibility</div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Centralized Customer Database</h3>
+                        <p class="feature-description">Bring all your customer data and business operations under one
+                            intelligent platform with 360° visibility into customer interactions and history.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Lead scoring, pipeline tracking, and
+                                    forecasting</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Automated workflows and notifications</span>
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> <span>Role-based access and data security</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-visual">
+                        <div class="demo-metric">
+                            <div class="metric-value">63%</div>
+                            <div class="metric-label">Faster Response Time</div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Seamless Integration</h3>
+                        <p class="feature-description">Connect your existing tools (ERP, email, telephony, etc.) for
+                            unified data flow and eliminate scattered customer data and missed opportunities.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Integration with third-party apps and
+                                    APIs</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Custom dashboards for analytics and
+                                    KPIs</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Cloud or on-premise deployment
+                                    flexibility</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Visualization -->
+    <section class="process-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Our CRM <span>Development Process</span></h2>
+            <p class="section-subtitle">A systematic approach to building your perfect CRM solution</p>
+
+            <div class="process-visual">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="step-title">Requirement Analysis</h3>
+                    <p class="step-description">Understand your business model, sales process, and goals</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="step-title">Design & Architecture</h3>
+                    <p class="step-description">Create data models, workflows, and UI/UX layouts</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="step-title">Development & Integration</h3>
+                    <p class="step-description">Build and connect CRM modules with your existing systems</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="step-title">Testing & QA</h3>
+                    <p class="step-description">Validate data accuracy, security, and performance</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="step-title">Deployment & Training</h3>
+                    <p class="step-description">Launch and onboard your team for smooth adoption</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="interactive-demo">
+                <div class="demo-header">
+                    <h2 class="demo-title">See the Impact of CRM</h2>
+                    <p class="demo-subtitle">Adjust the sliders to see how our CRM solutions can transform your business
+                        metrics</p>
+                </div>
+
+                <div class="demo-container">
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <label class="control-label">Sales Automation Level</label>
+                            <input type="range" min="0" max="100" value="30" class="control-slider"
+                                id="automation-slider">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Data Integration</label>
+                            <input type="range" min="0" max="100" value="40" class="control-slider"
+                                id="integration-slider">
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Analytics & Reporting</label>
+                            <input type="range" min="0" max="100" value="35" class="control-slider"
+                                id="analytics-slider">
+                        </div>
+                    </div>
+
+                    <div class="demo-visual">
+                        <div class="demo-metric">
+                            <div class="metric-value" id="result-value">42%</div>
+                            <div class="metric-label" id="result-label">Estimated Efficiency Gain</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Showcase -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Business <span>Impact</span></h2>
+            <p class="section-subtitle">How our CRM solutions drive tangible results for your business</p>
+
+            <div class="benefits-showcase">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="benefit-title">Improved Lead Conversion</h3>
+                    <p class="benefit-description">Streamlined sales processes and better lead management boost
+                        conversion rates and sales efficiency.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="benefit-title">Enhanced Customer Retention</h3>
+                    <p class="benefit-description">Personalized interactions and timely support enhance customer loyalty
+                        and satisfaction.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="benefit-title">Data-Driven Marketing</h3>
+                    <p class="benefit-description">Actionable customer insights enable targeted campaigns and effective
+                        campaign management.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="benefit-title">Seamless Collaboration</h3>
+                    <p class="benefit-description">Break down silos with unified customer data accessible across
+                        departments.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="benefit-title">Increased ROI</h3>
+                    <p class="benefit-description">Automation reduces manual work while insights help optimize sales and
+                        marketing spend.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Secure Data Handling</h3>
+                    <p class="benefit-description">Enterprise-grade security with encryption, access control, and
+                        compliance measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="cta-section">
+                <h2 class="cta-title">Ready to Transform Your Customer Relationships?</h2>
+                <p class="cta-subtitle">Let's build a CRM solution that drives growth, improves efficiency, and enhances
+                    customer satisfaction. Contact us for a free consultation and discover how our CRM expertise can
+                    benefit your business.</p>
+                <a href="contact.html" class="cta-button-large">Schedule a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                        <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                        <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software</a>
+                        <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <a href="web-design-development.html"><i class="fas fa-chevron-right"></i> Web Design &
+                            Development</a>
+                        <a href="web-app-development.html"><i class="fas fa-chevron-right"></i> Web App Development</a>
+                        <a href="crm-erp-solutions.html"><i class="fas fa-chevron-right"></i> CRM & ERP Solutions</a>
+                        <a href="ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design Services</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="footer-links">
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blog</a>
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Interactive demo functionality
+        const automationSlider = document.getElementById('automation-slider');
+        const integrationSlider = document.getElementById('integration-slider');
+        const analyticsSlider = document.getElementById('analytics-slider');
+        const resultValue = document.getElementById('result-value');
+        const resultLabel = document.getElementById('result-label');
+
+        function updateDemoResult() {
+            const automation = parseInt(automationSlider.value);
+            const integration = parseInt(integrationSlider.value);
+            const analytics = parseInt(analyticsSlider.value);
+
+            // Calculate a weighted result
+            const result = Math.round((automation * 0.4) + (integration * 0.3) + (analytics * 0.3));
+
+            resultValue.textContent = result + '%';
+
+            if (result < 30) {
+                resultLabel.textContent = 'Minimal Efficiency Gain';
+            } else if (result < 50) {
+                resultLabel.textContent = 'Moderate Efficiency Gain';
+            } else if (result < 70) {
+                resultLabel.textContent = 'Significant Efficiency Gain';
+            } else {
+                resultLabel.textContent = 'Maximum Efficiency Gain';
+            }
+        }
+
+        automationSlider.addEventListener('input', updateDemoResult);
+        integrationSlider.addEventListener('input', updateDemoResult);
+        analyticsSlider.addEventListener('input', updateDemoResult);
+
+        // Initialize the demo
+        updateDemoResult();
+
+        // Floating cards animation on scroll
+        const floatingCards = document.querySelectorAll('.floating-card');
+
+        function checkScroll() {
+            floatingCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (cardTop < windowHeight * 0.8) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initial state for animation
+        floatingCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+        });
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+    </script>
+</body>
+
+</html>
