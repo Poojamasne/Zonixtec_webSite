@@ -305,6 +305,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 104px;
             height: 400px;
             display: flex;
             align-items: center;
@@ -940,7 +941,8 @@
         }
     }
 }
-/* ===== Dropdown Styles ===== */
+
+/* ===== Updated Dropdown Styles with Scroll ===== */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -969,18 +971,45 @@
     background: rgba(15, 23, 42, 0.98);
     backdrop-filter: blur(15px);
     min-width: 280px;
+    max-height: 400px; /* Set max height for the dropdown */
     border-radius: 8px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(100, 116, 139, 0.3);
     z-index: 1000;
-    padding: 8px 0;
+    padding: 0; /* Remove padding from main container */
     margin-top: 8px;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow from main container */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
     animation: fadeInUp 0.3s ease;
+}
+
+/* Scrollable container for dropdown items */
+.dropdown-scroll {
+    max-height: 300px; /* Slightly less than parent to account for padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 8px 0; /* Add padding to scroll container */
+}
+
+/* Custom scrollbar styling */
+.dropdown-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 .dropdown-content a {
@@ -1014,7 +1043,7 @@
     }
 }
 
-/* Mobile dropdown styles */
+/* Mobile dropdown styles with scroll */
 @media (max-width: 768px) {
     .dropdown {
         width: 100%;
@@ -1029,7 +1058,12 @@
         margin: 10px 0;
         display: none;
         width: 100%;
-        padding: 8px 0;
+        max-height: 300px; /* Smaller max height for mobile */
+        padding: 0;
+    }
+    
+    .dropdown-scroll {
+        max-height: 250px; /* Smaller scroll container for mobile */
     }
     
     .dropdown.active .dropdown-content {
@@ -1077,18 +1111,41 @@
                 </div> -->
                 
                 <!-- Services Dropdown -->
-<div class="dropdown">
+<!-- <div class="dropdown">
     <a href="Services.html" class="active dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
     <div class="dropdown-content">
         <a href="web-design-development.html">Web Design & Development</a>
         <a href="web-app-development.html">Web App Development</a>
         <a href="software-development.html">Software Development</a>
-        <a href="crm-erp-solutions.html">CRM & ERP Solutions</a>
+        <a href="crm-solutions.html">Custom CRM Solutions</a>
+        <a href="erp-solutions.html">Custom ERP Solutions</a>
+        <a href="Billing-invoice">Billing-Invoice</a>
         <a href="AIStrategy.html">AI Strategy & Consulting</a>
         <a href="CustomSoftware.html">Custom Software Development</a>
+        <a href="DigitalMarketing.html">Digital Marketing Services</a>
         <a href="MobileDevelopment.html">Mobile App Development</a>
         <a href="ui.html">UI/UX Design Services</a>
         <a href="CloudSolutions.html">Cloud Solutions</a>
+    </div>
+</div> -->
+
+<!-- Services Dropdown with Scroll -->
+<div class="dropdown">
+    <a href="Services.html" class="active dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-content">
+        <div class="dropdown-scroll">
+            <a href="web-design-development.html">Web Design & Development</a>
+            <a href="web-app-development.html">Web App Development</a>
+            <a href="CustomSoftware.html">Custom Software Development</a>
+            <a href="crm-solutions.html">Custom CRM Solutions</a>
+            <a href="erp-solutions.html">Custom ERP Solutions</a>
+            <a href="Billing-invoice">Billing-Invoice</a>
+            <a href="AIStrategy.html">AI Strategy & Consulting</a>
+            <a href="DigitalMarketing.html">Digital Marketing Services</a>
+            <a href="MobileDevelopment.html">Mobile App Development</a>
+            <a href="ui.html">UI/UX Design Services</a>
+            <a href="CloudSolutions.html">Cloud Solutions</a>
+        </div>
     </div>
 </div>
                 <a href="carrer.html">Career</a>
@@ -1163,192 +1220,150 @@
     </section>
     
     <!-- Flashcard Services Section -->
-    <section class="section-padding flashcards-section">
-        <div class="container">
-            <h2 class="flashcards-title">Next-Gen Technology Solutions for Your Business</h2>
-            <div class="flashcards-grid">
-                <!-- Service 1 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-chess-queen"></i> -->
-                                <img src="./uploads/AI Strategy & Consulting.jpg" alt="AI Strategy" />
-                            </div>
-                            <h3 class="service-title">AI Strategy & Consulting</h3>
+    <!-- Flashcard Services Section -->
+<section class="section-padding flashcards-section">
+    <div class="container">
+        <h2 class="flashcards-title">Next-Gen Technology Solutions for Your Business</h2>
+        <div class="flashcards-grid">
+            <!-- Web Design & Development -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/web-design-development.jpg" alt="Web Design & Development" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">AI Strategy & Consulting</h3>
-                            <p class="service-desc">Unlock efficiency and growth with AI-driven strategies tailored to your business goals. Stay ahead in the digital era with expert AI consulting.</p>
-                            <a href="AIStrategy.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">Web Design & Development</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">Web Design & Development</h3>
+                        <p class="service-desc">Create stunning, responsive websites that deliver exceptional user experiences and drive business growth with modern design principles.</p>
+                        <a href="web-design-development.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-brain"></i> -->
-                                <img class="Imageset" src="./uploads/ML (1).webp" alt="Machine Learning" />
-                            </div>
-                            <h3 class="service-title">Machine Learning Solutions</h3>
+            </div>
+            
+            <!-- Web App Development -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/web-app-development.jpg" alt="Web App Development" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Machine Learning Solutions</h3>
-                            <p class="service-desc">Build intelligent machine learning models that adapt, learn, and deliver accurate, data-backed predictions.</p>
-                            <a href="MachineLearning.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">Web App Development</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">Web App Development</h3>
+                        <p class="service-desc">Build powerful, scalable web applications that streamline operations, enhance productivity, and deliver seamless user experiences.</p>
+                        <a href="web-app-development.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-comments"></i> -->
-                                <img class="ImgNLP" src="./uploads/Natural Language Processing (NLP).jpg" alt="Natural Language Processing" />
-                            </div>
-                            <h3 class="service-title">Natural Language Processing</h3>
+            </div>
+            
+            
+            <!-- CRM & ERP Solutions -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/crm-erp-solutions.jpg" alt="CRM & ERP Solutions" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Natural Language Processing</h3>
-                            <p class="service-desc">Transform communication with NLP solutions for chatbots, sentiment analysis, and voice assistants. Make conversations smarter and faster.</p>
-                            <a href="NLP.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">CRM & ERP Solutions</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">CRM & ERP Solutions</h3>
+                        <p class="service-desc">Implement integrated CRM and ERP systems to optimize customer relationships, streamline operations, and drive business efficiency.</p>
+                        <a href="crm-erp-solutions.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 4 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-eye"></i> -->
-                                <img src="./uploads/Computer Vision AI.jpg" alt="Computer Vision AI" />
-                            </div>
-                            <h3 class="service-title">Computer Vision AI</h3>
+            </div>
+            
+            <!-- AI Strategy & Consulting -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/AI Strategy & Consulting.jpg" alt="AI Strategy & Consulting" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Computer Vision AI</h3>
-                            <p class="service-desc">Enhance automation with AI-powered image and video recognition for smarter decision-making and real-time insights.</p>
-                            <a href="ComputerVision.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">AI Strategy & Consulting</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">AI Strategy & Consulting</h3>
+                        <p class="service-desc">Unlock efficiency and growth with AI-driven strategies tailored to your business goals. Stay ahead in the digital era with expert AI consulting.</p>
+                        <a href="AIStrategy.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 5 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-chart-line"></i> -->
-                                <img src="./uploads/Predictive Analytics.jpg" alt="Predictive Analytics" />
-                            </div>
-                            <h3 class="service-title">Predictive Analytics</h3>
+            </div>
+            
+            <!-- Custom Software Development -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/Custom Software Development.jpg" alt="Custom Software Development" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Predictive Analytics</h3>
-                            <p class="service-desc">Anticipate trends and make smarter decisions with predictive analytics solutions powered by AI and data science.</p>
-                            <a href="PredictiveAnalytics.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">Custom Software Development</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">Custom Software Development</h3>
+                        <p class="service-desc">Build scalable and flexible custom software designed to meet your business needs with precision and innovation.</p>
+                        <a href="CustomSoftware.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 6 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-cogs"></i> -->
-                                <img class="ImgInteligence" src="./uploads/Intelligent Process Automation.jpg" alt="Intelligent Process Automation" />
-                            </div>
-                            <h3 class="service-title">Intelligent Process Automation</h3>
+            </div>
+            
+            <!-- Mobile App Development -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/Mobile App Development.jpg" alt="Mobile App Development" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Intelligent Process Automation</h3>
-                            <p class="service-desc">Optimize workflows, reduce costs, and increase efficiency with AI-powered automation tailored to your business operations.</p>
-                            <a href="ProcessAutomation.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">Mobile App Development</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p class="service-desc">Create engaging, user-friendly mobile apps that scale with your business while delivering seamless digital experiences.</p>
+                        <a href="MobileDevelopment.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 7 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-code"></i> -->
-                                <img class="ImgCustom" src="./uploads/Custom Software Development.jpg" alt="Custom Software Development" />
-                            </div>
-                            <h3 class="service-title">Custom Software Development</h3>
+            </div>
+            
+            <!-- UI/UX Design Services -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/UX_UI Design Services.jpg" alt="UI/UX Design Services" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Custom Software Development</h3>
-                            <p class="service-desc">Build scalable and flexible custom software designed to meet your business needs with precision and innovation.</p>
-                            <a href="CustomSoftware.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">UI/UX Design Services</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">UI/UX Design Services</h3>
+                        <p class="service-desc">Deliver exceptional digital journeys with intuitive UI/UX design that boosts usability, engagement, and customer satisfaction.</p>
+                        <a href="ui.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
-                
-                <!-- Service 8 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-mobile-alt"></i> -->
-                                <img class = "ImgMobile" src="./uploads/Mobile App Development.jpg" alt="Mobile App Development" />
-                            </div>
-                            <h3 class="service-title">Mobile App Development</h3>
+            </div>
+            
+            <!-- Cloud Solutions -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="service-icon">
+                            <img src="./uploads/Cloud Solutions.jpg" alt="Cloud Solutions" />
                         </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Mobile App Development</h3>
-                            <p class="service-desc">Create engaging, user-friendly mobile apps that scale with your business while delivering seamless digital experiences.</p>
-                            <a href="MobileDevelopment.html" class="service-cta">Explore Service</a>
-                        </div>
+                        <h3 class="service-title">Cloud Solutions</h3>
                     </div>
-                </div>
-                
-                <!-- Service 9 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-palette"></i> -->
-                                <img src="./uploads/UX_UI Design Services.jpg" alt="UI/UX Design" />
-                            </div>
-                            <h3 class="service-title">UI/UX Design Services</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">UI/UX Design Services</h3>
-                            <p class="service-desc">Deliver exceptional digital journeys with intuitive UI/UX design that boosts usability, engagement, and customer satisfaction.</p>
-                            <a href="ui.html" class="service-cta">Explore Service</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service 10 -->
-                <div class="flashcard">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="service-icon">
-                                <!-- <i class="fas fa-cloud"></i> -->
-                                <img src="./uploads/Cloud Solutions.jpg" alt="Cloud Solutions" />
-                            </div>
-                            <h3 class="service-title">Cloud Solutions</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <h3 class="service-title">Cloud Solutions</h3>
-                            <p class="service-desc">Securely scale your business with customized cloud solutions for hosting, storage, and enterprise-grade operations.</p>
-                            <a href="CloudSolutions.html" class="service-cta">Explore Service</a>
-                        </div>
+                    <div class="flashcard-back">
+                        <h3 class="service-title">Cloud Solutions</h3>
+                        <p class="service-desc">Securely scale your business with customized cloud solutions for hosting, storage, and enterprise-grade operations.</p>
+                        <a href="CloudSolutions.html" class="service-cta">Explore Service</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- Industries Section -->
     <section class="section-padding industries-section">
@@ -1451,6 +1466,7 @@
               <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
               <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
               <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+              <a href="HRMS_Solutions.html"><i class="fas fa-chevron-right"></i>Human resources</a>
             </div>
           </div>
 

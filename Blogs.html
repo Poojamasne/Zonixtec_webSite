@@ -368,6 +368,29 @@
             gap: 12px;
         }
         
+         .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
         /* Blog Content */
         .blog-content-full {
             max-width: 900px;
@@ -771,10 +794,32 @@
     </header>
     
     <!-- Blog Hero -->
-    <section class="blog-hero">
+    <!-- <section class="blog-hero">
         <div class="container">
             <h1>Zonixtec Insights & Updates</h1>
             <p>Stay informed with the latest trends in technology, AI, and digital transformation from our experts</p>
+        </div>
+    </section> -->
+    
+        <section class="blog-hero">
+        <div class="container">
+            <h1>Zonixtec Insights & Updates</h1>
+            <p>Stay informed with the latest trends in technology, AI, and digital transformation from our experts</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Articles Published</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Monthly Readers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Industry Experts</span>
+                </div>
+            </div>
         </div>
     </section>
     
