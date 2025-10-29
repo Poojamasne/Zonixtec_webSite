@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQs | Zonixtec - Advanced AI Solutions</title>
+    <title>From CEO's Desk | Zonixtec - Advanced AI Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,11 +53,11 @@
         }
         
         .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 5rem;
-    position: relative;
-}
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
         
         .section-title span {
             color: var(--secondary);
@@ -245,105 +245,208 @@
             }
         }
         
-        /* FAQ Section */
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
+        /* CEO Hero Section */
+        .ceo-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .faq-item {
+        .ceo-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 102, 255, 0.1), transparent 70%);
+            z-index: -1;
+        }
+        
+        .ceo-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .ceo-hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .ceo-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .ceo-stat-item {
+            text-align: center;
+        }
+        
+        .ceo-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .ceo-stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* CEO Section */
+        .ceo-section {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
+            padding: 50px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+        
+        .ceo-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .ceo-quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            position: relative;
+            line-height: 1.4;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .ceo-quote::before, .ceo-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.7;
+            position: absolute;
+        }
+        
+        .ceo-quote::before {
+            top: -15px;
+            left: 0;
+        }
+        
+        .ceo-quote::after {
+            bottom: -30px;
+            right: 0;
+        }
+        
+        .ceo-content {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
             margin-bottom: 20px;
-            overflow: hidden;
+        }
+        
+        .ceo-content p {
+            margin-bottom: 25px;
+        }
+        
+        .ceo-content strong {
+            color: var(--secondary);
+        }
+        
+        .ceo-signature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .ceo-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--dark);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+        
+        .ceo-info h4 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .ceo-info p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        /* Vision Section */
+        .vision-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .vision-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
         
-        .faq-item:hover {
-            border-color: rgba(0, 102, 255, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
-        }
-        
-        .faq-question {
-            padding: 25px 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--light);
-            transition: all 0.3s ease;
-        }
-        
-        .faq-question:hover {
-            color: var(--secondary);
-        }
-        
-        .faq-question i {
-            transition: transform 0.3s ease;
-            color: var(--primary);
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            padding: 0 30px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 0 30px 25px;
-            max-height: 500px;
-        }
-        
-        .faq-answer p {
-            margin-bottom: 15px;
-        }
-        
-        .faq-answer p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .search-box {
-            max-width: 600px;
-            margin: 0 auto 50px;
-            position: relative;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(10, 10, 26, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            color: var(--light);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .search-box input:focus {
+        .vision-card:hover {
+            transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
         }
         
-        .search-box i {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+        .vision-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .vision-title {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .vision-description {
             color: var(--gray);
+            line-height: 1.6;
         }
         
-        .contact-cta {
+        /* Newsletter Section */
+        .newsletter-section {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
             padding: 60px;
@@ -352,19 +455,55 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        .contact-cta h2 {
-            font-size: 2.5rem;
+        .newsletter-section h2 {
+            font-size: 2.2rem;
             color: var(--secondary);
             margin-bottom: 20px;
         }
         
-        .contact-cta p {
+        .newsletter-section p {
             color: var(--gray);
             font-size: 1.2rem;
             margin-bottom: 30px;
-            max-width: 700px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px 0 0 30px;
+            color: var(--light);
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-input:focus {
+            border-color: var(--primary);
+        }
+        
+        .newsletter-btn {
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
         }
         
         /* Footer */
@@ -379,9 +518,6 @@
             grid-template-columns: repeat(4, minmax(150px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
-        }
-        .setFooter{
-            margin-right: 200px;
         }
         
         .footer-col h3 {
@@ -418,35 +554,6 @@
             font-size: 0.8rem;
         }
         
-        .form-group {
-            display: flex;
-            margin-top: 20px;
-        }
-        
-        .form-control {
-            flex: 1;
-            padding: 11px 3px;
-            border: none;
-            border-radius: 30px 0 0 30px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            outline: none;
-        }
-        
-        .submit-btn {
-            background: var(--primary);
-            color: var(--light);
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 30px 30px 0;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            background: var(--primary-dark);
-        }
-        
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -480,6 +587,12 @@
         }
 
         /* Responsive Styles */
+        @media (max-width: 992px) {
+            .vision-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .footer-container {
                 display: flex;
@@ -512,31 +625,53 @@
                 display: block;
             }
             
+            .ceo-hero h1 {
+                font-size: 2.5rem;
+            }
+            
             .section-title {
                 font-size: 2rem;
             }
             
-            .contact-cta {
+            .ceo-section {
+                padding: 30px 20px;
+            }
+            
+            .ceo-quote {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter-section {
                 padding: 40px 20px;
             }
             
-            .faq-question {
-                padding: 20px;
-                font-size: 1rem;
+            .newsletter-form {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .faq-answer {
-                padding: 0 20px;
+            .newsletter-input, .newsletter-btn {
+                border-radius: 30px;
+                width: 100%;
             }
             
-            .faq-item.active .faq-answer {
-                padding: 0 20px 20px;
+            .ceo-stats {
+                flex-direction: column;
+                gap: 20px;
             }
         }
         
         @media (max-width: 576px) {
-            .section-padding {
-                padding: 60px 0;
+            .vision-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .ceo-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .ceo-quote {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -578,173 +713,89 @@
         </div>
     </header>
     
-    <!-- FAQ Section -->
-    <section class="section-padding" id="faq">
+    <!-- CEO Hero Section -->
+    <section class="ceo-hero">
         <div class="container">
-            <h1 class="section-title">Frequently Asked <span>Questions</span></h1>
-            <p class="hero-subtitle">Find answers to common questions about our services, processes, and how we can help your business grow</p>
+            <h1>From CEO's Desk</h1>
+            <p>Direct insights from our leadership on Zonixtec's vision, journey, and the future of technology</p>
             
-            <div class="search-box">
-                <input type="text" id="faq-search" placeholder="Search for questions or keywords...">
-                <i class="fas fa-search"></i>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>1. What services does Zonixtec offer?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We specialize in Digital Experience Services, e-commerce solutions (web & mobile), Performance Testing, Application Modernization Services, Monitoring, and Maintenance.</p>
-                    </div>
+            <!-- <div class="ceo-stats">
+                <div class="ceo-stat-item">
+                    <span class="ceo-stat-number">5</span>
+                    <span class="ceo-stat-label">Passionate Developers Started</span>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>2. Who can benefit from Zonixtec's services?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our solutions are designed for startups, Small and medium enterprises, and enterprises looking to scale, modernize, or outsource their technology needs.</p>
-                    </div>
+                <div class="ceo-stat-item">
+                    <span class="ceo-stat-number">45%</span>
+                    <span class="ceo-stat-label">Sales Boost for First Client</span>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>3. How is Zonixtec different from other IT service providers?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We combine innovation, scalability, and personalized engagement. Unlike one-size-fits-all providers, we customize every solution to your business goals and growth stage.</p>
-                    </div>
+                <div class="ceo-stat-item">
+                    <span class="ceo-stat-number">2024</span>
+                    <span class="ceo-stat-label">Milestone Year</span>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>4. How does Zonixtec help businesses with AI solutions?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We provide end-to-end AI services, including Natural Language Processing (NLP), Computer Vision, Predictive Analytics, and Process Automation. Our team designs tailored AI strategies to help businesses cut costs, improve customer experiences, and make smarter data-driven decisions.</p>
-                    </div>
+            </div> -->
+        </div>
+    </section>
+    
+    <!-- CEO Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="ceo-section">
+                <div class="ceo-quote">"Some journeys start with code. Ours started with a belief that technology can truly change lives."</div>
+                <div class="ceo-content">
+                    <p>When I think back to the early days of Zonixtec IT Services, I remember sitting in a small room with just five passionate developers, all sharing one dream: to build technology that truly makes a difference. I often tell people, the idea wasn't just to write code — it was to create solutions that solve real problems, help businesses grow, and push the boundaries of what technology can do.</p>
+                    
+                    <p>2024 was a milestone year. We secured our first major enterprise client and delivered a custom <strong>CRM solution that boosted their sales by 45%</strong>. That moment wasn't just a number on a report — it was validation that our vision of AI-powered solutions, High-end technologies, and <strong>tailored software development could create tangible results</strong>. I still remember the celebration in that small office — a mix of relief, pride, and excitement for what was to come.</p>
+                    
+                    <p>Later that year, we took another bold step: opening our own office. It wasn't just a physical space — it became the heartbeat of our culture. A place where ideas collide, creativity flourishes, and collaboration drives impact. Today, Zonixtec has grown beyond those first five developers, delivering AI-powered solutions, cloud services, and digital transformation projects for clients across industries, all while keeping Quality and Client satisfaction at the center.</p>
+                    
+                    <p>Looking forward, I see limitless possibilities. Our mission is clear: to push boundaries, embrace emerging High-end technologies, and create solutions that empower businesses while making an impact on people's lives. At Zonixtec, every project, every innovation, and every success story is a testament to our belief that technology, when combined with passion and purpose, can truly transform the way organizations grow.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>5. Do you help businesses build e-commerce platforms?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. We design and develop end-to-end e-commerce solutions for web and mobile, ensuring smooth user experiences and scalable growth.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>6. Can Zonixtec help with legacy application modernization?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. We transform outdated systems into modern, efficient applications that are future-ready and secure.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>7. What industries does Zonixtec work with?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We work across diverse industries — retail, fintech, healthcare, logistics, and more — customizing solutions to fit unique sector needs.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>8. How does Zonixtec ensure project quality?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Through performance engineering, rigorous testing, continuous monitoring, and proactive maintenance. We prioritize both stability and innovation.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>9. What is Digital Experience Design at Zonixtec?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>It's our human-centered design approach that ensures products are intuitive, engaging, and aligned with customer behavior.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>10. Can Zonixtec support growing startups with limited budgets?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. We specialize in working with funded startups and SMEs, providing scalable solutions that match growth without overspending.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>11. Does Zonixtec offer long-term support after project delivery?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, our maintenance and monitoring services ensure your applications remain secure, optimized, and up to date.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>12. Where is Zonixtec located?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We are headquartered in Pune-Baner, serving clients globally through both onsite and remote collaboration.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>13. How can I get in touch with Zonixtec?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You can reach us through the Contact Us page on our website or email us directly. Our team will respond promptly.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>14. Why should I choose Zonixtec for my business?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Because we're not just developers — we're growth partners. We focus on delivering measurable results, smooth digital experiences, and technology that scales with your vision.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>15. How do I start working with Zonixtec?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Simply connect with us via our website form or email. Our team will schedule a consultation to understand your needs and propose the right solution.</p>
+                <div class="ceo-signature">
+                    <div class="ceo-avatar">SC</div>
+                    <div class="ceo-info">
+                        <h4>Shubham Chouhan</h4>
+                        <p>CEO & Co-Founder, Zonixtec</p>
                     </div>
                 </div>
             </div>
             
-            <div class="contact-cta">
-                <h2>Still Have Questions?</h2>
-                <p>If you didn't find the answer you were looking for, our team is ready to help. Get in touch with us for personalized assistance.</p>
-                <a href="contact.html" class="cta-buttons">Contact Us</a>
+            <!-- Vision Section -->
+            <h2 class="section-title">Our <span>Vision</span> Forward</h2>
+            
+            <div class="vision-section">
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="vision-title">Technology Innovation</h3>
+                    <p class="vision-description">Pushing boundaries with emerging technologies to create solutions that empower businesses and transform industries.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="vision-title">Client Success</h3>
+                    <p class="vision-description">Keeping quality and client satisfaction at the center of everything we do, delivering tangible results that drive growth.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="vision-title">AI-Powered Future</h3>
+                    <p class="vision-description">Leveraging artificial intelligence to create intelligent solutions that anticipate needs and solve complex challenges.</p>
+                </div>
+            </div>
+            
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h2>Stay Connected with Our Journey</h2>
+                <p>Subscribe to receive updates on our latest innovations, insights, and company milestones directly from our leadership team.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
@@ -818,7 +869,7 @@
                     <div class="footer-links">
                         <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
                         <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="CEOdesk.html" class="active"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
                         <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
                         <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
                         <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
@@ -906,29 +957,14 @@
             }
         });
         
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-        
-        // FAQ Search Functionality
-        document.getElementById('faq-search').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
-                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                
-                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            }
         });
     </script>
 </body>
