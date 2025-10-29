@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CRM Development & Integration Services | Zonixtec</title>
-    <meta name="description" content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making that enhance productivity and retention.">
-
     <title>CRM Solutions | Zonixtec - Transform Customer Relationships</title>
-    <meta name="description"
-        content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making.">
-        <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <meta name="description" content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making.">
+    <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +172,108 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--light);
+        }
+           /* ===== Dropdown Styles ===== */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            min-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            margin: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .dropdown-scroll {
+            max-height: 300px;
+            /* Slightly less than parent to account for padding */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+            padding: 8px 0;
+            /* Add padding to scroll container */
+        }
+
+        /* Custom scrollbar styling */
+        .dropdown-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 3px;
+        }
+
+        .dropdown-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .dropdown-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Hero Section */
@@ -647,7 +744,6 @@
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-top: 40px;
         }
@@ -966,6 +1062,37 @@
             .nav-links.active {
                 display: flex;
             }
+
+            /* Mobile dropdown styles */
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(15, 23, 42, 0.9);
+                box-shadow: none;
+                border: 1px solid rgba(100, 116, 139, 0.2);
+                border-radius: 8px;
+                margin: 10px 0;
+                display: none;
+                width: 100%;
+                padding: 8px 0;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-toggle {
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+
+            .dropdown-scroll {
+                max-height: none;
+                padding: 0;
+            }
             
             .mobile-menu-btn {
                 display: block;
@@ -1013,7 +1140,25 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="aboutus.html">About</a>
-                    <a href="Services.html" class="active">Services</a>
+                       <div class="dropdown">
+                        <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-scroll">
+
+                                <a href="web-design-development.html">Web Design & Development</a>
+                                <a href="web-app-development.html">Web App Development</a>
+                                <a href="CustomSoftware.html">Custom Software Development</a>
+                                <a href="crm-solutions.html">Custom CRM Solutions</a>
+                                <a href="erp-solutions.html">Custom ERP Solutions</a>
+                                <a href="Billing-invoice">Billing-Invoice</a>
+                                <a href="AIStrategy.html">AI Strategy & Consulting</a>
+                                <a href="DigitalMarketing.html">Digital Marketing Services</a>
+                                <a href="MobileDevelopment.html">Mobile App Development</a>
+                                <a href="ui.html">UI/UX Design Services</a>
+                                <a href="CloudSolutions.html">Cloud Solutions</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="carrer.html">Career</a>
                     <a href="contact.html">Contact</a>
                     <a href="contact.html" class="cta-button">Get Started</a>
@@ -1545,7 +1690,7 @@
     </section>
 
     <!-- Footer -->
-     <footer class="footer">
+   <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <!-- Solutions Section with Dropdown -->
@@ -1700,6 +1845,37 @@
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Mobile dropdown functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+
+                        // Close other dropdowns
+                        document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-btn')) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
         });
 
         // Header scroll effect
