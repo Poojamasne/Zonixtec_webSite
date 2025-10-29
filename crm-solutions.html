@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CRM Development & Integration Services | Zonixtec</title>
     <meta name="description" content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making that enhance productivity and retention.">
+
+    <title>CRM Solutions | Zonixtec - Transform Customer Relationships</title>
+    <meta name="description"
+        content="Empower your business with Zonixtec's CRM solutions—custom-built platforms for sales automation, customer engagement, and data-driven decision-making.">
+        <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1552,7 +1559,11 @@
                                 <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
                             </div>
                             <div class="footer-dropdown-content">
+
                                 <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine
+
+                                <a href="AIMachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine
+
                                     Learning</a>
                                 <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
                             </div>
@@ -1579,6 +1590,9 @@
                             </div>
                         </div>
 
+    
+                            </div>
+                        </div>
                         <!-- Core Development Dropdown -->
                         <div class="footer-dropdown">
                             <div class="footer-dropdown-header">
@@ -1592,7 +1606,7 @@
                                     Development</a>
                             </div>
                         </div>
-
+    
                         <!-- Design & Experience Dropdown -->
                         <div class="footer-dropdown">
                             <div class="footer-dropdown-header">
@@ -1606,6 +1620,9 @@
                     </div>
                 </div>
 
+
+
+    
                 <!-- Insights Section -->
                 <div class="footer-col">
                     <h3>Insights</h3>
@@ -1647,13 +1664,54 @@
                         <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
                     </div>
                 </div>
+    
+                <!-- Newsletter Section -->
+                <!-- <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+            <div class="form-group" id="newsletter-group">
+              <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+              <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
             </div>
-
+            <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+              Thank you for subscribing!
+            </div>
+          </div> -->
+            </div>
+    
             <div class="footer-bottom">
                 <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
             </div>
         </div>
     </footer>
+
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
+    
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
+    
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
 
     <script>
         // Mobile menu toggle

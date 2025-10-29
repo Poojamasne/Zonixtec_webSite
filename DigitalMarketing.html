@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Software Development Services | Zonixtec</title>
-    <meta name="description" content="Unlock innovation with Zonixtec's custom software development services.
-We design scalable, secure, and user-friendly applications tailored to your business needs.">
+    <title>Digital Marketing Services | Zonixtec</title>
+    <meta name="description" content="Boost your brand's online presence with Zonixtec's Digital Marketing Services—SEO, social media marketing, PPC campaigns, content strategy, and analytics that drive visibility, engagement, and conversions.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
     <link
@@ -150,9 +149,22 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             color: var(--secondary);
         }
 
-       
+        .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
 
-       .cta-button {
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
             background: var(--tech-gradient);
             color: white;
             padding: 10px 20px;
@@ -176,13 +188,13 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             cursor: pointer;
         }
 
-        /* Custom Software Section */
-        .software-section {
+        /* Digital Marketing Section */
+        .digital-marketing-section {
             padding: 150px 0 100px;
             position: relative;
         }
 
-        .software-hero {
+        .digital-marketing-hero {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 80px;
@@ -312,6 +324,53 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         }
 
         .service-type-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features-section {
+            margin-bottom: 80px;
+        }
+
+        .features-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .features-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            color: var(--secondary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .feature-text {
             color: #94a3b8;
             line-height: 1.7;
         }
@@ -656,10 +715,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             transform: rotate(180deg);
         }
 
-
-
         .footer {
-            /* background: rgba(2, 6, 23, 0.9); */
             padding: 70px 0 0;
             border-top: 1px solid rgba(100, 116, 139, 0.2);
         }
@@ -782,7 +838,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
         }
 
-           /* ===== Dropdown Styles ===== */
+        /* ===== Dropdown Styles ===== */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -846,29 +902,29 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         }
 
         .dropdown-scroll {
-    max-height: 300px; /* Slightly less than parent to account for padding */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 8px 0; /* Add padding to scroll container */
-}
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 8px 0;
+        }
 
-/* Custom scrollbar styling */
-.dropdown-scroll::-webkit-scrollbar {
-    width: 6px;
-}
+        /* Custom scrollbar styling */
+        .dropdown-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.5);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
 
         .footer-bottom {
             text-align: center;
@@ -884,10 +940,9 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         }
 
         @media (min-width: 768px) {
-
-                   .dropdown-scroll {
-        max-height: 250px; /* Smaller scroll container for mobile */
-    }
+            .dropdown-scroll {
+                max-height: 250px;
+            }
 
             .footer-container {
                 grid-template-columns: repeat(4, 1fr);
@@ -963,7 +1018,8 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             .faq-section,
             .challenges-container,
             .what-we-bring-container,
-            .impact-container {
+            .impact-container,
+            .features-container {
                 padding: 30px 20px;
             }
         }
@@ -1044,17 +1100,27 @@ We design scalable, secure, and user-friendly applications tailored to your busi
 
         /*  Get Start Button    */
         .cta-buttons {
-            background: linear-gradient(45deg, var(--primary), #5ed6eb);
-            color: var(--dark);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #fff;
             padding: 10px 20px;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
         }
 
         .cta-buttons:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
         }
 
         .cta-buttons:focus {
@@ -1065,7 +1131,6 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         .faq-toggle {
             font-size: 1.2rem;
             color: white;
-            /* or any color you prefer */
             transition: transform 0.3s ease;
         }
 
@@ -1073,15 +1138,26 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             transform: rotate(180deg);
         }
 
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
 
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
 
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
 
-        
-        
-
-
-
-
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
     </style>
 </head>
 
@@ -1094,7 +1170,6 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     <a href="index.html">Home</a>
                     <a href="aboutus.html">About</a>
 
-                    <!-- <a href="Services.html">Services</a> -->
                     <div class="dropdown">
                         <a href="Services.html" class="active dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -1106,7 +1181,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
                                 <a href="Billing-invoice.html">Billing-Invoice</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
-                                <a href="DigitalMarketing.html">Digital Marketing Services</a>
+                                <a href="DigitalMarketing.html" class="active">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
@@ -1125,257 +1200,226 @@ We design scalable, secure, and user-friendly applications tailored to your busi
     </header>
 
     <main>
-        <section class="software-section">
+        <section class="digital-marketing-section">
             <div class="container">
-                <div class="software-hero">
-                    <h1 class="hero-title">Custom Software Development</h1>
-                    <h2 class="hero-subtitle">Tailored Solutions for Your Unique Business Needs</h2>
-                    <p class="hero-description">In today's digital-first world, every business needs software that truly
-                        aligns with its unique
-                        vision. Off-the-shelf products often fall short, leaving gaps in performance, scalability, and
-                        customer experience.
-                        At Zonixtec, we specialize in custom software development that adapts to your exact needs.
-                        From concept to deployment, we design secure, scalable, and future-ready applications that
-                        help you stay ahead of the competition.
-                        Whether you need enterprise solutions, SaaS products, or workflow automation tools, our
-                        tailored approach ensures your software works seamlessly for your business.</p>
-                    <a href="contact.html" class="cta-button">Start Your Project</a>
+                <div class="digital-marketing-hero">
+                    <h1 class="hero-title">Digital Marketing Services</h1>
+                    <h2 class="hero-subtitle">Transform Clicks into Customers</h2>
+                    <p class="hero-description">At Zonixtec, we help businesses thrive in the digital landscape with data-driven Digital Marketing solutions that attract, engage, and convert audiences. From search engine optimization to paid campaigns and social media strategy, our services are designed to deliver measurable growth and brand visibility.</p>
+                    <a href="contact.html" class="cta-button">Let's Grow Your Digital Presence</a>
                 </div>
 
                 <div class="service-types">
-                    <h2 class="section-title">Our Custom Software Development Services</h2>
+                    <h2 class="section-title">Our Digital Marketing Solutions</h2>
                     <div class="service-types-grid">
                         <div class="service-type-card">
                             <div class="service-type-icon">
-                                <i class="fas fa-globe"></i>
+                                <i class="fas fa-search"></i>
                             </div>
-                            <h3 class="service-type-title">Web Applications</h3>
-                            <p class="service-type-text">Robust, scalable, and interactive platforms for businesses of all sizes.</p>
+                            <h3 class="service-type-title">Search Engine Optimization (SEO)</h3>
+                            <p class="service-type-text">Enhance your website's visibility and rank higher on Google with on-page and off-page optimization strategies.</p>
                         </div>
 
                         <div class="service-type-card">
                             <div class="service-type-icon">
-                                <i class="fas fa-mobile-alt"></i>
+                                <i class="fas fa-hashtag"></i>
                             </div>
-                            <h3 class="service-type-title">Mobile Applications</h3>
-                            <p class="service-type-text">Native & cross-platform apps for Android, iOS, and hybrid environments.</p>
+                            <h3 class="service-type-title">Social Media Marketing (SMM)</h3>
+                            <p class="service-type-text">Build brand awareness, engage audiences, and generate leads across platforms like LinkedIn, Instagram, Facebook, and X (Twitter).</p>
                         </div>
 
                         <div class="service-type-card">
                             <div class="service-type-icon">
-                                <i class="fas fa-building"></i>
+                                <i class="fas fa-ad"></i>
                             </div>
-                            <h3 class="service-type-title">Enterprise Solutions</h3>
-                            <p class="service-type-text">Streamlined software for managing operations, finance, and workforce.</p>
+                            <h3 class="service-type-title">Pay-Per-Click (PPC) Advertising</h3>
+                            <p class="service-type-text">Drive instant traffic and ROI with targeted ads on Google, Meta, and other ad networks.</p>
                         </div>
 
                         <div class="service-type-card">
                             <div class="service-type-icon">
-                                <i class="fas fa-cloud"></i>
+                                <i class="fas fa-pen-fancy"></i>
                             </div>
-                            <h3 class="service-type-title">SaaS Development</h3>
-                            <p class="service-type-text">Cloud-based applications with subscription models for B2B & B2C.</p>
+                            <h3 class="service-type-title">Content Marketing</h3>
+                            <p class="service-type-text">Create impactful blogs, videos, and campaigns that connect emotionally and educate audiences.</p>
                         </div>
 
                         <div class="service-type-card">
                             <div class="service-type-icon">
-                                <i class="fas fa-plug"></i>
+                                <i class="fas fa-envelope-open-text"></i>
                             </div>
-                            <h3 class="service-type-title">API & Integration Services</h3>
-                            <p class="service-type-text">Seamless data flow between your existing tools and new systems.</p>
+                            <h3 class="service-type-title">Email Marketing & Automation</h3>
+                            <p class="service-type-text">Nurture leads and retain customers with personalized, automated email campaigns.</p>
+                        </div>
+
+                        <div class="service-type-card">
+                            <div class="service-type-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3 class="service-type-title">Analytics & Reporting</h3>
+                            <p class="service-type-text">Track performance with real-time dashboards and actionable insights to optimize campaigns.</p>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="section-title">Features of Custom Software Development</h2>
+                                <h2 class="section-title">Features of Our Digital Marketing Solutions</h2>
                 <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3 class="benefit-title">Tailored Solutions</h3>
-                        <p class="benefit-text">Software designed specifically for your business processes, ensuring
-                            perfect alignment with your operational requirements and strategic goals.</p>
-                    </div>
-
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3 class="benefit-title">Scalable Architecture</h3>
-                        <p class="benefit-text">Future-proof solutions built with scalability in mind, allowing your
-                            software to grow seamlessly as your business expands.</p>
+                        <h3 class="benefit-title">Data-Driven Campaign Planning</h3>
+                        <p class="benefit-text">Data-driven campaign planning and optimization to maximize your marketing ROI and performance.</p>
                     </div>
 
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-search"></i>
                         </div>
-                        <h3 class="benefit-title">Enhanced Security</h3>
-                        <p class="benefit-text">Robust security protocols integrated at every level to protect your
-                            sensitive data and business-critical information.</p>
+                        <h3 class="benefit-title">Advanced SEO Strategy</h3>
+                        <p class="benefit-text">Advanced keyword research and SEO strategy to improve your search engine rankings and visibility.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="benefit-title">Targeted Audience Segmentation</h3>
+                        <p class="benefit-text">Targeted audience segmentation and retargeting to reach the right customers at the right time.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="benefit-title">AI-Powered Analytics</h3>
+                        <p class="benefit-text">AI-based performance analytics and automation for smarter marketing decisions and optimization.</p>
                     </div>
 
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <i class="fas fa-sync-alt"></i>
                         </div>
-                        <h3 class="benefit-title">Continuous Improvement</h3>
-                        <p class="benefit-text">Ongoing support and iterative enhancements to ensure your software
-                            remains cutting-edge and aligned with evolving business needs.</p>
+                        <h3 class="benefit-title">Multi-Channel Integration</h3>
+                        <p class="benefit-text">Multi-channel campaign integration (Search, Social, Email) for cohesive brand messaging across platforms.</p>
                     </div>
 
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
+                            <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3 class="benefit-title">Cost Efficiency</h3>
-                        <p class="benefit-text">Eliminate unnecessary features and licensing costs associated with
-                            off-the-shelf solutions.</p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3 class="benefit-title">Seamless Integration</h3>
-                        <p class="benefit-text">Solutions that integrate smoothly with your existing systems and
-                            workflows, eliminating data silos and improving efficiency.</p>
+                        <h3 class="benefit-title">Conversion-Focused Content</h3>
+                        <p class="benefit-text">Creative and conversion-focused content creation that engages audiences and drives results.</p>
                     </div>
                 </div>
 
                 <div class="challenges-section">
-  <div class="challenges-container">
-    <h2 class="challenges-title">Challenges Without Custom Software</h2>
-    <div class="challenges-list">
-      <div class="challenge-item">
-         <div class="challenge-icon">
-            <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <p class="challenge-text">Limited flexibility with off-the-shelf products</p>
-      </div>
-      <div class="challenge-item">
-         <div class="challenge-icon">
+                    <div class="challenges-container">
+                        <h2 class="challenges-title">Challenges Without Digital Marketing</h2>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
-        <p class="challenge-text">High costs due to unused features</p>
-      </div>
-      <div class="challenge-item">
-         <div class="challenge-icon">
+                                <p class="challenge-text">Low online visibility and poor brand recognition</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
-        <p class="challenge-text">Security vulnerabilities in generic software</p>
-      </div>
-      <div class="challenge-item">
-        <div class="challenge-icon">
+                                <p class="challenge-text">Inefficient ad spend with no measurable ROI</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
-        <p class="challenge-text">Poor integration with existing systems</p>
-      </div>
-      <div class="challenge-item">
-         <div class="challenge-icon">
+                                <p class="challenge-text">Missed opportunities to engage potential customers</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
-        <p class="challenge-text">Inability to scale with business growth</p>
-      </div>
-      <div class="challenge-item">
-        <div class="challenge-icon">
+                                <p class="challenge-text">Limited website traffic and poor lead generation</p>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-icon">
                                     <i class="fas fa-exclamation-circle"></i>
                                 </div>
-        <p class="challenge-text">Lack of competitive advantage</p>
-      </div>
-    </div>
-  </div>
-</div>
-
+                                <p class="challenge-text">Inability to track and analyze marketing performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="what-we-bring">
                     <div class="what-we-bring-container">
-                        <h2 class="what-we-bring-title">What We Bring to the Table</h2>
+                        <h2 class="what-we-bring-title">What We Bring – The Zonixtec Advantage</h2>
                         <div class="what-we-bring-list">
                             <div class="what-we-bring-item">
                                 <div class="what-we-bring-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <p class="what-we-bring-text">Deep industry expertise across multiple sectors</p>
+                                <p class="what-we-bring-text">Custom digital marketing strategies for your industry</p>
                             </div>
                             <div class="what-we-bring-item">
                                 <div class="what-we-bring-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <p class="what-we-bring-text">Agile development methodologies</p>
+                                <p class="what-we-bring-text">ROI-focused campaigns with transparent reporting</p>
                             </div>
                             <div class="what-we-bring-item">
                                 <div class="what-we-bring-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <p class="what-we-bring-text">Focus on user-centered design</p>
+                                <p class="what-we-bring-text">Expertise across B2B and B2C marketing channels</p>
                             </div>
                             <div class="what-we-bring-item">
                                 <div class="what-we-bring-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <p class="what-we-bring-text">Proven track record of successful projects</p>
+                                <p class="what-we-bring-text">Seamless integration with your website and CRM</p>
                             </div>
                             <div class="what-we-bring-item">
                                 <div class="what-we-bring-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <p class="what-we-bring-text">Transparent communication and collaboration</p>
-                            </div>
-                            <div class="what-we-bring-item">
-                                <div class="what-we-bring-icon">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <p class="what-we-bring-text">Commitment to quality and innovation</p>
+                                <p class="what-we-bring-text">Dedicated marketing experts for campaign management</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="process-container">
-                    <h2 class="process-title">Our Development Process</h2>
+                    <h2 class="process-title">How We'll Do It</h2>
                     <div class="process-steps">
                         <div class="process-step">
                             <div class="step-number">1</div>
-                            <h3 class="step-title">Discovery & Planning</h3>
-                            <p class="step-description">We begin by understanding your business objectives, challenges
-                                and requirements to define project scope.</p>
+                            <h3 class="step-title">Market Research & Strategy</h3>
+                            <p class="step-description">Identify audience behavior, competitors, and marketing goals.</p>
                         </div>
 
                         <div class="process-step">
                             <div class="step-number">2</div>
-                            <h3 class="step-title">Design & Prototyping</h3>
-                            <p class="step-description">Our architects create system blueprints and interactive
-                                prototypes for your feedback.</p>
+                            <h3 class="step-title">Campaign Planning</h3>
+                            <p class="step-description">Design SEO, social media, and ad strategies aligned with your objectives.</p>
                         </div>
 
                         <div class="process-step">
                             <div class="step-number">3</div>
-                            <h3 class="step-title">Development</h3>
-                            <p class="step-description">Using agile methodologies, we build your solution with regular
-                                demos and iterations.</p>
+                            <h3 class="step-title">Content Creation & Optimization</h3>
+                            <p class="step-description">Develop engaging, keyword-rich content for all digital channels.</p>
                         </div>
 
                         <div class="process-step">
                             <div class="step-number">4</div>
-                            <h3 class="step-title">Testing & QA</h3>
-                            <p class="step-description">Rigorous testing ensures functionality, performance, security
-                                and usability.</p>
+                            <h3 class="step-title">Execution & Monitoring</h3>
+                            <p class="step-description">Launch campaigns and track results in real time.</p>
                         </div>
 
                         <div class="process-step">
                             <div class="step-number">5</div>
-                            <h3 class="step-title">Deployment</h3>
-                            <p class="step-description">We implement the solution with minimal disruption to your
-                                operations.</p>
-                        </div>
-
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <h3 class="step-title">Support & Evolution</h3>
-                            <p class="step-description">Ongoing maintenance and enhancements to keep your solution
-                                optimal.</p>
+                            <h3 class="step-title">Reporting & Optimization</h3>
+                            <p class="step-description">Analyze performance and continuously refine strategies for better ROI.</p>
                         </div>
                     </div>
                 </div>
@@ -1385,105 +1429,97 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     <div class="tech-grid">
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-react"></i>
+                                <i class="fas fa-search"></i>
                             </div>
-                            <div class="tech-name">React</div>
+                            <div class="tech-name">Google Search Console</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-angular"></i>
+                                <i class="fas fa-chart-pie"></i>
                             </div>
-                            <div class="tech-name">Angular</div>
+                            <div class="tech-name">Ahrefs</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-vuejs"></i>
+                                <i class="fas fa-chart-line"></i>
                             </div>
-                            <div class="tech-name">Vue.js</div>
+                            <div class="tech-name">SEMrush</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-node-js"></i>
+                                <i class="fab fa-google"></i>
                             </div>
-                            <div class="tech-name">Node.js</div>
+                            <div class="tech-name">Google Analytics</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-python"></i>
+                                <i class="fas fa-eye"></i>
                             </div>
-                            <div class="tech-name">Python</div>
+                            <div class="tech-name">Hotjar</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-java"></i>
+                                <i class="fas fa-cube"></i>
                             </div>
-                            <div class="tech-name">Java</div>
+                            <div class="tech-name">HubSpot</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fas fa-database"></i>
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="tech-name">SQL/NoSQL</div>
+                            <div class="tech-name">Mailchimp</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">
-                                <i class="fab fa-aws"></i>
+                                <i class="fas fa-bolt"></i>
                             </div>
-                            <div class="tech-name">AWS</div>
+                            <div class="tech-name">Zapier</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="impact-section">
                     <div class="impact-container">
-                        <h2 class="impact-title">Business Impact</h2>
+                        <h2 class="impact-title">The Impact of Digital Marketing on Your Business</h2>
                         <div class="impact-list">
                             <div class="impact-item">
                                 <div class="impact-icon">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
-                                <p class="impact-text">Increased operational efficiency</p>
+                                <p class="impact-text">10x increase in brand visibility across digital channels</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p class="impact-text">Improved website traffic and lead conversion rates</p>
                             </div>
                             <div class="impact-item">
                                 <div class="impact-icon">
                                     <i class="fas fa-dollar-sign"></i>
                                 </div>
-                                <p class="impact-text">Reduced operational costs</p>
+                                <p class="impact-text">Better ROI through data-driven advertising</p>
                             </div>
                             <div class="impact-item">
                                 <div class="impact-icon">
-                                    <i class="fas fa-user-check"></i>
+                                    <i class="fas fa-heart"></i>
                                 </div>
-                                <p class="impact-text">Enhanced customer experience</p>
-                            </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <p class="impact-text">Improved data security</p>
+                                <p class="impact-text">Enhanced customer engagement and loyalty</p>
                             </div>
                             <div class="impact-item">
                                 <div class="impact-icon">
                                     <i class="fas fa-rocket"></i>
                                 </div>
-                                <p class="impact-text">Faster time-to-market</p>
-                            </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                                <p class="impact-text">Competitive advantage</p>
+                                <p class="impact-text">Consistent online growth and brand reputation</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="cta-container">
-                    <h2 class="cta-title">Ready to Transform Your Business?</h2>
-                    <p class="cta-description">Let's discuss how our custom software solutions can address your unique
-                        challenges and drive your business forward. Our team of experts is ready to turn your vision
-                        into reality.</p>
-                    <a href="contact.html" class="cta-button-large">Schedule a Free Consultation</a>
+                    <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+                    <p class="cta-description">Let's discuss how our digital marketing solutions can drive growth and visibility for your business. Our team of experts is ready to help you attract, engage, and convert your target audience.</p>
+                    <a href="contact.html" class="cta-button-large">Start Your Digital Marketing Journey</a>
                 </div>
 
                 <div class="faq-section">
@@ -1491,54 +1527,42 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     <div class="faq-container">
                         <div class="faq-item">
                             <div class="faq-question">
-                                How long does custom software development take?
+                                What is Digital Marketing, and why is it important?
                                 <span class="faq-toggle fas fa-chevron-down"></span>
                             </div>
-                            <p class="faq-answer" style="display:none;">The timeline varies based on project complexity,
-                                features and requirements. Simple applications may take 2-3 months, while enterprise
-                                solutions can take 6-12 months. We provide a detailed timeline after our initial
-                                discovery phase.</p>
+                            <p class="faq-answer" style="display:none;">Digital Marketing uses online strategies—SEO, social media, ads, and content—to grow brand awareness, attract leads, and increase sales.</p>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">
-                                How much does custom software cost?
+                                How long does it take to see results?
                                 <span class="faq-toggle fas fa-chevron-down"></span>
                             </div>
-                            <p class="faq-answer" style="display:none;">Costs depend on project scope, complexity, and
-                                technology stack. We offer transparent pricing models - fixed price for well-defined
-                                projects and time & materials for evolving requirements.</p>
+                            <p class="faq-answer" style="display:none;">Organic strategies like SEO take 3–6 months, while PPC and social campaigns deliver faster, measurable results.</p>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">
-                                How do you ensure the software meets our needs?
+                                Do you handle both B2B and B2C marketing?
                                 <span class="faq-toggle fas fa-chevron-down"></span>
                             </div>
-                            <p class="faq-answer" style="display:none;">We follow an iterative development approach with
-                                regular demos and feedback sessions. You'll see progress at every stage and have
-                                opportunities to request adjustments, ensuring the final product aligns perfectly with
-                                your expectations.</p>
+                            <p class="faq-answer" style="display:none;">Yes! We tailor strategies for both business types—ensuring the right approach for your target audience.</p>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">
-                                What ongoing support do you provide?
+                                Can you manage our social media accounts?
                                 <span class="faq-toggle fas fa-chevron-down"></span>
                             </div>
-                            <p class="faq-answer" style="display:none;">We offer comprehensive support packages
-                                including bug fixes, updates, feature enhancements, performance monitoring, and security
-                                patches. Our support can be scaled to match your operational needs.</p>
+                            <p class="faq-answer" style="display:none;">Absolutely. Our social media team handles everything from content creation to community management.</p>
                         </div>
 
                         <div class="faq-item">
                             <div class="faq-question">
-                                Can you integrate with our existing systems?
+                                How do you measure campaign success?
                                 <span class="faq-toggle fas fa-chevron-down"></span>
                             </div>
-                            <p class="faq-answer" style="display:none;">Absolutely! Our solutions are designed to
-                                integrate seamlessly with your current software ecosystem. We have extensive experience
-                                with APIs, data migration, and creating middleware for smooth interoperability.</p>
+                            <p class="faq-answer" style="display:none;">We track KPIs such as traffic, conversion rates, engagement, and ROI through analytics dashboards and monthly reports.</p>
                         </div>
                     </div>
                 </div>
@@ -1571,169 +1595,128 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         </section>
     </main>
 
-   <footer class="footer">
-  <div class="container">
-    <div class="footer-container">
-      <!-- Solutions Section with Dropdown -->
-      <div class="footer-col">
-        <h3>Solutions</h3>
-        <div class="footer-links">
-          
-          <!-- Next-Gen Tech Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
-              <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
-            </div>
-          </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdown -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        
+                        <!-- Next-Gen Tech Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine Learning</a>
+                                <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                            </div>
+                        </div>
 
-          <!-- AI Services Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> AI Services</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
-              <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
-              <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-              <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing (NLP)</a>
-              <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-              <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
-              <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
-            </div>
-          </div>
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> AI Services</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
+                                <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
+                                <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing (NLP)</a>
+                                <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
+                        </div>
 
-          <!-- Core Development Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Core Development</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-            </div>
-            <div class="footer-dropdown-content">
-              <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
-              <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
-            </div>
-          </div>
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
+                                <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
+                            </div>
+                        </div>
 
-          <!-- Design & Experience Dropdown -->
-          <div class="footer-dropdown">
-            <div class="footer-dropdown-header">
-              <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-              <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                    </div>
+                </div>
+
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
+                        <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-dropdown-content">
-              <a href="ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Insights Section -->
-      <div class="footer-col">
-        <h3>Insights</h3>
-        <div class="footer-links">
-          <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-          <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-          <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-          <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
-          <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-          <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-          <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
-        </div>
-      </div>
-
-      <!-- Company Section -->
-      <div class="footer-col">
-        <h3>Company</h3>
-        <div class="footer-links">
-          <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-          <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-          <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-          <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
-          <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
-          <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-          <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
-        </div>
-      </div>
-
-      <!-- Quick Links Section -->
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <div class="footer-links">
-          <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-          <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
-          <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-          <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-          <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-          <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-          <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-        </div>
-      </div>
-
-      <!-- Newsletter Section -->
-      <!-- <div class="footer-col">
-        <h3>Newsletter</h3>
-        <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
-        <div class="form-group" id="newsletter-group">
-          <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
-          <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
-        </div>
-        <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
-          Thank you for subscribing!
-        </div>
-      </div> -->
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
-    </div>
-  </div>
-</footer>
-
-
-<style>
-.footer-dropdown-content {
-  display: none;
-  margin-left: 15px;
-}
-.footer-dropdown.open .footer-dropdown-content {
-  display: block;
-}
-.footer-dropdown-header {
-  display: flex;
-  color: var(--gray);
-  /* transform: ; */
-  justify-content: space-between;
-  cursor: pointer;
-  margin: 5px 0;
-}
-.footer-dropdown-header:hover {
-  color: var(--secondary);
-}
-</style>
-
-
-<script>
-document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const parent = header.parentElement;
-    parent.classList.toggle('open');
-  });
-});
-</script>
-
-
+    </footer>
 
     <script>
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
     </script>
 </body>
 
