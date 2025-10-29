@@ -1797,14 +1797,21 @@
                     <h3>Company</h3>
                     <div class="footer-links">
                         <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                        <a href="OurStory.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                        <a href="MissionVision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-                        <a href="OurJourney.html"><i class="fas fa-chevron-right"></i> Our Journey</a>
-                        <a href="CoreValues.html"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <!-- <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a> -->
+                        <a href="aboutus.html" id="aboutLink">
+                            <i class="fas fa-chevron-right"></i> Mission & Vision
+                        </a>
+
+
+                        <a href="aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
                         <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
                         <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
                     </div>
                 </div>
+                
+
 
                 <!-- Quick Links Section -->
                 <div class="footer-col">
@@ -1872,6 +1879,28 @@
         });
     </script>
 
+<!-- <script>
+    window.addEventListener('load', () => {
+        // Check if the user came by clicking the link
+        if (sessionStorage.getItem('scrollAfterLoad') === 'true') {
+            window.scrollBy(0, 700); // scroll down 700px
+            sessionStorage.removeItem('scrollAfterLoad'); // reset flag
+        }
+    });
+</script>
+
+
+
+<script>
+    // When the link is clicked, set a flag before navigating
+    document.getElementById('aboutLink').addEventListener('click', () => {
+        sessionStorage.setItem('scrollAfterLoad', 'true');
+    });
+</script> -->
+
+
+
+
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
@@ -1936,6 +1965,56 @@
                 }
             });
         });
+
+
+        window.addEventListener('load', () => {
+                // Check if the user came by clicking the link
+                if (sessionStorage.getItem('scrollAfterLoad') === 'true') {
+                    window.scrollBy(0, 700); // scroll down 700px
+                    sessionStorage.removeItem('scrollAfterLoad'); // reset flag
+                }
+            });
+
+            document.getElementById('aboutLink').addEventListener('click', () => {
+                    sessionStorage.setItem('scrollAfterLoad', 'true');
+                });
+
+
+
+                        window.addEventListener('load', () => {
+                                // Check if the user came by clicking the link
+                                if (sessionStorage.getItem('scrollAfterLoad2') === 'true') {
+                                    window.scrollBy(0, 2200); // scroll down 700px
+                                    sessionStorage.removeItem('scrollAfterLoad2'); // reset flag
+                                }
+                            });
+
+                            document.getElementById('OurJou').addEventListener('click', () => {
+                                sessionStorage.setItem('scrollAfterLoad2', 'true');
+                            });
+
+
+
+                            window.addEventListener('load', () => {
+                                    // Check if the user came by clicking the link
+                                    if (sessionStorage.getItem('scrollAfterLoad3') === 'true') {
+                                        window.scrollBy(0, 1200); // scroll down 700px
+                                        sessionStorage.removeItem('scrollAfterLoad3'); // reset flag
+                                    }
+                                });
+
+                                document.getElementById('OurCore').addEventListener('click', () => {
+                                    sessionStorage.setItem('scrollAfterLoad3', 'true');
+                                });
+
+
+                            
+
+
+
+
+
+        
     </script>
 </body>
 
