@@ -1,20 +1,35 @@
-// When user clicks the Mission & Vision link, set a flag
-document.addEventListener("DOMContentLoaded", () => {
-  const link = document.getElementById("aboutLink");
-  if (link) {
-    link.addEventListener("click", () => {
-      sessionStorage.setItem("scrollAfterLoad", "true");
-    });
+window.addEventListener("load", () => {
+  // Check if the user came by clicking the link
+  if (sessionStorage.getItem("scrollAfterLoad") === "true") {
+    window.scrollBy(0, 700); // scroll down 700px
+    sessionStorage.removeItem("scrollAfterLoad"); // reset flag
   }
 });
 
-// On aboutus.html, check the flag and scroll down if needed
+document.getElementById("aboutLink").addEventListener("click", () => {
+  sessionStorage.setItem("scrollAfterLoad", "true");
+});
+
 window.addEventListener("load", () => {
-  if (sessionStorage.getItem("scrollAfterLoad") === "true") {
-    window.scrollBy({
-      top: 700, // scroll down 700px
-      behavior: "smooth", // optional smooth scroll
-    });
-    sessionStorage.removeItem("scrollAfterLoad"); // reset flag
+  // Check if the user came by clicking the link
+  if (sessionStorage.getItem("scrollAfterLoad2") === "true") {
+    window.scrollBy(0, 2200); // scroll down 700px
+    sessionStorage.removeItem("scrollAfterLoad2"); // reset flag
   }
+});
+
+document.getElementById("OurJou").addEventListener("click", () => {
+  sessionStorage.setItem("scrollAfterLoad2", "true");
+});
+
+window.addEventListener("load", () => {
+  // Check if the user came by clicking the link
+  if (sessionStorage.getItem("scrollAfterLoad3") === "true") {
+    window.scrollBy(0, 1200); // scroll down 700px
+    sessionStorage.removeItem("scrollAfterLoad3"); // reset flag
+  }
+});
+
+document.getElementById("OurCore").addEventListener("click", () => {
+  sessionStorage.setItem("scrollAfterLoad3", "true");
 });
