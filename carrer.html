@@ -186,7 +186,7 @@
              transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
         }
-
+        
         .mobile-menu-btn {
             display: none;
             color: var(--light);
@@ -308,17 +308,27 @@
 
         .search-box {
             display: flex;
-            gap: 10px;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
         }
 
         .search-input {
             flex: 1;
             padding: 12px 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid rgba(100, 116, 139, 0.3);
             background: rgba(15, 23, 42, 0.5);
             color: var(--light);
             font-size: 1rem;
+            min-height: 48px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
         }
 
         .search-input::placeholder {
@@ -330,16 +340,26 @@
             color: white;
             border: none;
             padding: 12px 25px;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            white-space: nowrap;
+            min-height: 48px;
         }
 
         .search-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .search-btn i {
+            font-size: 0.9rem;
         }
 
         /* Job Listings */
@@ -447,6 +467,39 @@
         .job-apply-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        /* Loading, error and no jobs states */
+        .loading-state, .error-state, .no-jobs {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            margin: 20px 0;
+        }
+
+        .loading-state i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Job tags */
+        .job-tags {
+            margin-top: 15px;
+        }
+
+        .job-tag {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--secondary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 4px;
         }
 
         /* Why Join Us Section */
@@ -853,53 +906,54 @@
         
         .footer {
             /* background: rgba(2, 6, 23, 0.9); */
-            padding: 70px 0 0;
+            padding: 60px 0 20px;
             border-top: 1px solid rgba(100, 116, 139, 0.2);
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(5, minmax(253px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
 
         .footer-col {
-            padding: 20px;
+            padding: 0;
         }
 
         .footer-col h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
             color: var(--secondary);
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
         }
 
         .footer-col p {
-            color: #cbd5e1;
+            color: var(--gray);
             margin-bottom: 20px;
             line-height: 1.7;
         }
 
-        .footer-links a {
+        .footer-links {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
             color: var(--gray);
             text-decoration: none;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-links a:hover {
             color: var(--secondary);
-            transform: translateX(5px);
         }
 
-        .footer-links i {
-            margin-right: 10px;
-            color: var(--gray);
+        .footer-links a i {
             font-size: 0.8rem;
         }
 
@@ -964,9 +1018,9 @@
 
         .footer-bottom {
             text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid rgba(100, 116, 139, 0.2);
-            color: #94a3b8;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
             font-size: 0.9rem;
         }
 
@@ -1042,6 +1096,34 @@
                 font-size: 1.3rem;
             }
 
+            /* Search section responsive */
+            .search-box {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 1rem;
+            }
+
+            .search-input {
+                padding: 14px 15px;
+                font-size: 1rem;
+            }
+
+            .search-filters {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .search-container {
+                margin: 30px 0;
+                padding: 20px;
+            }
+
             /* Job cards */
             .job-header {
                 flex-direction: column;
@@ -1053,24 +1135,9 @@
                 gap: 10px;
             }
 
-            /* Footer */
-            @media (min-width: 768px) {
-                .footer-container {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-
-                .footer-col {
-                    padding: 18px 1px;
-                }
-
-                .footer-col h3 {
-                    font-family: 'Orbitron', sans-serif;
-                    font-size: 1rem;
-                    margin-bottom: 20px;
-                    color: var(--secondary);
-                    position: relative;
-                    padding-bottom: 10px;
-                }
+            /* Footer responsive */
+            .footer-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1110,18 +1177,24 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Job cards */
-            .job-card {
-                padding: 20px;
-            }
-
-            /* Footer */
-            .footer-col {
+            /* Search container responsive */
+            .search-container {
+                margin: 20px 0;
                 padding: 15px;
             }
 
-            .footer-col h3 {
-                font-size: 1.2rem;
+            .search-btn {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+
+            .search-input {
+                padding: 12px 15px;
+            }
+
+            /* Job cards */
+            .job-card {
+                padding: 20px;
             }
         }
 
@@ -1572,23 +1645,28 @@
 
 
 <style>
-.footer-dropdown-content {
-  display: none;
-  margin-left: 15px;
-}
-.footer-dropdown.open .footer-dropdown-content {
-  display: block;
-}
+        /* Footer Dropdown Styles */
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
 
-.footer-dropdown-header {
-    display: flex;
-    color: var(--gray);
-    justify-content: space-between;
-    cursor: pointer;
-    margin: 5px 0;
-}
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
 
-</style>
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
+    </style>
 
 
 </head>
@@ -1691,12 +1769,9 @@
                     </div>
                     <div class="filter-group">
                         <label class="filter-label">Department</label>
-                        <select class="filter-select">
+                        <select class="filter-select" id="departmentFilter">
                             <option value="">All Departments</option>
-                            <option value="development">Development</option>
-                            <option value="testing">Testing</option>
-                            <option value="design">Design</option>
-                            <option value="marketing">Marketing</option>
+                            <!-- Departments will be populated dynamically -->
                         </select>
                     </div>
                 </div>
@@ -1773,65 +1848,31 @@
     <section class="job-listings section-padding">
         <div class="container">
             <h2 class="section-title">Job Listings</h2>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Junior Full Stack Developer</h3>
-                    <a href="#" class="job-apply-btn" data-job="Junior Full Stack Developer">Apply Now <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="job-meta">
-                    <span><i class="fas fa-map-marker-alt"></i> Baner, Pune</span>
-                    <span><i class="fas fa-clock"></i> Full-time</span>
-                    <span><i class="fas fa-indian-rupee-sign"></i> ₹15,000/month</span>
-                </div>
-                <div class="job-description">
-                    <p>We're looking for a motivated Junior Full Stack Developer with 1 year of experience in React.js,
-                        Node.js, Express.js, MySQL, and MongoDB. You'll work closely with senior developers to build
-                        scalable web applications, contribute to database design, and deliver high-quality software.</p>
-                </div>
-                <div class="job-requirements">
-                    <h4>Requirements:</h4>
-                    <ul>
-                        <li>Bachelor's degree in CS/IT or related field</li>
-                        <li>1 Year of Professional experience in Full-Stack Development</li>
-                        <li>Proficiency in Node.js, Express.js, React.js, HTML, CSS, and JavaScript</li>
-                        <li>Familiarity with MySQL and MongoDB</li>
-                        <li>Bonus: Basic Python scripting, Git, and Deployment knowledge</li>
-                        <li>Strong problem-solving and debugging skills</li>
-                        <li>Ability to work independently and collaboratively in a team</li>
-                    </ul>
-                </div>
+            
+            <!-- Loading state -->
+            <div id="jobsLoading" class="loading-state" style="text-align: center; padding: 50px;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--secondary);"></i>
+                <p style="margin-top: 15px; color: #cbd5e1;">Loading job opportunities...</p>
             </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Software Tester Intern</h3>
-                    <a href="#" class="job-apply-btn" data-job="Software Tester Intern">Apply Now <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="job-meta">
-                    <span><i class="fas fa-map-marker-alt"></i> Baner, Pune</span>
-                    <span><i class="fas fa-clock"></i> Internship</span>
-                    <span><i class="fas fa-indian-rupee-sign"></i> ₹5,000/month</span>
-                </div>
-                <div class="job-description">
-                    <p>Perfect for freshers or recent graduates! As a Software Tester Intern, you'll gain hands-on
-                        experience in manual & automation testing, working with tools like Selenium & JIRA while
-                        collaborating with the dev team.</p>
-                </div>
-                <div class="job-requirements">
-                    <h4>Requirements:</h4>
-                    <ul>
-                        <li>Strong understanding of SDLC & STLC</li>
-                        <li>Familiarity with automation tools (Selenium) and bug tracking tools (JIRA)</li>
-                        <li>Basic proficiency in SQL for data validation and query execution (preferred)</li>
-                        <li>Knowledge of manual and automation testing methodologies</li>
-                        <li>Strong analytical and problem-solving skills with attention to detail</li>
-                        <li>Good communication and teamwork skills</li>
-                        <li>Immediate availability with willingness to work on-site at Pune</li>
-                    </ul>
-                </div>
+            
+            <!-- Jobs container -->
+            <div id="jobsContainer"></div>
+            
+            <!-- No jobs message -->
+            <div id="noJobsMessage" class="no-jobs" style="display: none; text-align: center; padding: 50px;">
+                <i class="fas fa-briefcase" style="font-size: 3rem; color: var(--gray); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--light); margin-bottom: 15px;">No Job Openings Available</h3>
+                <p style="color: #cbd5e1;">We currently don't have any open positions. Please check back later or contact us directly.</p>
+            </div>
+            
+            <!-- Error message -->
+            <div id="jobsError" class="error-state" style="display: none; text-align: center; padding: 50px;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3 style="color: var(--light); margin-bottom: 15px;">Unable to Load Jobs</h3>
+                <p style="color: #cbd5e1; margin-bottom: 20px;">We're having trouble loading job listings. Please try again later.</p>
+                <button class="search-btn" onclick="loadJobs()">
+                    <i class="fas fa-refresh"></i> Try Again
+                </button>
             </div>
         </div>
     </section>
@@ -2121,6 +2162,10 @@
 </footer>
 
     <script>
+        // Global variables
+        let allJobs = [];
+        let filteredJobs = [];
+
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
@@ -2139,336 +2184,528 @@
             const btn = document.getElementById('newsletter-btn');
             const emailInput = document.getElementById('newsletter-email');
             const thankyou = document.getElementById('newsletter-thankyou');
-            btn.addEventListener('click', function () {
-                if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
-                    thankyou.style.display = 'block';
-                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
-                    emailInput.value = '';
+            if (btn && emailInput && thankyou) {
+                btn.addEventListener('click', function () {
+                    if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                        thankyou.style.display = 'block';
+                        setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                        emailInput.value = '';
+                    } else {
+                        emailInput.focus();
+                        emailInput.style.borderColor = '#e74c3c';
+                        setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                    }
+                });
+            }
+        });
+
+        // Load jobs from backend
+        async function loadJobs() {
+            const loadingElement = document.getElementById('jobsLoading');
+            const containerElement = document.getElementById('jobsContainer');
+            const noJobsElement = document.getElementById('noJobsMessage');
+            const errorElement = document.getElementById('jobsError');
+
+            // Show loading state
+            loadingElement.style.display = 'block';
+            containerElement.innerHTML = '';
+            noJobsElement.style.display = 'none';
+            errorElement.style.display = 'none';
+
+            try {
+                const response = await fetch('https://zonixtec.com/server/admin/admin-get-jobs.php');
+                const data = await response.json();
+
+                loadingElement.style.display = 'none';
+
+                if (data.status && data.response && data.response.length > 0) {
+                    allJobs = data.response.filter(job => job.status === 'active'); // Only show active jobs
+                    filteredJobs = [...allJobs];
+                    renderJobs(filteredJobs);
+                    populateDepartmentFilter();
                 } else {
-                    emailInput.focus();
-                    emailInput.style.borderColor = '#e74c3c';
-                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                    noJobsElement.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading jobs:', error);
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+            }
+        }
+
+        // Populate department filter dynamically
+        function populateDepartmentFilter() {
+            const departmentFilter = document.getElementById('departmentFilter');
+            const departments = [...new Set(allJobs.map(job => job.department))].filter(dept => dept);
+            
+            // Clear existing options except "All Departments"
+            departmentFilter.innerHTML = '<option value="">All Departments</option>';
+            
+            // Add unique departments
+            departments.forEach(dept => {
+                const option = document.createElement('option');
+                option.value = dept;
+                option.textContent = dept;
+                departmentFilter.appendChild(option);
+            });
+        }
+
+        // Render jobs
+        function renderJobs(jobs) {
+            const container = document.getElementById('jobsContainer');
+            
+            if (jobs.length === 0) {
+                document.getElementById('noJobsMessage').style.display = 'block';
+                return;
+            }
+
+            container.innerHTML = jobs.map(job => {
+                const requirements = job.requirements ? job.requirements.split('\n').filter(req => req.trim()) : [];
+                const tags = job.tags ? job.tags.split(',').map(tag => tag.trim()) : [];
+                
+                return `
+                    <div class="job-card" data-job-id="${job.id}">
+                        <div class="job-header">
+                            <h3 class="job-title">${escapeHtml(job.title)}</h3>
+                            <a href="#" class="job-apply-btn" data-job="${escapeHtml(job.title)}" data-job-id="${job.id}">
+                                Apply Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ${escapeHtml(job.location)}</span>
+                            <span><i class="fas fa-clock"></i> ${escapeHtml(job.type)}</span>
+                            ${job.salary ? `<span><i class="fas fa-indian-rupee-sign"></i> ${escapeHtml(job.salary)}</span>` : ''}
+                            <span><i class="fas fa-building"></i> ${escapeHtml(job.department)}</span>
+                        </div>
+                        <div class="job-description">
+                            <p>${escapeHtml(job.description)}</p>
+                        </div>
+                        ${requirements.length > 0 ? `
+                            <div class="job-requirements">
+                                <h4>Requirements:</h4>
+                                <ul>
+                                    ${requirements.map(req => `<li>${escapeHtml(req)}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+                        ${tags.length > 0 ? `
+                            <div class="job-tags" style="margin-top: 15px;">
+                                ${tags.map(tag => `<span class="job-tag" style="background: rgba(37, 99, 235, 0.2); color: var(--secondary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 8px;">${escapeHtml(tag)}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            // Re-attach event listeners for apply buttons
+            attachApplyButtonListeners();
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text ? text.replace(/[&<>"']/g, function(m) { return map[m]; }) : '';
+        }
+
+        // Search and filter functionality
+        function initializeSearch() {
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            const keywordInput = document.querySelector('.filter-select'); // First filter input (keywords)
+            const locationFilter = document.querySelectorAll('.filter-select')[1]; // Location filter
+            const workTypeFilter = document.querySelectorAll('.filter-select')[2]; // Work type filter
+            const departmentFilter = document.getElementById('departmentFilter'); // Department filter
+
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const keyword = keywordInput.value.toLowerCase().trim();
+                const location = locationFilter.value;
+                const workType = workTypeFilter.value;
+                const department = departmentFilter.value;
+
+                filteredJobs = allJobs.filter(job => {
+                    const matchesSearch = !searchTerm || 
+                        job.title.toLowerCase().includes(searchTerm) ||
+                        job.description.toLowerCase().includes(searchTerm) ||
+                        (job.tags && job.tags.toLowerCase().includes(searchTerm));
+                    
+                    const matchesKeyword = !keyword || 
+                        job.title.toLowerCase().includes(keyword) ||
+                        job.description.toLowerCase().includes(keyword) ||
+                        (job.tags && job.tags.toLowerCase().includes(keyword));
+                    
+                    const matchesLocation = !location || job.location.toLowerCase().includes(location.toLowerCase());
+                    const matchesWorkType = !workType || job.type.toLowerCase() === workType.toLowerCase();
+                    const matchesDepartment = !department || job.department.toLowerCase() === department.toLowerCase();
+
+                    return matchesSearch && matchesKeyword && matchesLocation && matchesWorkType && matchesDepartment;
+                });
+
+                renderJobs(filteredJobs);
+            }
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
                 }
             });
+
+            // Add event listeners to all filter inputs
+            [keywordInput, locationFilter, workTypeFilter, departmentFilter].forEach(filter => {
+                if (filter) {
+                    filter.addEventListener('change', performSearch);
+                    filter.addEventListener('input', performSearch);
+                }
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadJobs();
+            initializeSearch();
+            initializeApplicationModal();
         });
     </script>
 
     <script>
+        // Application Modal functionality
+        function initializeApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            const closeModal = document.getElementById('closeModal');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const closeSuccess = document.getElementById('closeSuccess');
+            const jobTitleElement = document.getElementById('jobTitle');
+            const applicationForm = document.getElementById('applicationForm');
+            const formContainer = document.getElementById('formContainer');
+            const successMessage = document.getElementById('successMessage');
+            const fileUpload = document.getElementById('fileUpload');
+            const resumeInput = document.getElementById('resume');
+            const fileName = document.getElementById('fileName');
+            const coverLetter = document.getElementById('coverLetter');
+            const coverLetterCounter = document.getElementById('coverLetterCounter');
+            const sourceSelect = document.getElementById('source');
+            const otherSourceContainer = document.getElementById('otherSourceContainer');
+            const otherSourceInput = document.getElementById('otherSource');
+            const submitBtn = applicationForm.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
 
+            let currentJobTitle = '';
+            let currentJobId = '';
 
-        document.addEventListener('DOMContentLoaded', function () {
-                const modal = document.getElementById('applicationModal');
-                const closeModal = document.getElementById('closeModal');
-                const cancelBtn = document.getElementById('cancelBtn');
-                const closeSuccess = document.getElementById('closeSuccess');
-                const jobApplyBtns = document.querySelectorAll('.job-apply-btn');
-                const jobTitleElement = document.getElementById('jobTitle');
-                const applicationForm = document.getElementById('applicationForm');
-                const formContainer = document.getElementById('formContainer');
-                const successMessage = document.getElementById('successMessage');
-                const fileUpload = document.getElementById('fileUpload');
-                const resumeInput = document.getElementById('resume');
-                const fileName = document.getElementById('fileName');
-                const coverLetter = document.getElementById('coverLetter');
-                const coverLetterCounter = document.getElementById('coverLetterCounter');
-                const sourceSelect = document.getElementById('source');
-                const otherSourceContainer = document.getElementById('otherSourceContainer');
-                const otherSourceInput = document.getElementById('otherSource');
-                const submitBtn = applicationForm.querySelector('.submit-btn');
-                const btnText = submitBtn.querySelector('.btn-text');
-                const btnLoading = submitBtn.querySelector('.btn-loading');
+            // Validation regex patterns
+            const regexPatterns = {
+                name: /^[A-Za-z\s]{2,50}$/, // Letters and spaces, 2-50 characters
+                email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // Valid email format
+                phone: /^[\+]?[0-9\s\-\(\)]{10,15}$/, // Phone number with optional country code
+            };
 
-                // Validation regex patterns
-                const regexPatterns = {
-                    name: /^[A-Za-z\s]{1,18}$/, // Letters and spaces, 2-50 characters
-                    email: /^[^\s@]+@[^\s@]+\.com$/, // Email must end with .com
-                    phone: /^\+?[0-9\s\-\(\)]{1,10}$/, // Phone number with optional country code
-                };
+            // Show error message
+            function showError(fieldId, message) {
+                const errorElement = document.getElementById(fieldId + 'Error');
+                const inputElement = document.getElementById(fieldId);
+                if (errorElement && inputElement) {
+                    errorElement.textContent = message;
+                    errorElement.style.display = 'block';
+                    inputElement.classList.add('error');
+                }
+            }
 
-                // Show error message
-                function showError(fieldId, message) {
-                    const errorElement = document.getElementById(fieldId + 'Error');
-                    const inputElement = document.getElementById(fieldId);
-                    if (errorElement && inputElement) {
-                        errorElement.textContent = message;
-                        errorElement.style.display = 'block';
-                        inputElement.classList.add('error');
-                    }
+            // Clear error message
+            function clearError(fieldId) {
+                const errorElement = document.getElementById(fieldId + 'Error');
+                const inputElement = document.getElementById(fieldId);
+                if (errorElement && inputElement) {
+                    errorElement.textContent = '';
+                    errorElement.style.display = 'none';
+                    inputElement.classList.remove('error');
+                }
+            }
+
+            // Validate individual field
+            function validateField(field) {
+                const fieldId = field.id;
+                const value = field.value.trim();
+
+                if (field.required && !value) {
+                    showError(fieldId, 'This field is required');
+                    return false;
                 }
 
-                // Clear error message
-                function clearError(fieldId) {
-                    const errorElement = document.getElementById(fieldId + 'Error');
-                    const inputElement = document.getElementById(fieldId);
-                    if (errorElement && inputElement) {
-                        errorElement.textContent = '';
-                        errorElement.style.display = 'none';
-                        inputElement.classList.remove('error');
-                    }
-                }
-
-                // Validate individual field
-                function validateField(field) {
-                    const fieldId = field.id;
-                    const value = field.value.trim();
-
-                    if (field.required && !value) {
-                        showError(fieldId, 'This field is required');
-                        return false;
-                    }
-
-                    switch (fieldId) {
-                        case 'firstName':
-                        case 'lastName':
-                            if (value && !regexPatterns.name.test(value)) {
-                                showError(fieldId, 'Please enter a valid name');
-                                return false;
-                            }
-                            break;
-                        case 'email':
-                            if (value && !regexPatterns.email.test(value)) {
-                                showError(fieldId, 'Please enter a valid email address');
-                                return false;
-                            }
-                            break;
-                        case 'phone':
-                            if (value && !regexPatterns.phone.test(value)) {
-                                showError(fieldId, 'Please enter a valid phone number ');
-                                return false;
-                            }
-                            break;
-                        case 'experience':
-                        case 'education':
-                        case 'source':
-                            if (!value) {
-                                showError(fieldId, 'Please select an option');
-                                return false;
-                            }
-                            break;
-                        case 'otherSource':
-                            if (sourceSelect.value === 'other' && !value) {
-                                showError('source', 'Please specify how you heard about us');
-                                return false;
-                            }
-                            break;
-                    }
-                    clearError(fieldId);
-                    return true;
-                }
-
-                // Validate file upload
-                function validateFile() {
-                    if (!resumeInput.files.length) {
-                        showError('resume', 'Please upload your resume');
-                        return false;
-                    }
-                    const file = resumeInput.files[0];
-                    const fileSize = file.size / 1024 / 1024; // Size in MB
-                    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-
-                    if (!validTypes.includes(file.type)) {
-                        showError('resume', 'Please upload a PDF, DOC, or DOCX file');
-                        return false;
-                    }
-                    // if (fileSize > 5) {
-                    //     showError('resume', 'File size must be less than 5MB');
-                    //     return false;
-                    // }
-
-                    clearError('resume');
-                    return true;
-                }
-
-                // Validate cover letter
-                function validateCoverLetter() {
-                    const length = coverLetter.value.length;
-                    if (length > 500) {
-                        showError('coverLetter', 'Cover letter cannot exceed 500 characters');
-                        return false;
-                    }
-                    clearError('coverLetter');
-                    return true;
-                }
-
-                // Validate entire form
-                function validateForm() {
-                    let isValid = true;
-                    const fields = ['firstName', 'lastName', 'email', 'phone', 'experience', 'education', 'source'];
-
-                    fields.forEach(fieldId => {
-                        const field = document.getElementById(fieldId);
-                        if (!validateField(field)) {
-                            isValid = false;
+                switch (fieldId) {
+                    case 'firstName':
+                    case 'lastName':
+                        if (value && !regexPatterns.name.test(value)) {
+                            showError(fieldId, 'Please enter a valid name (2-50 characters, letters only)');
+                            return false;
                         }
-                    });
+                        break;
+                    case 'email':
+                        if (value && !regexPatterns.email.test(value)) {
+                            showError(fieldId, 'Please enter a valid email address');
+                            return false;
+                        }
+                        break;
+                    case 'phone':
+                        if (value && !regexPatterns.phone.test(value)) {
+                            showError(fieldId, 'Please enter a valid phone number (10-15 digits)');
+                            return false;
+                        }
+                        break;
+                    case 'experience':
+                    case 'education':
+                    case 'source':
+                        if (!value) {
+                            showError(fieldId, 'Please select an option');
+                            return false;
+                        }
+                        break;
+                    case 'otherSource':
+                        if (sourceSelect.value === 'other' && !value) {
+                            showError('source', 'Please specify how you heard about us');
+                            return false;
+                        }
+                        break;
+                }
+                clearError(fieldId);
+                return true;
+            }
 
-                    if (!validateFile()) {
+            // Validate file upload
+            function validateFile() {
+                if (!resumeInput.files.length) {
+                    showError('resume', 'Please upload your resume');
+                    return false;
+                }
+                const file = resumeInput.files[0];
+                const fileSize = file.size / 1024 / 1024; // Size in MB
+                const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+                if (!validTypes.includes(file.type)) {
+                    showError('resume', 'Please upload a PDF, DOC, or DOCX file');
+                    return false;
+                }
+                if (fileSize > 5) {
+                    showError('resume', 'File size must be less than 5MB');
+                    return false;
+                }
+
+                clearError('resume');
+                return true;
+            }
+
+            // Validate cover letter
+            function validateCoverLetter() {
+                const length = coverLetter.value.length;
+                if (length > 500) {
+                    showError('coverLetter', 'Cover letter cannot exceed 500 characters');
+                    return false;
+                }
+                clearError('coverLetter');
+                return true;
+            }
+
+            // Validate entire form
+            function validateForm() {
+                let isValid = true;
+                const fields = ['firstName', 'lastName', 'email', 'phone', 'experience', 'education', 'source'];
+
+                fields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (!validateField(field)) {
                         isValid = false;
                     }
+                });
 
-                    if (!validateCoverLetter()) {
-                        isValid = false;
-                    }
-
-                    if (sourceSelect.value === 'other') {
-                        if (!validateField(otherSourceInput)) {
-                            isValid = false;
-                        }
-                    }
-
-                    return isValid;
+                if (!validateFile()) {
+                    isValid = false;
                 }
 
-                // Character counter for cover letter
-                coverLetter.addEventListener('input', function () {
-                    const length = this.value.length;
-                    coverLetterCounter.textContent = `${length}/500 characters`;
-                    if (length > 450) {
-                        coverLetterCounter.classList.add('near-limit');
-                        coverLetterCounter.classList.remove('over-limit');
-                    } else if (length > 500) {
-                        coverLetterCounter.classList.remove('near-limit');
-                        coverLetterCounter.classList.add('over-limit');
-                    } else {
-                        coverLetterCounter.classList.remove('near-limit', 'over-limit');
-                    }
-                    validateCoverLetter();
-                });
+                if (!validateCoverLetter()) {
+                    isValid = false;
+                }
 
-                // Show/hide other source input
-                sourceSelect.addEventListener('change', function () {
-                    if (this.value === 'other') {
-                        otherSourceContainer.classList.add('active');
-                        otherSourceInput.required = true;
-                    } else {
-                        otherSourceContainer.classList.remove('active');
-                        otherSourceInput.required = false;
-                        otherSourceInput.value = '';
-                        clearError('source');
+                if (sourceSelect.value === 'other') {
+                    if (!validateField(otherSourceInput)) {
+                        isValid = false;
                     }
-                    validateField(this);
-                });
+                }
 
-                // Open modal
-                jobApplyBtns.forEach(btn => {
+                return isValid;
+            }
+
+            // Character counter for cover letter
+            coverLetter.addEventListener('input', function () {
+                const length = this.value.length;
+                coverLetterCounter.textContent = `${length}/500 characters`;
+                if (length > 450) {
+                    coverLetterCounter.classList.add('near-limit');
+                    coverLetterCounter.classList.remove('over-limit');
+                } else if (length > 500) {
+                    coverLetterCounter.classList.remove('near-limit');
+                    coverLetterCounter.classList.add('over-limit');
+                } else {
+                    coverLetterCounter.classList.remove('near-limit', 'over-limit');
+                }
+                validateCoverLetter();
+            });
+
+            // Show/hide other source input
+            sourceSelect.addEventListener('change', function () {
+                if (this.value === 'other') {
+                    otherSourceContainer.classList.add('active');
+                    otherSourceInput.required = true;
+                } else {
+                    otherSourceContainer.classList.remove('active');
+                    otherSourceInput.required = false;
+                    otherSourceInput.value = '';
+                    clearError('source');
+                }
+                validateField(this);
+            });
+
+            // Attach event listeners to apply buttons
+            window.attachApplyButtonListeners = function() {
+                document.querySelectorAll('.job-apply-btn').forEach(btn => {
                     btn.addEventListener('click', function (e) {
                         e.preventDefault();
-                        const jobTitle = this.getAttribute('data-job');
-                        jobTitleElement.textContent = jobTitle;
+                        currentJobTitle = this.getAttribute('data-job');
+                        currentJobId = this.getAttribute('data-job-id');
+                        jobTitleElement.textContent = currentJobTitle;
                         modal.classList.add('active');
                         document.body.style.overflow = 'hidden';
                     });
                 });
+            };
 
-                // Close modal
-                function closeApplicationModal() {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                    applicationForm.reset();
+            // Close modal
+            function closeApplicationModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                applicationForm.reset();
+                fileName.textContent = '';
+                fileUpload.classList.remove('has-file');
+                formContainer.style.display = 'block';
+                successMessage.classList.remove('active');
+                coverLetterCounter.textContent = '0/500 characters';
+                coverLetterCounter.classList.remove('near-limit', 'over-limit');
+                otherSourceContainer.classList.remove('active');
+                otherSourceInput.required = false;
+
+                // Clear all errors
+                document.querySelectorAll('.form-control').forEach(input => {
+                    input.classList.remove('error');
+                });
+                document.querySelectorAll('.form-error').forEach(error => {
+                    error.textContent = '';
+                    error.style.display = 'none';
+                });
+
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+
+            closeModal.addEventListener('click', closeApplicationModal);
+            cancelBtn.addEventListener('click', closeApplicationModal);
+            closeSuccess.addEventListener('click', closeApplicationModal);
+
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeApplicationModal();
+                }
+            });
+
+            // File upload handling
+            fileUpload.addEventListener('click', function () {
+                resumeInput.click();
+            });
+
+            resumeInput.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    fileName.textContent = file.name;
+                    fileUpload.classList.add('has-file');
+                    validateFile();
+                } else {
                     fileName.textContent = '';
                     fileUpload.classList.remove('has-file');
-                    formContainer.style.display = 'block';
-                    successMessage.classList.remove('active');
-                    coverLetterCounter.textContent = '0/500 characters';
-                    coverLetterCounter.classList.remove('near-limit', 'over-limit');
-                    otherSourceContainer.classList.remove('active');
-                    otherSourceInput.required = false;
+                    showError('resume', 'Please upload your resume');
+                }
+            });
 
-                    // Clear all errors
-                    document.querySelectorAll('.form-control').forEach(input => {
-                        input.classList.remove('error');
-                    });
-                    document.querySelectorAll('.form-error').forEach(error => {
-                        error.textContent = '';
-                        error.style.display = 'none';
+            // Real-time validation
+            const inputs = applicationForm.querySelectorAll('input[required], select[required]');
+            inputs.forEach(input => {
+                input.addEventListener('input', function () {
+                    validateField(this);
+                });
+                input.addEventListener('blur', function () {
+                    validateField(this);
+                });
+            });
+
+            // Form submission
+            applicationForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                if (!validateForm()) {
+                    return;
+                }
+
+                // Show loading state
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'flex';
+                submitBtn.disabled = true;
+
+                try {
+                    // Prepare form data
+                    const formData = new FormData();
+                    formData.append('name', `${document.getElementById('firstName').value.trim()} ${document.getElementById('lastName').value.trim()}`);
+                    formData.append('email', document.getElementById('email').value.trim());
+                    formData.append('phone', document.getElementById('phone').value.trim());
+                    formData.append('experience', document.getElementById('experience').value);
+                    formData.append('education', document.getElementById('education').value);
+                    formData.append('cover_letter', document.getElementById('coverLetter').value.trim() || 'No cover letter provided');
+                    formData.append('resume', resumeInput.files[0]);
+                    formData.append('job_title', currentJobTitle);
+                    formData.append('source', sourceSelect.value === 'other' ? otherSourceInput.value.trim() : sourceSelect.value);
+
+                    // Submit to backend
+                    const response = await fetch('https://zonixtec.com/server/admin/apply-job.php', {
+                        method: 'POST',
+                        body: formData
                     });
 
+                    const result = await response.json();
+
+                    if (result.status) {
+                        // Success - show success message
+                        formContainer.style.display = 'none';
+                        successMessage.classList.add('active');
+                    } else {
+                        // Error - show error message
+                        alert('Error: ' + (result.message || 'Failed to submit application. Please try again.'));
+                    }
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    alert('Network error. Please check your connection and try again.');
+                } finally {
                     // Reset button state
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
                 }
-
-                closeModal.addEventListener('click', closeApplicationModal);
-                cancelBtn.addEventListener('click', closeApplicationModal);
-                closeSuccess.addEventListener('click', closeApplicationModal);
-
-                modal.addEventListener('click', function (e) {
-                    if (e.target === modal) {
-                        closeApplicationModal();
-                    }
-                });
-
-                // File upload handling
-                fileUpload.addEventListener('click', function () {
-                    resumeInput.click();
-                });
-
-                resumeInput.addEventListener('change', function () {
-                    if (this.files.length > 0) {
-                        const file = this.files[0];
-                        fileName.textContent = file.name;
-                        fileUpload.classList.add('has-file');
-                        validateFile();
-                    } else {
-                        fileName.textContent = '';
-                        fileUpload.classList.remove('has-file');
-                        showError('resume', 'Please upload your resume');
-                    }
-                });
-
-                // Real-time validation
-                const inputs = applicationForm.querySelectorAll('input[required], select[required]');
-                inputs.forEach(input => {
-                    input.addEventListener('input', function () {
-                        validateField(this);
-                    });
-                    input.addEventListener('blur', function () {
-                        validateField(this);
-                    });
-                });
-
-                // Form submission
-                applicationForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    if (!validateForm()) {
-                        return;
-                    }
-
-                    // Show loading state
-                    btnText.style.display = 'none';
-                    btnLoading.style.display = 'flex';
-                    submitBtn.disabled = true;
-
-                    // Simulate form submission (replace with actual API call)
-                    setTimeout(() => {
-                        formContainer.style.display = 'none';
-                        successMessage.classList.add('active');
-                        btnText.style.display = 'inline';
-                        btnLoading.style.display = 'none';
-                        submitBtn.disabled = false;
-
-                        // Log form data for debugging (remove in production)
-                        const formData = new FormData(applicationForm);
-                        console.log('Form Data:', {
-                            firstName: formData.get('firstName'),
-                            lastName: formData.get('lastName'),
-                            email: formData.get('email'),
-                            phone: formData.get('phone'),
-                            experience: formData.get('experience'),
-                            education: formData.get('education'),
-                            coverLetter: formData.get('coverLetter'),
-                            resume: formData.get('resume')?.name,
-                            source: formData.get('source'),
-                            otherSource: formData.get('otherSource'),
-                            jobTitle: jobTitleElement.textContent
-                        });
-                    }, 2000);
-                });
             });
-        
-        
+        }
     </script>
 
 <script>
