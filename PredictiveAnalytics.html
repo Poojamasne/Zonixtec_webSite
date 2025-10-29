@@ -147,7 +147,7 @@
             color: var(--secondary);
         }
 
-        .nav-links a:not(.cta-button)::after {
+        /* .nav-links a:not(.cta-button)::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -156,7 +156,7 @@
             height: 2px;
             background: var(--secondary);
             transition: width 0.3s ease;
-        }
+        } */
 
         .nav-links a:not(.cta-button):hover::after {
             width: 100%;
@@ -809,28 +809,18 @@
         }
 
         /* Get Start Button */
-        .cta-buttons {
-            background: linear-gradient(135deg, #6C63FF, #3F8EFC);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 50px;
+         .cta-buttons {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
             font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.35s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
         }
 
         .cta-buttons:hover {
-            background: linear-gradient(135deg, #cfd3d8, #6666f5);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
-            color: #fff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
         }
 
         /* Responsive styles */
