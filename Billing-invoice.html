@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing & Invoice Software | Zonixtec - Automate Financial Operations</title>
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
-    <meta name="description" content="Simplify your financial operations with Zonixtec's Billing & Invoice Software—automating invoicing, payments, and reporting for faster transactions and better cash flow management.">
+    <meta name="description"
+        content="Simplify your financial operations with Zonixtec's Billing & Invoice Software—automating invoicing, payments, and reporting for faster transactions and better cash flow management.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -26,17 +30,17 @@
             --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
             --accent-gradient: linear-gradient(135deg, var(--accent), #ff6b9c);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -44,35 +48,40 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .section-padding {
             padding: 100px 0;
         }
-        
+
         .section-title {
             font-size: 3rem;
             text-align: center;
             margin-bottom: 1.5rem;
             position: relative;
         }
-        
+
         .section-title span {
             color: var(--secondary);
             position: relative;
         }
-        
+
         .section-subtitle {
             text-align: center;
             font-size: 1.3rem;
@@ -82,7 +91,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         /* Header Styles */
         header {
             position: fixed;
@@ -95,18 +104,18 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         header.scrolled {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
+
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
@@ -114,21 +123,21 @@
             color: var(--light);
             text-decoration: none;
         }
-        
+
         .logo span {
             color: var(--secondary);
         }
-        
+
         .logo .tech {
             color: var(--primary);
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
             gap: 30px;
         }
-        
+
         .nav-links a {
             color: var(--light);
             text-decoration: none;
@@ -136,11 +145,12 @@
             transition: color 0.3s ease;
             position: relative;
         }
-        
-        .nav-links a:hover, .nav-links a.active {
+
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--secondary);
         }
-        
+
         .nav-links a.active::after {
             content: '';
             position: absolute;
@@ -154,7 +164,7 @@
 
 
 
-          /* ===== Dropdown Styles ===== */
+        /* ===== Dropdown Styles ===== */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -218,32 +228,35 @@
         }
 
         .dropdown-scroll {
-    max-height: 300px; /* Slightly less than parent to account for padding */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 8px 0; /* Add padding to scroll container */
-}
+            max-height: 300px;
+            /* Slightly less than parent to account for padding */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+            padding: 8px 0;
+            /* Add padding to scroll container */
+        }
 
-/* Custom scrollbar styling */
-.dropdown-scroll::-webkit-scrollbar {
-    width: 6px;
-}
+        /* Custom scrollbar styling */
+        .dropdown-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.5);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
 
 
-        
+
         .cta-button {
             background: var(--tech-gradient);
             color: var(--dark);
@@ -254,26 +267,26 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.4);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--light);
         }
-        
+
         /* Hero Section */
         .billing-hero {
             padding: 180px 0 100px;
             position: relative;
             overflow: hidden;
         }
-        
+
         .billing-hero::before {
             content: '';
             position: absolute;
@@ -281,55 +294,55 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(0, 242, 255, 0.1) 0%, transparent 50%);
             z-index: -1;
         }
-        
+
         .hero-content {
             display: flex;
             align-items: center;
             gap: 60px;
         }
-        
+
         .hero-text {
             flex: 1;
         }
-        
+
         .hero-title {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1.1;
         }
-        
+
         .hero-title span {
             background: var(--tech-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero-subtitle {
             font-size: 1.4rem;
             color: var(--secondary);
             margin-bottom: 2rem;
             font-weight: 500;
         }
-        
+
         .hero-description {
             font-size: 1.2rem;
             color: var(--gray);
             margin-bottom: 3rem;
             line-height: 1.8;
         }
-        
+
         .hero-visual {
             flex: 1;
             position: relative;
             height: 500px;
         }
-        
+
         .invoice-preview {
             position: relative;
             width: 100%;
@@ -342,22 +355,22 @@
             transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
             transition: transform 0.5s ease;
         }
-        
+
         .invoice-preview:hover {
             transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
         }
-        
+
         .invoice-header {
             background: var(--tech-gradient);
             padding: 20px;
             color: var(--dark);
             text-align: center;
         }
-        
+
         .invoice-body {
             padding: 30px;
         }
-        
+
         .invoice-row {
             display: flex;
             justify-content: space-between;
@@ -365,13 +378,13 @@
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .invoice-total {
             font-weight: 700;
             font-size: 1.2rem;
             color: var(--secondary);
         }
-        
+
         .invoice-status {
             position: absolute;
             top: 20px;
@@ -383,7 +396,7 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-        
+
         /* Features Grid */
         .features-grid {
             display: grid;
@@ -391,7 +404,7 @@
             gap: 30px;
             margin-top: 60px;
         }
-        
+
         .feature-card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -402,7 +415,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .feature-card::before {
             content: '';
             position: absolute;
@@ -412,29 +425,29 @@
             height: 5px;
             background: var(--tech-gradient);
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .feature-icon {
             font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 25px;
         }
-        
+
         .feature-title {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--light);
         }
-        
+
         .feature-description {
             color: var(--gray);
             line-height: 1.6;
         }
-        
+
         /* Challenges Section */
         .challenges-section {
             background: var(--card-bg);
@@ -445,48 +458,48 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .challenges-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--secondary);
         }
-        
+
         .challenges-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .challenge-item {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             padding: 30px;
             border-left: 4px solid var(--accent);
         }
-        
+
         .challenge-item i {
             color: var(--accent);
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
-        
+
         .challenge-title {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--light);
         }
-        
+
         .challenge-description {
             color: var(--gray);
         }
-        
+
         /* Process Visualization */
         .process-section {
             position: relative;
         }
-        
+
         .process-visual {
             display: flex;
             justify-content: space-between;
@@ -494,14 +507,14 @@
             margin-top: 60px;
             position: relative;
         }
-        
+
         .process-step {
             text-align: center;
             width: 180px;
             position: relative;
             z-index: 2;
         }
-        
+
         .process-step::before {
             content: '';
             position: absolute;
@@ -512,11 +525,11 @@
             background: var(--tech-gradient);
             z-index: -1;
         }
-        
+
         .process-step:last-child::before {
             display: none;
         }
-        
+
         .step-icon {
             width: 80px;
             height: 80px;
@@ -530,30 +543,30 @@
             color: var(--dark);
             box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
         }
-        
+
         .step-title {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--light);
         }
-        
+
         .step-description {
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
         /* Technology Stack */
         .tech-stack {
             margin-top: 80px;
         }
-        
+
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .tech-category {
             background: var(--card-bg);
             border-radius: 15px;
@@ -561,28 +574,28 @@
             text-align: center;
             border: 1px solid var(--card-border);
         }
-        
+
         .tech-icon {
             font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 20px;
         }
-        
+
         .tech-title {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--light);
         }
-        
+
         .tech-list {
             list-style: none;
         }
-        
+
         .tech-list li {
             color: var(--gray);
             margin-bottom: 8px;
         }
-        
+
         /* Benefits Section */
         .benefits-section {
             display: grid;
@@ -590,7 +603,7 @@
             gap: 30px;
             margin-top: 60px;
         }
-        
+
         .benefit-card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -601,7 +614,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .benefit-card::before {
             content: '';
             position: absolute;
@@ -611,39 +624,39 @@
             height: 5px;
             background: var(--tech-gradient);
         }
-        
+
         .benefit-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .benefit-icon {
             font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 25px;
         }
-        
+
         .benefit-title {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--light);
         }
-        
+
         .benefit-description {
             color: var(--gray);
             line-height: 1.6;
         }
-        
+
         /* FAQ Section */
         .faq-section {
             margin-top: 80px;
         }
-        
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             background: var(--card-bg);
             border-radius: 15px;
@@ -651,7 +664,7 @@
             border: 1px solid var(--card-border);
             overflow: hidden;
         }
-        
+
         .faq-question {
             padding: 25px;
             cursor: pointer;
@@ -661,12 +674,12 @@
             font-weight: 600;
             color: var(--light);
         }
-        
+
         .faq-question i {
             color: var(--secondary);
             transition: transform 0.3s ease;
         }
-        
+
         .faq-answer {
             padding: 0 25px;
             max-height: 0;
@@ -674,16 +687,16 @@
             transition: max-height 0.3s ease, padding 0.3s ease;
             color: var(--gray);
         }
-        
+
         .faq-item.active .faq-answer {
             padding: 0 25px 25px;
             max-height: 500px;
         }
-        
+
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
         }
-        
+
         /* CTA Section */
         .cta-section {
             background: var(--tech-gradient);
@@ -694,7 +707,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-section::before {
             content: '';
             position: absolute;
@@ -705,13 +718,13 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><path fill="%23ffffff" d="M500,100 C700,100 900,200 900,500 C900,800 700,900 500,900 C300,900 100,800 100,500 C100,200 300,100 500,100 Z"/></svg>') no-repeat center center;
             background-size: 80%;
         }
-        
+
         .cta-title {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             color: var(--dark);
         }
-        
+
         .cta-subtitle {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
@@ -720,7 +733,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .cta-button-large {
             background: var(--dark);
             color: var(--light);
@@ -733,38 +746,38 @@
             display: inline-block;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        
+
         .cta-button-large:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
-        
+
         /* Footer */
         .footer {
             /* background: rgba(15, 23, 42, 0.9); */
             padding: 80px 0 30px;
             margin-top: 100px;
         }
-        
+
         .footer-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 50px;
             margin-bottom: 40px;
         }
-        
+
         .footer-col h3 {
             color: var(--secondary);
             margin-bottom: 25px;
             font-size: 1.3rem;
         }
-        
+
         .footer-links {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-        
+
         .footer-links a {
             color: var(--gray);
             text-decoration: none;
@@ -773,11 +786,11 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .footer-links a:hover {
             color: var(--secondary);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -786,37 +799,37 @@
         }
 
 
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
             }
-            
+
             .process-visual {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 40px;
             }
-            
+
             .process-step::before {
                 display: none;
             }
-            
+
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             .section-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-title {
                 font-size: 3rem;
             }
-            
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -828,59 +841,60 @@
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             }
-            
+
             .nav-links.active {
                 display: flex;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .challenges-section {
                 padding: 60px 30px;
             }
-            
+
             .cta-section {
                 padding: 60px 20px;
             }
-            
+
             .cta-title {
                 font-size: 2.5rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .challenges-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .tech-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .benefits-section {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -891,7 +905,8 @@
                     <a href="index.html">Home</a>
                     <a href="aboutus.html">About</a>
                     <div class="dropdown">
-                        <a href="Services.html" class="active dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="Services.html" class="active dropdown-toggle">Services <i
+                                class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <div class="dropdown-scroll">
                                 <a href="web-design-development.html">Web Design & Development</a>
@@ -918,7 +933,7 @@
             </nav>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="billing-hero section-padding">
         <div class="container">
@@ -926,7 +941,11 @@
                 <div class="hero-text">
                     <h1 class="hero-title">Billing & <span>Invoice Software</span></h1>
                     <p class="hero-subtitle">Automate Transactions. Accelerate Growth.</p>
-                    <p class="hero-description">At Zonixtec, we build intelligent billing and invoicing systems that help businesses simplify financial operations. Our solutions automate invoice creation, payment tracking, and financial reporting—reducing errors and saving valuable time. With real-time insights and seamless integrations, you can stay focused on what matters most: running your business.</p>
+                    <p class="hero-description">At Zonixtec, we build intelligent billing and invoicing systems that
+                        help businesses simplify financial operations. Our solutions automate invoice creation, payment
+                        tracking, and financial reporting—reducing errors and saving valuable time. With real-time
+                        insights and seamless integrations, you can stay focused on what matters most: running your
+                        business.</p>
                     <a href="#contact" class="cta-button">Let's Simplify Your Billing Process</a>
                 </div>
                 <div class="hero-visual">
@@ -975,65 +994,72 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Features Section -->
     <section class="section-padding">
         <div class="container">
             <h2 class="section-title">Our Billing & <span>Invoice Solutions</span></h2>
-            <p class="section-subtitle">Our billing and invoice systems are designed to handle complex financial workflows with ease—no matter the scale of your business.</p>
-            
+            <p class="section-subtitle">Our billing and invoice systems are designed to handle complex financial
+                workflows with ease—no matter the scale of your business.</p>
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <h3 class="feature-title">Invoice Management</h3>
-                    <p class="feature-description">Create, send, and track invoices automatically with branding and custom templates tailored to your business needs.</p>
+                    <p class="feature-description">Create, send, and track invoices automatically with branding and
+                        custom templates tailored to your business needs.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
                     <h3 class="feature-title">Payment Integration</h3>
-                    <p class="feature-description">Accept secure payments through multiple gateways like Razorpay, Stripe, and PayPal with seamless integration.</p>
+                    <p class="feature-description">Accept secure payments through multiple gateways like Razorpay,
+                        Stripe, and PayPal with seamless integration.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3 class="feature-title">Recurring Billing</h3>
-                    <p class="feature-description">Automate subscription-based billing cycles with automated reminders and due alerts for consistent revenue.</p>
+                    <p class="feature-description">Automate subscription-based billing cycles with automated reminders
+                        and due alerts for consistent revenue.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="feature-title">Expense Tracking</h3>
-                    <p class="feature-description">Record and categorize expenses for accurate financial reports and better cash flow management.</p>
+                    <p class="feature-description">Record and categorize expenses for accurate financial reports and
+                        better cash flow management.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-balance-scale"></i>
                     </div>
                     <h3 class="feature-title">Tax & Compliance</h3>
-                    <p class="feature-description">Ensure GST, VAT, and regional compliance in every transaction with automated tax calculations.</p>
+                    <p class="feature-description">Ensure GST, VAT, and regional compliance in every transaction with
+                        automated tax calculations.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3 class="feature-title">Multi-Currency Support</h3>
-                    <p class="feature-description">Handle international transactions with multi-currency and multi-language support for global businesses.</p>
+                    <p class="feature-description">Handle international transactions with multi-currency and
+                        multi-language support for global businesses.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Challenges Section -->
     <section class="section-padding">
         <div class="container">
@@ -1043,58 +1069,65 @@
                     <div class="challenge-item">
                         <i class="fas fa-exclamation-circle"></i>
                         <h3 class="challenge-title">Manual Invoice Errors</h3>
-                        <p class="challenge-description">Manual data entry leads to errors that can result in revenue loss and client dissatisfaction.</p>
+                        <p class="challenge-description">Manual data entry leads to errors that can result in revenue
+                            loss and client dissatisfaction.</p>
                     </div>
-                    
+
                     <div class="challenge-item">
                         <i class="fas fa-clock"></i>
                         <h3 class="challenge-title">Payment Delays</h3>
-                        <p class="challenge-description">Slow invoicing processes cause delays in payments and complicate financial reconciliations.</p>
+                        <p class="challenge-description">Slow invoicing processes cause delays in payments and
+                            complicate financial reconciliations.</p>
                     </div>
-                    
+
                     <div class="challenge-item">
                         <i class="fas fa-eye-slash"></i>
                         <h3 class="challenge-title">Poor Financial Visibility</h3>
-                        <p class="challenge-description">Lack of real-time insights into cash flow and financial health hinders strategic decision-making.</p>
+                        <p class="challenge-description">Lack of real-time insights into cash flow and financial health
+                            hinders strategic decision-making.</p>
                     </div>
-                    
+
                     <div class="challenge-item">
                         <i class="fas fa-file-contract"></i>
                         <h3 class="challenge-title">Tax Compliance Issues</h3>
-                        <p class="challenge-description">Difficulty in maintaining accurate tax records and compliance reporting increases audit risks.</p>
+                        <p class="challenge-description">Difficulty in maintaining accurate tax records and compliance
+                            reporting increases audit risks.</p>
                     </div>
-                    
+
                     <div class="challenge-item">
                         <i class="fas fa-redo"></i>
                         <h3 class="challenge-title">No Recurring Billing</h3>
-                        <p class="challenge-description">Manual handling of subscription payments leads to inefficiencies and potential revenue leakage.</p>
+                        <p class="challenge-description">Manual handling of subscription payments leads to
+                            inefficiencies and potential revenue leakage.</p>
                     </div>
-                    
+
                     <div class="challenge-item">
                         <i class="fas fa-chart-pie"></i>
                         <h3 class="challenge-title">Limited Reporting</h3>
-                        <p class="challenge-description">Inadequate reporting capabilities make it difficult to analyze business performance and trends.</p>
+                        <p class="challenge-description">Inadequate reporting capabilities make it difficult to analyze
+                            business performance and trends.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Process Visualization -->
     <section class="process-section section-padding">
         <div class="container">
             <h2 class="section-title">Our Development <span>Process</span></h2>
             <p class="section-subtitle">A systematic approach to building your perfect billing and invoice solution</p>
-            
+
             <div class="process-visual">
                 <div class="process-step">
                     <div class="step-icon">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
                     <h3 class="step-title">Requirement Analysis</h3>
-                    <p class="step-description">Understand your billing workflow, payment structure, and compliance needs</p>
+                    <p class="step-description">Understand your billing workflow, payment structure, and compliance
+                        needs</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-icon">
                         <i class="fas fa-pencil-ruler"></i>
@@ -1102,7 +1135,7 @@
                     <h3 class="step-title">System Design</h3>
                     <p class="step-description">Build UI/UX wireframes and data architecture for ease of use</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-icon">
                         <i class="fas fa-code"></i>
@@ -1110,7 +1143,7 @@
                     <h3 class="step-title">Development</h3>
                     <p class="step-description">Code and connect payment gateways, databases, and modules</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-icon">
                         <i class="fas fa-vial"></i>
@@ -1118,7 +1151,7 @@
                     <h3 class="step-title">Testing & Validation</h3>
                     <p class="step-description">Verify accuracy in transactions and security compliance</p>
                 </div>
-                
+
                 <div class="process-step">
                     <div class="step-icon">
                         <i class="fas fa-rocket"></i>
@@ -1129,13 +1162,14 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Technology Stack -->
     <section class="section-padding">
         <div class="container">
             <h2 class="section-title">Technology <span>Stack</span></h2>
-            <p class="section-subtitle">We leverage cutting-edge technologies to build secure, scalable, and efficient billing solutions</p>
-            
+            <p class="section-subtitle">We leverage cutting-edge technologies to build secure, scalable, and efficient
+                billing solutions</p>
+
             <div class="tech-stack">
                 <div class="tech-grid">
                     <div class="tech-category">
@@ -1150,7 +1184,7 @@
                             <li>Bootstrap, Material UI</li>
                         </ul>
                     </div>
-                    
+
                     <div class="tech-category">
                         <div class="tech-icon">
                             <i class="fas fa-server"></i>
@@ -1163,7 +1197,7 @@
                             <li>MySQL, Redis</li>
                         </ul>
                     </div>
-                    
+
                     <div class="tech-category">
                         <div class="tech-icon">
                             <i class="fas fa-money-check-alt"></i>
@@ -1176,7 +1210,7 @@
                             <li>Multiple currency support</li>
                         </ul>
                     </div>
-                    
+
                     <div class="tech-category">
                         <div class="tech-icon">
                             <i class="fas fa-shield-alt"></i>
@@ -1193,71 +1227,78 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Benefits Section -->
     <section class="section-padding">
         <div class="container">
             <h2 class="section-title">Business <span>Impact</span></h2>
-            <p class="section-subtitle">How our billing and invoice software drives tangible results for your business</p>
-            
+            <p class="section-subtitle">How our billing and invoice software drives tangible results for your business
+            </p>
+
             <div class="benefits-section">
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3 class="benefit-title">Faster Invoicing</h3>
-                    <p class="benefit-description">Automated invoice creation and delivery reduces processing time from days to minutes.</p>
+                    <p class="benefit-description">Automated invoice creation and delivery reduces processing time from
+                        days to minutes.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="benefit-title">Real-Time Visibility</h3>
-                    <p class="benefit-description">Gain instant insights into revenue, expenses, and cash flow with comprehensive dashboards.</p>
+                    <p class="benefit-description">Gain instant insights into revenue, expenses, and cash flow with
+                        comprehensive dashboards.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-money-bill-wave"></i>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
                     </div>
                     <h3 class="benefit-title">Improved Cash Flow</h3>
-                    <p class="benefit-description">Reduce payment delays with automated reminders and multiple payment options.</p>
+                    <p class="benefit-description">Reduce payment delays with automated reminders and multiple payment
+                        options.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-file-contract"></i>
                     </div>
                     <h3 class="benefit-title">Simplified Compliance</h3>
-                    <p class="benefit-description">Automated tax calculations and reporting ensure compliance with GST and other regulations.</p>
+                    <p class="benefit-description">Automated tax calculations and reporting ensure compliance with GST
+                        and other regulations.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-user-shield"></i>
                     </div>
                     <h3 class="benefit-title">Enhanced Security</h3>
-                    <p class="benefit-description">Enterprise-grade security with encryption and role-based access controls.</p>
+                    <p class="benefit-description">Enterprise-grade security with encryption and role-based access
+                        controls.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="benefit-title">Customer Trust</h3>
-                    <p class="benefit-description">Professional invoices and transparent transactions build customer confidence and loyalty.</p>
+                    <p class="benefit-description">Professional invoices and transparent transactions build customer
+                        confidence and loyalty.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- FAQ Section -->
     <section class="section-padding faq-section">
         <div class="container">
             <h2 class="section-title">Billing & Invoice <span>FAQs</span></h2>
             <p class="section-subtitle">Find answers to common questions about our billing and invoice solutions</p>
-            
+
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -1265,217 +1306,231 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Any business—retail, SaaS, healthcare, or manufacturing—that manages regular transactions and clients benefits from an automated billing system. It's particularly valuable for businesses with recurring billing models, multiple payment methods, or complex tax compliance requirements.</p>
+                        <p>Any business—retail, SaaS, healthcare, or manufacturing—that manages regular transactions and
+                            clients benefits from an automated billing system. It's particularly valuable for businesses
+                            with recurring billing models, multiple payment methods, or complex tax compliance
+                            requirements.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Can the system handle GST and other tax rules?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes. Our software is fully compliant with GST and other local tax regulations. It automatically calculates taxes based on your business location and customer locations, generates compliant invoices, and prepares necessary reports for tax filing.</p>
+                        <p>Yes. Our software is fully compliant with GST and other local tax regulations. It
+                            automatically calculates taxes based on your business location and customer locations,
+                            generates compliant invoices, and prepares necessary reports for tax filing.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Is it suitable for recurring payments or subscriptions?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. We support automated recurring billing and invoicing for subscription models. You can set up different billing cycles (monthly, quarterly, annually), automate payment collection, and send automated reminders for upcoming or failed payments.</p>
+                        <p>Absolutely. We support automated recurring billing and invoicing for subscription models. You
+                            can set up different billing cycles (monthly, quarterly, annually), automate payment
+                            collection, and send automated reminders for upcoming or failed payments.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Can I integrate the system with my accounting software?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we can integrate with popular accounting tools like QuickBooks, Zoho Books, Tally, and others. Our systems use APIs to ensure seamless data synchronization between your billing system and accounting software.</p>
+                        <p>Yes, we can integrate with popular accounting tools like QuickBooks, Zoho Books, Tally, and
+                            others. Our systems use APIs to ensure seamless data synchronization between your billing
+                            system and accounting software.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Is data stored securely?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>100%. All data is encrypted, backed up, and protected using secure cloud infrastructure. We implement industry-standard security measures including SSL encryption, OAuth2.0 authentication, role-based access controls, and regular security audits to ensure your financial data remains safe.</p>
+                        <p>100%. All data is encrypted, backed up, and protected using secure cloud infrastructure. We
+                            implement industry-standard security measures including SSL encryption, OAuth2.0
+                            authentication, role-based access controls, and regular security audits to ensure your
+                            financial data remains safe.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- CTA Section -->
     <section class="section-padding" id="contact">
         <div class="container">
             <div class="cta-section">
                 <h2 class="cta-title">Ready to Simplify Your Billing Process?</h2>
-                <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover how our expertise can transform your billing processes.</p>
+                <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial
+                    operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover
+                    how our expertise can transform your billing processes.</p>
                 <a href="contact.html" class="cta-button-large">Schedule a Free Consultation</a>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-container">
-            <!-- Solutions Section with Dropdown -->
-            <div class="footer-col">
-                <h3>Solutions</h3>
-                <div class="footer-links">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdown -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
 
-                    <!-- Next-Gen Tech Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                        <!-- Next-Gen Tech Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Next-Gen Tech</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine
+                                    Learning</a>
+                                <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+                            </div>
                         </div>
-                        <div class="footer-dropdown-content">
-                            <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> AI & Machine
-                                Learning</a>
-                            <a href="CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
+
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> AI Services</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
+                                <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy &
+                                    Consulting</a>
+                                <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
+                                <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing
+                                    (NLP)</a>
+                                <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive
+                                    Analysis</a>
+                                <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process
+                                    Automation</a>
+                            </div>
+                        </div>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software
+                                    Development</a>
+                                <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App
+                                    Development</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- AI Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> AI Services</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="AIServices.html"><i class="fas fa-chevron-right"></i> AI Services Overview</a>
-                            <a href="AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy &
-                                Consulting</a>
-                            <a href="MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-                            <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing
-                                (NLP)</a>
-                            <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-                            <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive
-                                Analysis</a>
-                            <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process
-                                Automation</a>
-                        </div>
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
                     </div>
+                </div>
 
-                    <!-- Core Development Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Core Development</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software
-                                Development</a>
-                            <a href="MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App
-                                Development</a>
-                        </div>
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <!-- <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a> -->
+                        <a href="aboutus.html" id="aboutLink">
+                            <i class="fas fa-chevron-right"></i> Mission & Vision
+                        </a>
+
+
+                        <a href="aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
                     </div>
+                </div>
 
-                    <!-- Design & Experience Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
-                        </div>
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
+                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
+                        <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Insights Section -->
-            <div class="footer-col">
-                <h3>Insights</h3>
-                <div class="footer-links">
-                    <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-                    <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                    <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                    <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
-                    <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-                    <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-                    <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
-                </div>
-            </div>
-
-            <!-- Company Section -->
-            <div class="footer-col">
-                <h3>Company</h3>
-                <div class="footer-links">
-                    <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                    <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                    <!-- <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a> -->
-                    <a href="aboutus.html" id="aboutLink">
-                        <i class="fas fa-chevron-right"></i> Mission & Vision
-                    </a>
-            
-            
-                    <a href="aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
-                    <a href="aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
-                    <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
-                </div>
-            </div>
-
-            <!-- Quick Links Section -->
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-                    <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
-                    <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                    <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-                    <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                    <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 Zonixtec. All Rights Reserved. | Designed with by Zonixtec Team</p>
-        </div>
-    </div>
-</footer>
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
 
-<style>
-.footer-dropdown-content {
-  display: none;
-  margin-left: 15px;
-}
-.footer-dropdown.open .footer-dropdown-content {
-  display: block;
-}
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
 
-.footer-dropdown-header {
-    display: flex;
-    color: var(--gray);
-    justify-content: space-between;
-    cursor: pointer;
-    margin: 5px 0;
-}
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
 
-</style>
-
-<script>
-    // Footer dropdown functionality
-    document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const parent = header.parentElement;
-            parent.classList.toggle('open');
+    <script>
+        // Footer dropdown functionality
+        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
         });
-    });
-</script>
+    </script>
 
     <!-- <script>
         // Mobile menu toggle
@@ -1514,4 +1569,5 @@
     </script> -->
     <script src="Customscroll.js"></script>
 </body>
+
 </html>
