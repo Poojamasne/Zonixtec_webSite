@@ -69,6 +69,10 @@
             background: var(--primary);
         }
 
+.dropdown:hover .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
 
 
         @media (max-width: 768px){
