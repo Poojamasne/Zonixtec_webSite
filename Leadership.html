@@ -179,10 +179,27 @@
             margin: 0 auto;
         }
 
+        /* Custom 2-3-2 Grid Layout */
         .leadership-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .leadership-row {
+            display: flex;
+            justify-content: center;
             gap: 30px;
+        }
+
+        .row-2-cards .flip-card {
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+
+        .row-3-cards .flip-card {
+            flex: 0 0 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
         }
 
         /* Flip Card Styles */
@@ -238,13 +255,15 @@
             text-align: left;
         }
 
-        .member-photo {
+        .member-photo-placeholder {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+            border: 3px solid var(--secondary);
         }
 
         .member-name {
@@ -258,13 +277,6 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             font-weight: 500;
-        }
-
-        .member-bio {
-            color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            text-align: center;
         }
 
         .linkedin-btn {
@@ -447,6 +459,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--gray);
         }
+        
         /* Footer Dropdown Styles */
         .footer-dropdown-content {
             display: none;
@@ -471,8 +484,13 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .leadership-container {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            .row-3-cards .flip-card {
+                flex: 0 0 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+            }
+            
+            .row-3-cards {
+                flex-wrap: wrap;
             }
         }
 
@@ -512,13 +530,19 @@
             .flip-card {
                 height: 450px;
             }
+            
+            .row-2-cards, .row-3-cards {
+                flex-direction: column;
+            }
+            
+            .row-2-cards .flip-card,
+            .row-3-cards .flip-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
 
         @media (max-width: 576px) {
-            .leadership-container {
-                grid-template-columns: 1fr;
-            }
-
             .footer-container {
                 grid-template-columns: 1fr;
             }
@@ -571,218 +595,227 @@
             </div>
 
             <div class="leadership-container">
-                <!-- Leader 1 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Shubham Chavan</h3>
-                            <p class="member-designation">CEO & Founder</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Shubham Chavan</h3>
-                                <p>With a clear vision to redefine digital transformation, Shubham drives Zonixtec's strategic initiatives and innovation roadmap. His leadership combines entrepreneurial foresight with technical excellence, positioning the company as a trusted IT partner for global businesses.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Strategic Vision</li>
-                                    <li><i class="fas fa-check"></i> Digital Transformation</li>
-                                    <li><i class="fas fa-check"></i> Innovation Leadership</li>
-                                    <li><i class="fas fa-check"></i> Business Strategy</li>
-                                </ul>
+                <!-- First Row - 2 Cards -->
+                <div class="leadership-row row-2-cards">
+                    <!-- Leader 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Shubham Chavan</h3>
+                                <p class="member-designation">CEO & Founder</p>
                                 <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                                 </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Shubham Chavan</h3>
+                                    <p>With a clear vision to redefine digital transformation, Shubham drives Zonixtec's strategic initiatives and innovation roadmap. His leadership combines entrepreneurial foresight with technical excellence, positioning the company as a trusted IT partner for global businesses.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Strategic Vision</li>
+                                        <li><i class="fas fa-check"></i> Digital Transformation</li>
+                                        <li><i class="fas fa-check"></i> Innovation Leadership</li>
+                                        <li><i class="fas fa-check"></i> Business Strategy</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Rushikesh Bendal</h3>
+                                <p class="member-designation">Co-Chairman</p>
+                                <a href="#" class="linkedin-btn">
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Rushikesh Bendal</h3>
+                                    <p>Focused on governance and long-term strategy, Rushikesh ensures the organization's growth remains aligned with its mission and values. His structured decision-making and operational insight strengthen the company's foundation for sustainable success.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Corporate Governance</li>
+                                        <li><i class="fas fa-check"></i> Long-term Strategy</li>
+                                        <li><i class="fas fa-check"></i> Operational Insight</li>
+                                        <li><i class="fas fa-check"></i> Strategic Decision-Making</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Leader 2 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Rushikesh Bendal</h3>
-                            <p class="member-designation">Co-Chairman</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Rushikesh Bendal</h3>
-                                <p>Focused on governance and long-term strategy, Rushikesh ensures the organization's growth remains aligned with its mission and values. His structured decision-making and operational insight strengthen the company's foundation for sustainable success.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Corporate Governance</li>
-                                    <li><i class="fas fa-check"></i> Long-term Strategy</li>
-                                    <li><i class="fas fa-check"></i> Operational Insight</li>
-                                    <li><i class="fas fa-check"></i> Strategic Decision-Making</li>
-                                </ul>
+                <!-- Second Row - 3 Cards -->
+                <div class="leadership-row row-3-cards">
+                    <!-- Leader 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Chetan Patil</h3>
+                                <p class="member-designation">Chief Management Officer</p>
                                 <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                                 </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Chetan Patil</h3>
+                                    <p>Responsible for driving operational discipline across all verticals, Chetan emphasizes efficiency, accountability, and goal-oriented teamwork. His ability to streamline management processes ensures projects meet the highest standards of delivery.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Operational Discipline</li>
+                                        <li><i class="fas fa-check"></i> Process Optimization</li>
+                                        <li><i class="fas fa-check"></i> Team Leadership</li>
+                                        <li><i class="fas fa-check"></i> Project Management</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Anjali Garje</h3>
+                                <p class="member-designation">Chief Human Resources Officer</p>
+                                <a href="#" class="linkedin-btn">
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Anjali Garje</h3>
+                                    <p>Dedicated to nurturing talent and culture, Anjali oversees the company's people strategy with empathy and precision. Her leadership fosters engagement, diversity, and a performance-driven workplace.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Talent Development</li>
+                                        <li><i class="fas fa-check"></i> Organizational Culture</li>
+                                        <li><i class="fas fa-check"></i> Employee Engagement</li>
+                                        <li><i class="fas fa-check"></i> HR Strategy</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leader 5 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Omkar Thorat</h3>
+                                <p class="member-designation">Chief Operations Officer</p>
+                                <a href="#" class="linkedin-btn">
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Omkar Thorat</h3>
+                                    <p>Ensuring seamless operations, Omkar coordinates execution across teams to maintain project integrity and client satisfaction. His focus on operational excellence drives consistent results and organizational efficiency.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Operations Management</li>
+                                        <li><i class="fas fa-check"></i> Process Coordination</li>
+                                        <li><i class="fas fa-check"></i> Client Satisfaction</li>
+                                        <li><i class="fas fa-check"></i> Operational Excellence</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Leader 3 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Chetan Patil</h3>
-                            <p class="member-designation">Chief Management Officer</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Chetan Patil</h3>
-                                <p>Responsible for driving operational discipline across all verticals, Chetan emphasizes efficiency, accountability, and goal-oriented teamwork. His ability to streamline management processes ensures projects meet the highest standards of delivery.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Operational Discipline</li>
-                                    <li><i class="fas fa-check"></i> Process Optimization</li>
-                                    <li><i class="fas fa-check"></i> Team Leadership</li>
-                                    <li><i class="fas fa-check"></i> Project Management</li>
-                                </ul>
+                <!-- Third Row - 2 Cards -->
+                <div class="leadership-row row-2-cards">
+                    <!-- Leader 6 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Sanket Pawar</h3>
+                                <p class="member-designation">Executive Head – Business Development & Administration</p>
                                 <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                                 </a>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Sanket Pawar</h3>
+                                    <p>Committed to expanding business horizons, Sanket leads initiatives that strengthen client relationships and enhance market presence. His strategic mindset and administrative expertise accelerate business growth and stability.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Business Development</li>
+                                        <li><i class="fas fa-check"></i> Client Relationships</li>
+                                        <li><i class="fas fa-check"></i> Market Expansion</li>
+                                        <li><i class="fas fa-check"></i> Strategic Planning</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Leader 4 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Anjali Garje</h3>
-                            <p class="member-designation">Chief Human Resources Officer</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Anjali Garje</h3>
-                                <p>Dedicated to nurturing talent and culture, Anjali oversees the company's people strategy with empathy and precision. Her leadership fosters engagement, diversity, and a performance-driven workplace.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Talent Development</li>
-                                    <li><i class="fas fa-check"></i> Organizational Culture</li>
-                                    <li><i class="fas fa-check"></i> Employee Engagement</li>
-                                    <li><i class="fas fa-check"></i> HR Strategy</li>
-                                </ul>
+                    <!-- Leader 7 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="member-photo-placeholder">
+                                    <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="member-name">Aniket Sangale</h3>
+                                <p class="member-designation">Executive Head – Client Satisfaction & Technical Success</p>
                                 <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
+                                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 5 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Omkar Thorat</h3>
-                            <p class="member-designation">Chief Operations Officer</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Omkar Thorat</h3>
-                                <p>Ensuring seamless operations, Omkar coordinates execution across teams to maintain project integrity and client satisfaction. His focus on operational excellence drives consistent results and organizational efficiency.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Operations Management</li>
-                                    <li><i class="fas fa-check"></i> Process Coordination</li>
-                                    <li><i class="fas fa-check"></i> Client Satisfaction</li>
-                                    <li><i class="fas fa-check"></i> Operational Excellence</li>
-                                </ul>
-                                <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 6 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Sanket Pawar</h3>
-                            <p class="member-designation">Executive Head – Business Development & Administration</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Sanket Pawar</h3>
-                                <p>Committed to expanding business horizons, Sanket leads initiatives that strengthen client relationships and enhance market presence. His strategic mindset and administrative expertise accelerate business growth and stability.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Business Development</li>
-                                    <li><i class="fas fa-check"></i> Client Relationships</li>
-                                    <li><i class="fas fa-check"></i> Market Expansion</li>
-                                    <li><i class="fas fa-check"></i> Strategic Planning</li>
-                                </ul>
-                                <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 7 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="member-photo-placeholder">
-                                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--secondary);"></i>
-                            </div>
-                            <h3 class="member-name">Aniket Sangale</h3>
-                            <p class="member-designation">Executive Head – Client Satisfaction & Technical Success</p>
-                            <a href="#" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <h3>Aniket Sangale</h3>
-                                <p>Passionate about delivering exceptional client experiences, Aniket bridges the gap between innovation and implementation. His technical proficiency and customer-first approach ensure measurable success for every project.</p>
-                                <ul class="expertise-list">
-                                    <li><i class="fas fa-check"></i> Client Satisfaction</li>
-                                    <li><i class="fas fa-check"></i> Technical Implementation</li>
-                                    <li><i class="fas fa-check"></i> Customer Experience</li>
-                                    <li><i class="fas fa-check"></i> Project Success</li>
-                                </ul>
-                                <a href="#" class="linkedin-btn">
-                                    <i class="fab fa-linkedin"></i> Connect
-                                </a>
+                            <div class="flip-card-back">
+                                <div class="back-content">
+                                    <h3>Aniket Sangale</h3>
+                                    <p>Passionate about delivering exceptional client experiences, Aniket bridges the gap between innovation and implementation. His technical proficiency and customer-first approach ensure measurable success for every project.</p>
+                                    <ul class="expertise-list">
+                                        <li><i class="fas fa-check"></i> Client Satisfaction</li>
+                                        <li><i class="fas fa-check"></i> Technical Implementation</li>
+                                        <li><i class="fas fa-check"></i> Customer Experience</li>
+                                        <li><i class="fas fa-check"></i> Project Success</li>
+                                    </ul>
+                                    <a href="#" class="linkedin-btn">
+                                        <i class="fab fa-linkedin"></i> Connect
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -829,7 +862,7 @@
     </section>
 
     <!-- Footer -->
-     <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <!-- Solutions Section with Dropdown -->
@@ -905,7 +938,6 @@
                         <a href="CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
                         <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
                         <a href="CEOdesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                        <!-- <a href="FutureZonixtec.html"><i class="fas fa-chevron-right"></i> Future of Zonixtec</a> -->
                         <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
                         <a href="Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
                         <a href="HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
@@ -918,12 +950,9 @@
                     <div class="footer-links">
                         <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
                         <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                        <!-- <a href="aboutus.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a> -->
                         <a href="aboutus.html" id="aboutLink">
                             <i class="fas fa-chevron-right"></i> Mission & Vision
                         </a>
-
-
                         <a href="aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
                         <a href="aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
                         <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
