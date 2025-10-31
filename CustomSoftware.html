@@ -483,52 +483,60 @@ We design scalable, secure, and user-friendly applications tailored to your busi
 
         /* Technology Stack Section */
 
-        .tech-stack {
-            margin-bottom: 80px;
+        /* Technology Stack */
+        .tech-section {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            margin-top: 80px;
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .tech-title {
+        
+        .tech-section h2 {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            padding-top: 40px;
-            background: var(--tech-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--secondary);
+            margin-bottom: 40px;
         }
-
+        
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
         }
-
-        .tech-item {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 10px;
-            padding: 25px 15px;
+        
+        .tech-category {
             text-align: center;
-            border: 1px solid rgba(100, 116, 139, 0.2);
-            transition: transform 0.3s ease;
         }
-
+        
+        .tech-category h3 {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+        
         .tech-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--light);
+            transform: translateY(-3px);
         }
-
-        .tech-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .tech-name {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+        
 
         .impact-section {
             margin-bottom: 80px;
@@ -1395,59 +1403,63 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     </div>
                 </div>
 
-                <div class="tech-stack">
-                    <h2 class="tech-title">Our Technology Stack</h2>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <div class="tech-name">React</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-angular"></i>
-                            </div>
-                            <div class="tech-name">Angular</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-vuejs"></i>
-                            </div>
-                            <div class="tech-name">Vue.js</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <div class="tech-name">Node.js</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="tech-name">Python</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <div class="tech-name">Java</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="tech-name">SQL/NoSQL</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="fab fa-aws"></i>
-                            </div>
-                            <div class="tech-name">AWS</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Technology Stack -->
+<div class="tech-section">
+    <h2>Our Technology Stack</h2>
+    
+    <div class="tech-grid">
+        <div class="tech-category">
+            <h3>Languages & Frameworks</h3>
+            <div class="tech-items">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Angular</div>
+                <div class="tech-item">Node.js</div>
+            </div>
+        </div>
+        
+        <div class="tech-category">
+            <h3>Backend Technologies</h3>
+            <div class="tech-items">
+                <div class="tech-item">PHP</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Express.js</div>
+                <div class="tech-item">Laravel</div>
+            </div>
+        </div>
+        
+        <div class="tech-category">
+            <h3>Databases</h3>
+            <div class="tech-items">
+                <div class="tech-item">MongoDB</div>
+                <div class="tech-item">MySQL</div>
+                <div class="tech-item">PostgreSQL</div>
+            </div>
+        </div>
+        
+        <div class="tech-category">
+            <h3>CMS Platforms</h3>
+            <div class="tech-items">
+                <div class="tech-item">WordPress</div>
+                <div class="tech-item">Drupal</div>
+                <div class="tech-item">Strapi</div>
+                <div class="tech-item">Shopify</div>
+            </div>
+        </div>
+        
+        <div class="tech-category">
+            <h3>Cloud & Hosting</h3>
+            <div class="tech-items">
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Azure</div>
+                <div class="tech-item">Google Cloud</div>
+                <div class="tech-item">DigitalOcean</div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <div class="impact-section">
                     <div class="impact-container">
