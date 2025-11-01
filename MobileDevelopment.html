@@ -667,46 +667,50 @@
         
         /* Impact Section */
         .impact-section {
-            margin-bottom: 80px;
-        }
-        
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .impact-card {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(100, 116, 139, 0.2);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .impact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-        }
-        
-        .impact-icon {
-            font-size: 2.5rem;
-            color: var(--success);
-            margin-bottom: 20px;
-        }
-        
-        .impact-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .impact-description {
-            color: #94a3b8;
-            line-height: 1.7;
-        }
+    margin-bottom: 80px;
+}
+
+.impact-container {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.impact-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.impact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.impact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.impact-icon {
+    color: var(--success);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.impact-text {
+    color: #94a3b8;
+    line-height: 1.7;
+}
         
         /* FAQ Section */
         .faq-section {
@@ -1521,42 +1525,43 @@
             </div>
             
             <!-- Impact Section -->
-            <div class="impact-section">
-                <h2 class="section-title">Business Impact of Mobile Apps</h2>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="impact-title">Increased Revenue</h3>
-                        <p class="impact-description">Mobile apps can increase customer engagement and drive direct sales through in-app purchases and mobile commerce.</p>
+            <!-- Impact Section -->
+<section class="section-padding impact-section">
+    <div class="container">
+        <div class="impact-container">
+            <h2 class="impact-title">Business Impact of Mobile Apps</h2>
+            <div class="impact-list">
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="impact-title">Enhanced Customer Engagement</h3>
-                        <p class="impact-description">Stay connected with your customers through push notifications, personalized content, and seamless experiences.</p>
+                    <p class="impact-text">Increased Revenue - Mobile apps can increase customer engagement and drive direct sales through in-app purchases and mobile commerce.</p>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3 class="impact-title">Brand Visibility</h3>
-                        <p class="impact-description">A presence on users' home screens increases brand recall and creates ongoing touchpoints with your audience.</p>
+                    <p class="impact-text">Enhanced Customer Engagement - Stay connected with your customers through push notifications, personalized content, and seamless experiences.</p>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="impact-title">Operational Efficiency</h3>
-                        <p class="impact-description">Streamline business processes, improve communication, and increase productivity with custom mobile solutions.</p>
+                    <p class="impact-text">Brand Visibility - A presence on users' home screens increases brand recall and creates ongoing touchpoints with your audience.</p>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
+                    <p class="impact-text">Operational Efficiency - Streamline business processes, improve communication, and increase productivity with custom mobile solutions.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
             
             <!-- FAQ Section -->
             <div class="faq-section">

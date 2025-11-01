@@ -607,56 +607,63 @@
         }
 
         /* Benefits Section */
-        .benefits-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
+        .impact-section {
+    margin-bottom: 80px;
+}
 
-        .benefit-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+.impact-container {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
 
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--tech-gradient);
-        }
+.impact-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
+.section-subtitle {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 25px;
-        }
+.impact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
-        .benefit-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
+.impact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
 
-        .benefit-description {
-            color: var(--gray);
-            line-height: 1.6;
-        }
+.impact-icon {
+    color: var(--success);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
 
+.impact-text {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin: 0;
+}
         /* FAQ Section */
         .faq-section {
             margin-top: 80px;
@@ -1247,69 +1254,58 @@
 </section>
 
     <!-- Benefits Section -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Business <span>Impact</span></h2>
-            <p class="section-subtitle">How our billing and invoice software drives tangible results for your business
-            </p>
+<section class="section-padding impact-section">
+    <div class="container">
+        <div class="impact-container">
+            <h2 class="impact-title">Business Impact</h2>
+            <p class="section-subtitle">How our billing and invoice software drives tangible results for your business</p>
 
-            <div class="benefits-section">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
+            <div class="impact-list">
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Faster Invoicing</h3>
-                    <p class="benefit-description">Automated invoice creation and delivery reduces processing time from
-                        days to minutes.</p>
+                    <p class="impact-text">Faster Invoicing - Automated invoice creation and delivery reduces processing time from days to minutes.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Real-Time Visibility</h3>
-                    <p class="benefit-description">Gain instant insights into revenue, expenses, and cash flow with
-                        comprehensive dashboards.</p>
+                    <p class="impact-text">Real-Time Visibility - Gain instant insights into revenue, expenses, and cash flow with comprehensive dashboards.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Improved Cash Flow</h3>
-                    <p class="benefit-description">Reduce payment delays with automated reminders and multiple payment
-                        options.</p>
+                    <p class="impact-text">Improved Cash Flow - Reduce payment delays with automated reminders and multiple payment options.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-file-contract"></i>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Simplified Compliance</h3>
-                    <p class="benefit-description">Automated tax calculations and reporting ensure compliance with GST
-                        and other regulations.</p>
+                    <p class="impact-text">Simplified Compliance - Automated tax calculations and reporting ensure compliance with GST and other regulations.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-shield"></i>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Enhanced Security</h3>
-                    <p class="benefit-description">Enterprise-grade security with encryption and role-based access
-                        controls.</p>
+                    <p class="impact-text">Enhanced Security - Enterprise-grade security with encryption and role-based access controls.</p>
                 </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-handshake"></i>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="benefit-title">Customer Trust</h3>
-                    <p class="benefit-description">Professional invoices and transparent transactions build customer
-                        confidence and loyalty.</p>
+                    <p class="impact-text">Customer Trust - Professional invoices and transparent transactions build customer confidence and loyalty.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section class="section-padding faq-section">
