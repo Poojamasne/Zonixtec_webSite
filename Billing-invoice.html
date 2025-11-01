@@ -450,51 +450,50 @@
 
         /* Challenges Section */
         .challenges-section {
-            background: var(--card-bg);
+            margin-bottom: 80px;
+        }
+
+        .challenges-container {
+            background: rgba(15, 23, 42, 0.5);
             border-radius: 20px;
-            padding: 80px 60px;
-            margin-top: 80px;
-            border: 1px solid var(--card-border);
-            position: relative;
-            overflow: hidden;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
         }
 
         .challenges-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--secondary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .challenges-grid {
+        .challenges-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
 
         .challenge-item {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .challenge-item i {
-            color: var(--accent);
-            font-size: 1.5rem;
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 15px;
         }
 
-        .challenge-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--light);
+        .challenge-icon {
+            color: #ef4444;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
         }
 
-        .challenge-description {
-            color: var(--gray);
+        .challenge-text {
+            color: #94a3b8;
+            line-height: 1.7;
         }
-
 
         /* Process Section */
         .process-section {
@@ -1072,56 +1071,57 @@
     </section>
 
     <!-- Challenges Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="challenges-section">
-                <h2 class="challenges-title">Challenges Without a Smart Billing System</h2>
-                <div class="challenges-grid">
-                    <div class="challenge-item">
+    <!-- Challenges Section -->
+<section class="section-padding challenges-section">
+    <div class="container">
+        <div class="challenges-container">
+            <h2 class="challenges-title">Challenges Without a Smart Billing System</h2>
+            <div class="challenges-list">
+                <div class="challenge-item">
+                    <div class="challenge-icon">
                         <i class="fas fa-exclamation-circle"></i>
-                        <h3 class="challenge-title">Manual Invoice Errors</h3>
-                        <p class="challenge-description">Manual data entry leads to errors that can result in revenue
-                            loss and client dissatisfaction.</p>
                     </div>
-
-                    <div class="challenge-item">
-                        <i class="fas fa-clock"></i>
-                        <h3 class="challenge-title">Payment Delays</h3>
-                        <p class="challenge-description">Slow invoicing processes cause delays in payments and
-                            complicate financial reconciliations.</p>
+                    <p class="challenge-text">Manual data entry leads to errors that can result in revenue loss and client dissatisfaction</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-
-                    <div class="challenge-item">
-                        <i class="fas fa-eye-slash"></i>
-                        <h3 class="challenge-title">Poor Financial Visibility</h3>
-                        <p class="challenge-description">Lack of real-time insights into cash flow and financial health
-                            hinders strategic decision-making.</p>
+                    <p class="challenge-text">Slow invoicing processes cause delays in payments and complicate financial reconciliations</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-
-                    <div class="challenge-item">
-                        <i class="fas fa-file-contract"></i>
-                        <h3 class="challenge-title">Tax Compliance Issues</h3>
-                        <p class="challenge-description">Difficulty in maintaining accurate tax records and compliance
-                            reporting increases audit risks.</p>
+                    <p class="challenge-text">Lack of real-time insights into cash flow and financial health hinders strategic decision-making</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-
-                    <div class="challenge-item">
-                        <i class="fas fa-redo"></i>
-                        <h3 class="challenge-title">No Recurring Billing</h3>
-                        <p class="challenge-description">Manual handling of subscription payments leads to
-                            inefficiencies and potential revenue leakage.</p>
+                    <p class="challenge-text">Difficulty in maintaining accurate tax records and compliance reporting increases audit risks</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-
-                    <div class="challenge-item">
-                        <i class="fas fa-chart-pie"></i>
-                        <h3 class="challenge-title">Limited Reporting</h3>
-                        <p class="challenge-description">Inadequate reporting capabilities make it difficult to analyze
-                            business performance and trends.</p>
+                    <p class="challenge-text">Manual handling of subscription payments leads to inefficiencies and potential revenue leakage</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
+                    <p class="challenge-text">Inadequate reporting capabilities make it difficult to analyze business performance and trends</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Process Visualization -->
     <!-- Process Section -->

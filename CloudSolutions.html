@@ -808,26 +808,47 @@
         .challenges-section {
             margin-bottom: 80px;
         }
-        
+
+        .challenges-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .challenges-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .challenges-list {
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        
+
         .challenge-item {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
-        
+
         .challenge-icon {
             color: #ef4444;
             margin-right: 15px;
             font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .challenge-text {
+            color: #94a3b8;
+            line-height: 1.7;
         }
         
         /* Impact Section */
@@ -1485,62 +1506,50 @@
     </section>
     
     <!-- Challenges Section -->
-    <section class="challenges-section">
-        <div class="container">
-            <h2 class="section-title">Challenges Without Cloud Solutions</h2>
+    <!-- Challenges Section -->
+<section class="section-padding challenges-section">
+    <div class="container">
+        <div class="challenges-container">
+            <h2 class="challenges-title">Challenges Without Cloud Solutions</h2>
             <div class="challenges-list">
                 <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div>
-                        <h3>High IT infrastructure costs</h3>
-                        <p>Significant capital expenditure on hardware, maintenance, and upgrades without the flexibility of cloud pricing models.</p>
-                    </div>
+                    <p class="challenge-text">Significant capital expenditure on hardware, maintenance, and upgrades without the flexibility of cloud pricing models</p>
                 </div>
                 
                 <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div>
-                        <h3>Lack of agility and flexibility</h3>
-                        <p>Inability to quickly scale resources up or down based on changing business demands and market conditions.</p>
-                    </div>
+                    <p class="challenge-text">Inability to quickly scale resources up or down based on changing business demands and market conditions</p>
                 </div>
                 
                 <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div>
-                        <h3>Data loss risks without proper backup</h3>
-                        <p>Vulnerability to data loss from hardware failures, disasters, or security breaches without robust backup solutions.</p>
-                    </div>
+                    <p class="challenge-text">Vulnerability to data loss from hardware failures, disasters, or security breaches without robust backup solutions</p>
                 </div>
                 
                 <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div>
-                        <h3>Limited scalability for growing businesses</h3>
-                        <p>Restricted growth potential due to infrastructure limitations and lengthy procurement processes for new hardware.</p>
-                    </div>
+                    <p class="challenge-text">Restricted growth potential due to infrastructure limitations and lengthy procurement processes for new hardware</p>
                 </div>
                 
                 <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div>
-                        <h3>Slower application delivery cycles</h3>
-                        <p>Extended development and deployment timelines due to manual processes and infrastructure constraints.</p>
-                    </div>
+                    <p class="challenge-text">Extended development and deployment timelines due to manual processes and infrastructure constraints</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- What Zonixtec Brings Section -->
     <section class="cta-container">

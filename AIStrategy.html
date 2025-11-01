@@ -427,38 +427,46 @@
             margin-bottom: 80px;
         }
 
-        .challenges-grid {
+        .challenges-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .challenges-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .challenges-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
-        .challenge-card {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 10px;
-            padding: 25px;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            position: relative;
-        }
-
-        .challenge-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(135deg, #ef4444, #f97316);
-        }
-
-        .challenge-icon {
-            font-size: 2rem;
-            color: #ef4444;
+        .challenge-item {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 15px;
         }
 
+        .challenge-icon {
+            color: #ef4444;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
         .challenge-text {
-            color: #cbd5e1;
+            color: #94a3b8;
+            line-height: 1.7;
         }
 
         /* Process Section */
@@ -1241,58 +1249,50 @@
     </section>
 
     <!-- Challenges Section -->
-    <section class="section-padding challenges-section">
-        <div class="container">
-            <h2 class="section-title">Challenges Without an AI Strategy</h2>
-            <div class="challenges-grid">
-                <div class="challenge-card">
+    <!-- Challenges Section -->
+<section class="section-padding challenges-section">
+    <div class="container">
+        <div class="challenges-container">
+            <h2 class="challenges-title">Challenges Without an AI Strategy</h2>
+            <div class="challenges-list">
+                <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="challenge-text">
-                        <p>Wasted investments on irrelevant AI projects that don't align with business objectives</p>
-                    </div>
+                    <p class="challenge-text">Wasted investments on irrelevant AI projects that don't align with business objectives</p>
                 </div>
-
-                <div class="challenge-card">
+                
+                <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="challenge-text">
-                        <p>Difficulty aligning AI initiatives with real business goals and measurable outcomes</p>
-                    </div>
+                    <p class="challenge-text">Difficulty aligning AI initiatives with real business goals and measurable outcomes</p>
                 </div>
-
-                <div class="challenge-card">
+                
+                <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="challenge-text">
-                        <p>Low ROI due to lack of structured planning, implementation, and measurement frameworks</p>
-                    </div>
+                    <p class="challenge-text">Low ROI due to lack of structured planning, implementation, and measurement frameworks</p>
                 </div>
-
-                <div class="challenge-card">
+                
+                <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="challenge-text">
-                        <p>Confusion around choosing the right AI tools, technologies, and implementation partners</p>
-                    </div>
+                    <p class="challenge-text">Confusion around choosing the right AI tools, technologies, and implementation partners</p>
                 </div>
-
-                <div class="challenge-card">
+                
+                <div class="challenge-item">
                     <div class="challenge-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="challenge-text">
-                        <p>Increased operational risks due to poor adoption strategy and inadequate change management
-                        </p>
-                    </div>
+                    <p class="challenge-text">Increased operational risks due to poor adoption strategy and inadequate change management</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Solution Section -->
     <section class="section-padding">

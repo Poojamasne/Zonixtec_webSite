@@ -73,6 +73,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 60px;
+            margin-top: 60px;
             position: relative;
         }
 
@@ -410,57 +411,83 @@
         }
 
         /* Challenges & Solutions Section */
-        .challenges-solutions {
-            display: flex;
-            gap: 50px;
-            margin-bottom: 100px;
-        }
+        /* Challenges & Solutions Section */
+.challenges-solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
 
-        .challenges,
-        .solutions {
-            flex: 1;
-            background: rgba(15, 23, 42, 0.5);
-            border-radius: 15px;
-            padding: 40px;
-            border: 1px solid rgba(100, 116, 139, 0.2);
-        }
+.challenges-column, .solutions-column {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
 
-        .challenges h2,
-        .solutions h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--secondary);
-        }
+.challenges-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .challenges ul,
-        .solutions ul {
-            list-style-type: none;
-        }
+.column-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--secondary);
+    position: relative;
+}
 
-        .challenges li,
-        .solutions li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            color: #94a3b8;
-        }
+.column-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
 
-        .challenges li::before {
-            content: '✕';
-            position: absolute;
-            left: 0;
-            color: #ef4444;
-            font-weight: bold;
-        }
+.challenges-list, .solutions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        .solutions li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
+.challenge-item, .solution-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.challenge-icon {
+    color: #ef4444;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.solution-icon {
+    color: var(--success);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.challenge-text, .solution-text {
+    color: #94a3b8;
+    line-height: 1.7;
+}
 
         /* Process Section */
         .process-section {
@@ -531,6 +558,7 @@
             text-align: center;
             color: var(--secondary);
             margin-bottom: 40px;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .tech-grid {
@@ -547,6 +575,7 @@
             color: var(--light);
             margin-bottom: 20px;
             font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .tech-items {
@@ -1119,27 +1148,76 @@
             </div>
 
             <!-- Challenges & Solutions -->
-            <div class="challenges-solutions">
-                <div class="challenges">
-                    <h2>Challenges Without UI/UX Design</h2>
-                    <ul>
-                        <li>Confusing navigation frustrates users</li>
-                        <li>Poor user engagement lowers retention</li>
-                        <li>Outdated visuals harm brand credibility</li>
-                        <li>Higher bounce rates and lower conversions</li>
-                    </ul>
-                </div>
-
-                <div class="solutions">
-                    <h2>Our Solutions</h2>
-                    <ul>
-                        <li>Increase user satisfaction</li>
-                        <li>Boost retention rates</li>
-                        <li>Improve overall brand value</li>
-                        <li>Drive higher conversions</li>
-                    </ul>
+            <!-- Challenges & Solutions Section -->
+<div class="challenges-section">
+    <div class="challenges-container">
+        <h2 class="challenges-title">Challenges & Solutions</h2>
+        
+        <div class="challenges-solutions-grid">
+            <!-- Challenges Column -->
+            <div class="challenges-column">
+                <h3 class="column-title">Challenges Without UI/UX Design</h3>
+                <div class="challenges-list">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <p class="challenge-text">Confusing navigation frustrates users</p>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <p class="challenge-text">Poor user engagement lowers retention</p>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <p class="challenge-text">Outdated visuals harm brand credibility</p>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <p class="challenge-text">Higher bounce rates and lower conversions</p>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Solutions Column -->
+            <div class="solutions-column">
+                <h3 class="column-title">Our Solutions</h3>
+                <div class="solutions-list">
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="solution-text">Increase user satisfaction</p>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="solution-text">Boost retention rates</p>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="solution-text">Improve overall brand value</p>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="solution-text">Drive higher conversions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- Process Section -->
             <div class="process-section">
