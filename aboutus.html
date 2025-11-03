@@ -267,91 +267,128 @@
         }
 
         /* Story Slider */
-        .story-slider {
-            position: relative;
-            background-color: rgba(15, 23, 42, 0.85);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.story-slider {
+    position: relative;
+    background-color: rgba(15, 23, 42, 0.85);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-        .slider-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
-        .slider-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 108%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1s ease;
-            text-align: center;
-            padding: 0 20px;
+.slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 108%; /* Changed from 108% to 100% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    text-align: center;
+    padding: 0 20px;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: -moz-linear-gradient();
+    background-position: center center;
+    background-attachment: fixed; 
+}
 
-            /* Background Image + Dark Overlay */
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+/* Add individual background classes for each slide */
+.slider-slide:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('./uploads/image.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+}
 
-        .slider-slide.active {
-            opacity: 1;
-        }
+.slider-slide:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('./uploads/about1.jpg');
+}
 
+.slider-slide:nth-child(3) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('./uploads/f02c2e170b1b7a5c0842c63e3c15160b.jpg');
+}
 
-        .slide-content {
-            max-width: 800px;
-            z-index: 10;
-        }
+.slider-slide:nth-child(4) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('./uploads/about3.jpg');
+}
 
-        .slide-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--light);
-        }
+.slider-slide.active {
+    opacity: 1;
+}
 
-        .slide-content p {
-            font-size: 1.2rem;
-            color: var(--light);
-            margin-bottom: 2rem;
-        }
+.slide-content {
+    max-width: 800px;
+    z-index: 10;
+    position: relative;
+}
 
-        .slider-indicators {
-            position: absolute;
-            bottom: 50px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-        }
+.slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-        .slider-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.slide-content p {
+    font-size: 1.2rem;
+    color: var(--light);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
 
-        .slider-indicator.active {
-            background-color: var(--secondary);
-            transform: scale(1.2);
-        }
+.slider-indicators {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.slider-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-indicator.active {
+    background-color: var(--secondary);
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slider-slide {
+        background-attachment: scroll; /* Better for mobile */
+        background-position: center;
+    }
+    
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+}
 
         /* Mission & Vision */
         .mission-vision {
@@ -734,24 +771,56 @@
             gap: 20px;
         }
 
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
+       /* Update the existing feature-item styles */
+.feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0 10px; /* Added side margins for mobile */
+}
 
-        .feature-item i {
-            color: var(--success);
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
+.feature-item i {
+    color: var(--success);
+    font-size: 1.5rem;
+    margin-top: 3px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
 
-        .feature-item p {
-            color: var(--gray);
-        }
+.feature-item p {
+    color: var(--gray);
+    margin: 0; /* Remove default margins */
+}
+
+/* Add responsive solution-features grid for mobile */
+@media (max-width: 768px) {
+    .solution-features {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px; /* Add padding to container */
+    }
+    
+    .feature-item {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0; /* Remove individual margins when container has padding */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .feature-item {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .feature-item i {
+        font-size: 1.3rem;
+    }
+}
 
         .journey-section {
             padding: 40px;
@@ -1022,7 +1091,7 @@
         .footer-container {
             display: grid;
             grid-template-columns: repeat(4, minmax(150px, 1fr));
-            gap: 40px;
+            gap: 150px;
             margin-bottom: 40px;
         }
 
@@ -1284,8 +1353,7 @@
             <div class="slider-slide">
                 <div class="slide-content">
                     <h2>Teams today want more.</h2>
-                    <p>Agility. Reliability. Simplicity. Design that delights. Development that scales. Solutions that
-                        just work.</p>
+                    <p>Agility, reliability, simplicity — design that delights, development that scales, and solutions that just work.</p>
                 </div>
             </div>
             <div class="slider-slide">
@@ -1720,8 +1788,7 @@
                                 <a href="NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing
                                     (NLP)</a>
                                 <a href="ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive
-                                    Analysis</a>
+                                <a href="PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analytics</a>
                                 <a href="ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process
                                     Automation</a>
                             </div>
@@ -1845,6 +1912,40 @@
         .footer-dropdown-header:hover {
             color: var(--secondary);
         }
+
+        /* Footer dropdown styling with different icons for subtext */
+.footer-dropdown-header i.fas.fa-chevron-right {
+    font-size: 0.8rem;
+    color: var(--gray);
+    transition: transform 0.3s ease;
+}
+
+.footer-dropdown-content a i.fas.fa-chevron-right {
+    font-size: 0.6rem;
+    color: var(--gray);
+    opacity: 0.7;
+}
+
+.footer-dropdown-content a:hover i.fas.fa-chevron-right {
+    color: var(--secondary);
+    opacity: 1;
+}
+
+/* Dropdown toggle animation */
+.footer-dropdown.open .footer-dropdown-header i.fas.fa-chevron-right {
+    transform: rotate(90deg);
+}
+
+.footer-dropdown-header .dropdown-toggle i.fas.fa-chevron-down {
+    font-size: 0.7rem;
+    color: var(--gray);
+    transition: transform 0.3s ease;
+}
+
+.footer-dropdown.open .footer-dropdown-header .dropdown-toggle i.fas.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
     </style>
     <script>
         document.querySelectorAll('.footer-dropdown-header').forEach(header => {
