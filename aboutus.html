@@ -151,7 +151,7 @@
 
         .nav-links a {
             color: var(--light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
             padding: 15px 20px;
 
             text-decoration: none;
@@ -205,6 +205,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            padding: 10px 0;
         }
 
         .dropdown-toggle i {
@@ -216,7 +217,7 @@
             transform: rotate(180deg);
         }
 
-        .dropdown-content {
+         .dropdown-content {
             display: none;
             position: absolute;
             top: 100%;
@@ -229,14 +230,20 @@
             border: 1px solid rgba(100, 116, 139, 0.3);
             z-index: 1000;
             padding: 8px 0;
-            margin-top: 8px;
+            margin-top: 0;
             overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, margin-top 0.2s ease;
         }
-
-        .dropdown:hover .dropdown-content {
+         .dropdown:hover .dropdown-content {
             display: block;
+            opacity: 1;
+            pointer-events: auto;
+            margin-top: 0;
             animation: fadeInUp 0.3s ease;
         }
+
 
         .dropdown-content a {
             display: block;
